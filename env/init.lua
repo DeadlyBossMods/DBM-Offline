@@ -1,0 +1,7 @@
+require "env.bitlib"
+require "env.debuglib"
+require "env.mathlib"
+require "env.oslib"
+require "env.stringlib"
+require "env.tablelib"
+require "env.basics"
