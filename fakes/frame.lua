@@ -35,6 +35,10 @@ function frame:CreateFontString(name)
 	return CreateFrame("FontString", name, self)
 end
 
+function frame:GetStringWidth()
+	return 0
+end
+
 -- Visibility tracking is important for OnUpdate logic in the timewarper
 function frame:Show()
 	self.shown = true

@@ -10,7 +10,6 @@ function GetRealmName() return "FakeServer" end
 function GetGuildInfo() return "FakeGuild" end
 function GetTime() return 0 end
 function UnitLevel() return 60 end
-function UnitGUID() return end
 function IsInRaid() return true end
 function IsTrialAccount() return false end
 function IsInGroup() return true end
@@ -20,7 +19,7 @@ function UnitOnTaxi() return false end
 function GetSpellTexture() return "" end
 function GetNumTalentTabs() return 1 end
 function InCombatLockdown() return false end
-function UnitPosition() return end
+function UnitPosition() return 0, 0, 0, 0 end
 function GetInstanceInfo() return nil, nil, nil, nil, nil, nil, nil, nil, nil end
 function Ambiguate(str) return str end
 function PlaySoundFile() return end
@@ -30,6 +29,18 @@ function SetCVar() return 0 end
 function UnitIsGroupLeader() return true end
 function UnitExists() return false end
 function UnitHealthMax() return 0 end
+function CombatLogGetCurrentEventInfo() end
+function IsEncounterInProgress() end
+function UnitDetailedThreatSituation() end
+function UnitAffectingCombat() end
+function FlashClientIcon() end
+
+function UnitGUID(uId)
+	if uId == "player" then
+		return "Player-fake-guid" -- Non-mock variant used internally to rewrite GUIDs to match who is replaying a log, so we need a non-mock fake
+	end
+	return nil
+end
 
 C_LFGInfo = {
 	GetDungeonInfo = function() return end
@@ -42,8 +53,11 @@ C_TradeSkillUI = magicFake()
 C_QuestLog = magicFake()
 C_AddOns = magicFake()
 C_NamePlate = magicFake()
+C_NamePlate.GetNamePlates = function() return {} end
 function C_AddOns.GetAddOnEnableState() return 0 end
 function C_AddOns.GetNumAddOns() return 0 end
+function C_AddOns.IsAddOnLoaded(name) return false end
+function C_AddOns.GetAddOnMetadata() return "" end
 C_Map = magicFake()
 C_Map.GetBestMapForUnit = function() return 0 end
 
@@ -57,3 +71,18 @@ GetMicroIconForRole = magicFake()
 CreateAtlasMarkup = magicFake()
 
 SCENARIO_STAGE = "%s"
+
+RaidBossEmoteFrame = magicFake()
+AlertFrame = magicFake()
+SOUNDKIT = magicFake()
+
+function GetCurrentEnvironment() return _G end
+C_UIColor = magicFake()
+function C_UIColor.GetColors() return {} end
+
+WOW_PROJECT_CLASSIC = 2
+WOW_PROJECT_ID = WOW_PROJECT_CLASSIC
+
+C_Seasons = magicFake()
+function C_Seasons.HasActiveSeason() return true end
+function C_Seasons.GetActiveSeason() return 2 end

@@ -3,7 +3,8 @@
 DBM-Offline can load DBM mods and play back combat logs while running in a standard Lua 5.1 interpreter outside of WoW.
 
 It's currently in a proof of concept state, lots of quick and dirty code to be found here.
-It runs 10 out of the 11 SoD/AQ40 test cases and the differences in the test reports are minor (biggest one is that something about combat start events is broken).
+It runs all SoD/AQ40 tests without errors and 8 out of 11 tests report the exact same result.
+The remaining discrepancies are minor things such as DBM-Offline not knowing about spell cast time, non-deterministic order in the test report, and a trash mod triggering in a slightly odd manner.
 
 # Why?
 

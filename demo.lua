@@ -30,9 +30,13 @@ local function runTest(name)
 	DBM.Test:RunTest(name)
 	for i = 1, 1000 do
 		Tick()
-		if not DBM.Test.ResumeCoroutine() then break end
+		if not DBM.Test:OnUpdate() then break end
 	end
-	local f = io.open("reports/" .. name:gsub("/", "-") .. ".lua", "w+")
+	local f, err = io.open("reports/" .. name:gsub("/", "-") .. ".lua", "w+")
+	if not f then error(err) end
+	if DBM.Test.reporter:HasDiff() then
+		print("diff vs. expected in " .. name)
+	end
 	f:write(DBM.Test.reporter:ReportWithHeader())
 	f:close()
 end
