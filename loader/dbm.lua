@@ -14,13 +14,41 @@ local excludedFiles = {
 	["DBM-HudMap.lua"] = true,
 }
 
--- TODO: decide if we want to have timestamps here. the main argument against it is that it might turn diffs entirely unreadable if everything shifts by a fixed offset
-
 local addMsgLogFile, debugLogFile
+
+local lastTimewarperStart
+local origTimewarperStart
+local function timewarperStartHook(self, ...)
+	local a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 = origTimewarperStart(self, ...)
+	lastTimewarperStart = self.fakeTime
+	return a1, a2, a3, a4, a5, a6, a7, a8, a9, a10
+end
+
+local function getMockTime()
+	if not DBM.Test or not DBM.Test.TimeWarper then
+		return nil
+	end
+	if DBM.Test.TimeWarper.Start ~= timewarperStartHook then
+		origTimewarperStart = DBM.Test.TimeWarper.Start
+		DBM.Test.TimeWarper.Start = timewarperStartHook
+	end
+	local timewarper = DBM.Test.timeWarper
+	if timewarper and timewarper.fakeTime then
+		return timewarper.fakeTime - lastTimewarperStart
+	end
+end
+
+local function getMockTimeString()
+	local time = getMockTime()
+	if not time then
+		return "     ?"
+	end
+	return ("%6.2f"):format(time)
+end
 
 local function logAddMsg(self, msg, prefix)
 	prefix = prefix or (self.localization and self.localization.general.name) or DBM_CORE_L.DBM
-	local str = ("<%s> %s"):format(prefix, msg)
+	local str = ("[%s] <%s> %s"):format(getMockTimeString(), prefix, msg)
 	if addMsgLogFile then
 		addMsgLogFile:write(str, "\n")
 	else
@@ -30,7 +58,7 @@ end
 
 local function logDbmDebug(self, msg, level)
 	level = level or 1
-	local str = ("Debug(%d): %s"):format(level, msg)
+	local str = ("[%s] Debug(%d): %s"):format(getMockTimeString(), level, msg)
 	if debugLogFile then
 		debugLogFile:write(str, "\n")
 	else
@@ -40,6 +68,7 @@ end
 
 local function setupHooks()
 	DBM.AddMsg = logAddMsg
+	DBM.Test:GetPrivate():GetPrototype("DBMMod").AddMsg = logAddMsg
 	DBM.Debug = logDbmDebug
 end
 
@@ -49,7 +78,7 @@ function dbmLoader:SetLogFiles(cfg)
 			addMsgLogFile:close()
 		end
 		local err
-		addMsgLogFile, err = io.open(cfg.debug, "w+")
+		addMsgLogFile, err = io.open(cfg.out, "w+")
 		if not addMsgLogFile then error(err) end
 	end
 	if cfg.debug then
@@ -57,7 +86,7 @@ function dbmLoader:SetLogFiles(cfg)
 			debugLogFile:close()
 		end
 		local err
-		debugLogFile, err = io.open(cfg.out, "w+")
+		debugLogFile, err = io.open(cfg.debug, "w+")
 		if not debugLogFile then error(err) end
 	end
 end
