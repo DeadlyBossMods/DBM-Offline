@@ -1,0 +1,112 @@
+name: Diff DBM test output
+description: Runs DBM tests on two commits and pushes the resulting output into a repository to get a diff
+branding:
+  icon: book
+  color: blue
+
+inputs:
+  dbm-offline-repo:
+    default: DeadlyBossMods/DBM-Offline
+  dbm-offline-ref:
+    default: ""
+  dbm-main-repo:
+    default: DeadlyBossMods/DeadlyBossMods
+  dbm-main-ref:
+    default: ""
+  dbm-mod-repo:
+    required: true
+  dbm-mod-ref:
+    required: true
+  dbm-mod-base-ref:
+    required: true
+  upload-repo:
+    required: true
+  upload-token:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Setup and DBM-Offline dependencies
+      shell: bash
+      run: |
+        mkdir -p dbm-offline-diff
+        export DEBIAN_FRONTEND=noninteractive
+        sudo apt-get update
+        sudo apt-get install -y lua5.1 luarocks subversion
+        sudo luarocks --lua-version 5.1 install bitlib
+        sudo luarocks --lua-version 5.1 install luafilesystem
+    - name: Checkout DBM-Offline
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.dbm-offline-repo }}
+        ref: ${{ inputs.dbm-offline-ref }}
+        path: ./dbm-offline-diff/DBM-Offline
+    - name: Checkout DBM main repo
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.dbm-main-repo }}
+        ref: ${{ inputs.dbm-main-ref }}
+        path: ./dbm-offline-diff/DeadlyBossMods
+    - name: Download DBM dependencies
+      uses: BigWigsMods/packager@master
+      with:
+        args: -z -d -c -t ./dbm-offline-diff/DeadlyBossMods
+    - name: Install DBM dependencies
+      shell: bash
+      run: |
+        cp -r ./dbm-offline-diff/DeadlyBossMods/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods/DBM-Core/
+    - name: Checkout DBM mod repo
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.dbm-mod-repo }}
+        ref: ${{ inputs.dbm-mod-ref }}
+        path: ./dbm-offline-diff/DBM-Vanilla
+    - name: Run tests
+      shell: bash
+      run: |
+        cd dbm-offline-diff/DBM-Offline
+        lua5.1 main.lua
+        mkdir -p ../results
+        mv reports ../results/new
+        rm -rf ../DBM-Vanilla
+    - name: Checkout DBM mod repo (base)
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.dbm-mod-repo }}
+        ref: ${{ inputs.dbm-mod-base-ref }}
+        path: ./dbm-offline-diff/DBM-Vanilla
+    - name: Run tests
+      shell: bash
+      run: |
+        cd dbm-offline-diff/DBM-Offline
+        lua5.1 main.lua
+        mkdir -p ../results
+        mv reports ../results/base
+    - name: Upload reports
+      shell: bash
+      run: |
+        cd dbm-offline-diff
+        mkdir upload-results
+        cd upload-results
+        git init .
+        git config --global user.email "ci@deadlybossmods.com"
+        git config --global user.name "DBM CI"
+        git checkout -b diff-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        mv ../results/base reports
+        rm -f reports/.gitignore
+        git add reports/*
+        git commit -am "Test results at https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-base-ref }}"
+        rm -rf reports/
+        mv ../results/new reports
+        rm -f reports/.gitignore
+        git add reports/*
+        git commit --allow-empty -am "Test results at https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-ref }}"
+        git remote add origin https://${gh_token}@github.com/${{ inputs.upload-repo }}
+        git push origin diff-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+      env:
+        gh_token: ${{ inputs.upload-token }}
+    - name: Cleanup
+      shell: bash
+      run: |
+        rm -rf dbm-offline-diff/upload-results/.git
