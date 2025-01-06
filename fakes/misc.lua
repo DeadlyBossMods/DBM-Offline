@@ -70,7 +70,8 @@ RegisterStaticConstants = magicFake()
 GetMicroIconForRole = magicFake()
 CreateAtlasMarkup = magicFake()
 
-SCENARIO_STAGE = "%s"
+SCENARIO_STAGE = "SCENARIO_STAGE(%s)"
+BOSSES_KILLED = "BOSSES_KILLED(%d, %d)"
 
 RaidBossEmoteFrame = magicFake()
 AlertFrame = magicFake()
@@ -86,3 +87,12 @@ WOW_PROJECT_ID = WOW_PROJECT_CLASSIC
 C_Seasons = magicFake()
 function C_Seasons.HasActiveSeason() return true end
 function C_Seasons.GetActiveSeason() return 2 end
+
+function GetPartyAssignment() return false end
+function UnitIsDead() return false end
+function UnitIsFriend() return false end
+function SendChatMessage() return false end -- TODO: this shouldn't be called in the first place
+function UnitIsUnit(a, b) return a == b end
+function UnitDistanceSquared() return 0 end -- TODO: this being called implies that map restrictions aren't known
+
+C_MythicPlus = magicFake()
