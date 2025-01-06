@@ -1,3 +1,5 @@
+local log = require "logging"
+
 debugstack = debug.traceback
 
 function debuglocals()
@@ -12,7 +14,7 @@ function seterrorhandler()
 end
 
 function getprinthandler()
-	return print -- FIXME: return logging once we have it
+	return log
 end
 
 function setprinthandler()
@@ -26,6 +28,6 @@ function xpcall(f, handler, ...)
 	return oldxpcall(function()
 		return f(unpack(args))
 	end, function(...)
-		print("xpcall error", ...) -- FIXME: use logging library here or get rid of this
+		log:DbmError(debug.traceback(..., 2))
 	end)
 end

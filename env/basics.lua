@@ -1,3 +1,5 @@
+local log = require "logging"
+
 function hooksecurefunc(tbl, key, hook)
 	if type(tbl) ~= "table" then
 		return hooksecurefunc(_G, tbl, key)
@@ -10,13 +12,13 @@ function hooksecurefunc(tbl, key, hook)
 			return unpack(ret)
 		end
 	else
-		print("warning: ignoring hooking of missing secure func: " .. key)
+		log("warning: ignoring hooking of missing secure func: %s", tostring(key))
 	end
 end
 
 local function logError(ok, ...)
 	if not ok then
-		print("error in securecall(): " .. tostring(...))
+		log:DbmError("error in securecall(): %s", tostring(...))
 	end
 	return ...
 end
