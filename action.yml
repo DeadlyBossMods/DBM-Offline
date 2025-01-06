@@ -5,6 +5,8 @@ branding:
   color: blue
 
 inputs:
+  game-flavor:
+    required: true
   dbm-offline-repo:
     default: DeadlyBossMods/DBM-Offline
   dbm-offline-ref:
@@ -22,6 +24,8 @@ inputs:
   upload-repo:
     required: true
   upload-token:
+    required: true
+  comment-token:
     required: true
 
 runs:
@@ -61,32 +65,35 @@ runs:
       with:
         repository: ${{ inputs.dbm-mod-repo }}
         ref: ${{ inputs.dbm-mod-ref }}
-        path: ./dbm-offline-diff/DBM-Vanilla
+        path: ./dbm-offline-diff/mod-repo
     - name: Run tests
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
-        lua5.1 main.lua
+        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --mods ../mod-repo
         mkdir -p ../results
         mv reports ../results/new
-        rm -rf ../DBM-Vanilla
+        rm -rf ../mod-repo
     - name: Checkout DBM mod repo (base)
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.dbm-mod-repo }}
         ref: ${{ inputs.dbm-mod-base-ref }}
-        path: ./dbm-offline-diff/DBM-Vanilla
-    - name: Run tests
+        path: ./dbm-offline-diff/mod-repo
+    - name: Run tests (Base)
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
-        lua5.1 main.lua
+        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --mods ../mod-repo
         mkdir -p ../results
         mv reports ../results/base
     - name: Upload reports
+      id: upload
       shell: bash
       run: |
-        cd dbm-offline-diff
+        cd dbm-offline-diff/DBM-Offline
+        lua5.1 diff.lua ../results/base ../results/new > ../summary.txt
+        cd ..
         mkdir upload-results
         cd upload-results
         git init .
@@ -102,11 +109,28 @@ runs:
         rm -f reports/.gitignore
         git add reports/*
         git commit --allow-empty -am "Test results at https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-ref }}"
-        git remote add origin https://${gh_token}@github.com/${{ inputs.upload-repo }}
-        git push origin diff-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} diff-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
+        echo 'diff<<EOFDelim' >> $GITHUB_OUTPUT
+        cat ../summary.txt >> $GITHUB_OUTPUT
+        echo EOFDelim >> $GITHUB_OUTPUT
+        cat ../summary.txt >> $GITHUB_STEP_SUMMARY
       env:
         gh_token: ${{ inputs.upload-token }}
     - name: Cleanup
       shell: bash
+      if: always()
       run: |
+        # just making sure the auth token is definitely gone
         rm -rf dbm-offline-diff/upload-results/.git
+    - name: Post comment
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ inputs.comment-token }}
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `${{ steps.upload.outputs.diff }}`
+          })
