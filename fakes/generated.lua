@@ -1,3 +1,11 @@
+-- Auto-generated, do not edit by hand.
+-- Generation command:
+-- `./bin/lua-language-server <DBM-Offline path>/fake-generator.lua <vscode-wow-api path>/Annotations`
+
+---@meta _ -- Actually not a meta file as it gets run, but this surpresses warnings about duplicate definitions
+
+local magicFake = require "fakes.magicfake"
+
 ACCOUNT_WIDE_FONT_COLOR = setmetatable({}, {__index = ColorMixin})
 ACHIEVEMENT_COLOR = setmetatable({}, {__index = ColorMixin})
 ACHIEVEMENT_COMPLETE_COLOR = setmetatable({}, {__index = ColorMixin})
@@ -22,7 +30,7 @@ function AbandonSkill()
 	return
 end
 function AbbreviateNumbers()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function AcceptAreaSpiritHeal()
 	return
@@ -94,7 +102,7 @@ function AddTradeMoney()
 	return
 end
 function Ambiguate()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function AntiAliasingSupported()
 	return
@@ -160,10 +168,10 @@ function AttackTarget()
 end
 AuraUtil = {}
 function AuraUtil.FindAuraByName()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[string?​]], 0, 0, setmetatable({}, {__index = string}), false, false, 0, false, false, false, false, 0, magicFake("unknown")
+	return "", 0, 0, nil --[[string?​]], 0, 0, "", false, false, 0, false, false, false, false, 0, magicFake("unknown")
 end
 function AuraUtil.ForEachAura()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[string?​]], 0, 0, setmetatable({}, {__index = string}), false, false, 0, false, false, false, false, 0, magicFake("unknown")
+	return "", 0, 0, nil --[[string?​]], 0, 0, "", false, false, 0, false, false, false, false, 0, magicFake("unknown")
 end
 function AutoChooseCurrentGraphicsSetting()
 	return
@@ -211,7 +219,7 @@ function BNGetDisplayName()
 	return
 end
 function BNGetFOFInfo()
-	return 0, setmetatable({}, {__index = string}), false
+	return 0, "", false
 end
 function BNGetFriendIndex()
 	return 0
@@ -220,7 +228,7 @@ function BNGetFriendInviteInfo()
 	return 0, 0, false, nil --[[string?​]], 0
 end
 function BNGetInfo()
-	return nil --[[number?​]], setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, false, false
+	return nil --[[number?​]], "", 0, "", false, false, false
 end
 function BNGetNumBlocked()
 	return
@@ -333,7 +341,7 @@ function BindEnchant()
 end
 BossEmoteNormalHuge = setmetatable({}, {__index = Font})
 function BreakUpLargeNumbers()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function BuyGuildBankTab()
 	return
@@ -393,7 +401,7 @@ function C_AccountStore.GetCategories()
 	return {} --[[number[]​]]
 end
 function C_AccountStore.GetCategoryInfo()
-	return {type = 0 --[[Enum.AccountStoreCategoryType​]], icon = setmetatable({}, {__index = integer}), id = 0, name = setmetatable({}, {__index = string})}
+	return {type = 0 --[[Enum.AccountStoreCategoryType​]], icon = 0, id = 0, name = ""}
 end
 function C_AccountStore.GetCategoryItems()
 	return {} --[[number[]​]]
@@ -405,7 +413,7 @@ function C_AccountStore.GetCurrencyIDForStore()
 	return nil --[[number?​]]
 end
 function C_AccountStore.GetCurrencyInfo()
-	return {icon = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), amount = 0, id = 0, maxQuantity = nil --[[number?​]]}
+	return {icon = 0, name = "", amount = 0, id = 0, maxQuantity = nil --[[number?​]]}
 end
 function C_AccountStore.GetItemInfo()
 	return nil --[[AccountStoreItemInfo?​]]
@@ -532,19 +540,19 @@ function C_AddOns.EnableAllAddOns()
 	return
 end
 function C_AddOns.GetAddOnDependencies()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AddOns.GetAddOnEnableState()
 	return 0 --[[Enum.AddOnEnableState​]]
 end
 function C_AddOns.GetAddOnInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false
+	return "", "", "", false, "", "", false
 end
 function C_AddOns.GetAddOnMetadata()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AddOns.GetAddOnOptionalDependencies()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AddOns.GetNumAddOns()
 	return 0
@@ -556,7 +564,7 @@ function C_AddOns.IsAddOnLoadOnDemand()
 	return false
 end
 function C_AddOns.IsAddOnLoadable()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_AddOns.IsAddOnLoaded()
 	return false, false
@@ -609,7 +617,7 @@ function C_AdventureMap.Close()
 	return
 end
 function C_AdventureMap.GetAdventureMapTextureKit()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AdventureMap.GetMapID()
 	return
@@ -646,7 +654,7 @@ function C_AlliedRaces.GetAllRacialAbilitiesFromID()
 	return {} --[[AlliedRaceRacialAbility[]​]]
 end
 function C_AlliedRaces.GetRaceInfoByID()
-	return {femaleModelID = 0, achievementIds = {} --[[number[]​]], maleModelID = 0, raceFileString = setmetatable({}, {__index = string}), maleName = setmetatable({}, {__index = string}), femaleName = setmetatable({}, {__index = string}), raceID = 0, modelBackgroundAtlas = setmetatable({}, {__index = string}), crestAtlas = setmetatable({}, {__index = string}), description = setmetatable({}, {__index = string}), bannerColor = setmetatable({}, {__index = ColorMixin})}
+	return {femaleModelID = 0, achievementIds = {} --[[number[]​]], maleModelID = 0, raceFileString = "", maleName = "", femaleName = "", raceID = 0, modelBackgroundAtlas = "", crestAtlas = "", description = "", bannerColor = setmetatable({}, {__index = ColorMixin})}
 end
 C_AnimaDiversion = {}
 function C_AnimaDiversion.CloseUI()
@@ -662,7 +670,7 @@ function C_AnimaDiversion.GetReinforceProgress()
 	return 0
 end
 function C_AnimaDiversion.GetTextureKit()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AnimaDiversion.OpenAnimaDiversionUI()
 	return
@@ -682,7 +690,7 @@ function C_AreaPoiInfo.GetAreaPOIForMap()
 	return {} --[[number[]​]]
 end
 function C_AreaPoiInfo.GetAreaPOIInfo()
-	return {tooltipWidgetSet = nil --[[number?​]], highlightVignettesOnHover = false, isCurrentEvent = false, textureIndex = nil --[[number?​]], highlightWorldQuestsOnHover = false, position = setmetatable({}, {__index = Vector2DMixin}), linkedUiMapID = nil --[[number?​]], addPaddingAboveTooltipWidgets = nil --[[boolean?​]], areaPoiID = 0, isPrimaryMapForPOI = false, atlasName = nil --[[string?​]], isAlwaysOnFlightmap = false, shouldGlow = false, name = setmetatable({}, {__index = string}), description = nil --[[string?​]], factionID = nil --[[number?​]], uiTextureKit = nil --[[string?​]], iconWidgetSet = nil --[[number?​]]}
+	return {tooltipWidgetSet = nil --[[number?​]], highlightVignettesOnHover = false, isCurrentEvent = false, textureIndex = nil --[[number?​]], highlightWorldQuestsOnHover = false, position = setmetatable({}, {__index = Vector2DMixin}), linkedUiMapID = nil --[[number?​]], addPaddingAboveTooltipWidgets = nil --[[boolean?​]], areaPoiID = 0, isPrimaryMapForPOI = false, atlasName = nil --[[string?​]], isAlwaysOnFlightmap = false, shouldGlow = false, name = "", description = nil --[[string?​]], factionID = nil --[[number?​]], uiTextureKit = nil --[[string?​]], iconWidgetSet = nil --[[number?​]]}
 end
 function C_AreaPoiInfo.GetAreaPOISecondsLeft()
 	return 0
@@ -744,19 +752,19 @@ function C_ArtifactUI.DoesEquippedArtifactHaveAnyRelicsSlotted()
 	return false
 end
 function C_ArtifactUI.GetAppearanceInfo()
-	return 0, setmetatable({}, {__index = string}), 0, false, nil --[[string?​]], 0, nil --[[number?​]], 0, 0, 0, 0, 0, false
+	return 0, "", 0, false, nil --[[string?​]], 0, nil --[[number?​]], 0, 0, 0, 0, 0, false
 end
 function C_ArtifactUI.GetAppearanceInfoByID()
-	return 0, 0, setmetatable({}, {__index = string}), 0, false, nil --[[string?​]], 0, nil --[[number?​]], 0, 0, 0, 0, 0, false
+	return 0, 0, "", 0, false, nil --[[string?​]], 0, nil --[[number?​]], 0, 0, 0, 0, 0, false
 end
 function C_ArtifactUI.GetAppearanceSetInfo()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return 0, "", "", 0
 end
 function C_ArtifactUI.GetArtifactArtInfo()
-	return {textureKit = setmetatable({}, {__index = string}), titleName = setmetatable({}, {__index = string}), titleColor = setmetatable({}, {__index = ColorMixin}), barDisconnectedColor = setmetatable({}, {__index = ColorMixin}), barConnectedColor = setmetatable({}, {__index = ColorMixin}), uiModelSceneID = 0, spellVisualKitID = 0}
+	return {textureKit = "", titleName = "", titleColor = setmetatable({}, {__index = ColorMixin}), barDisconnectedColor = setmetatable({}, {__index = ColorMixin}), barConnectedColor = setmetatable({}, {__index = ColorMixin}), uiModelSceneID = 0, spellVisualKitID = 0}
 end
 function C_ArtifactUI.GetArtifactInfo()
-	return 0, nil --[[number?​]], setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, 0, 0, 0, nil --[[number?​]], nil --[[number?​]], false, 0
+	return 0, nil --[[number?​]], "", 0, 0, 0, 0, 0, 0, nil --[[number?​]], nil --[[number?​]], false, 0
 end
 function C_ArtifactUI.GetArtifactItemID()
 	return 0
@@ -765,16 +773,16 @@ function C_ArtifactUI.GetArtifactTier()
 	return nil --[[number?​]]
 end
 function C_ArtifactUI.GetArtifactXPRewardTargetInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer})
+	return "", 0
 end
 function C_ArtifactUI.GetCostForPointAtRank()
 	return 0
 end
 function C_ArtifactUI.GetEquippedArtifactArtInfo()
-	return {textureKit = setmetatable({}, {__index = string}), titleName = setmetatable({}, {__index = string}), titleColor = setmetatable({}, {__index = ColorMixin}), barDisconnectedColor = setmetatable({}, {__index = ColorMixin}), barConnectedColor = setmetatable({}, {__index = ColorMixin}), uiModelSceneID = 0, spellVisualKitID = 0}
+	return {textureKit = "", titleName = "", titleColor = setmetatable({}, {__index = ColorMixin}), barDisconnectedColor = setmetatable({}, {__index = ColorMixin}), barConnectedColor = setmetatable({}, {__index = ColorMixin}), uiModelSceneID = 0, spellVisualKitID = 0}
 end
 function C_ArtifactUI.GetEquippedArtifactInfo()
-	return 0, nil --[[number?​]], setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, 0, 0, 0, nil --[[number?​]], nil --[[number?​]], false, 0
+	return 0, nil --[[number?​]], "", 0, 0, 0, 0, 0, 0, nil --[[number?​]], nil --[[number?​]], false, 0
 end
 function C_ArtifactUI.GetEquippedArtifactItemID()
 	return 0
@@ -783,7 +791,7 @@ function C_ArtifactUI.GetEquippedArtifactNumRelicSlots()
 	return 0
 end
 function C_ArtifactUI.GetEquippedArtifactRelicInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", 0, "", ""
 end
 function C_ArtifactUI.GetEquippedRelicLockedReason()
 	return nil --[[string?​]]
@@ -810,7 +818,7 @@ function C_ArtifactUI.GetPointsRemaining()
 	return 0
 end
 function C_ArtifactUI.GetPowerHyperlink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ArtifactUI.GetPowerInfo()
 	return {linearIndex = nil --[[number?​]], offset = nil --[[Vector2DMixin?​]], currentRank = 0, prereqsMet = false, isFinal = false, isStart = false, spellID = 0, maxRank = 0, isGoldMedal = false, bonusRanks = 0, position = setmetatable({}, {__index = Vector2DMixin}), tier = 0, numMaxRankBonusFromTier = 0, cost = 0}
@@ -831,22 +839,22 @@ function C_ArtifactUI.GetPreviewAppearance()
 	return nil --[[number?​]]
 end
 function C_ArtifactUI.GetRelicInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", 0, "", ""
 end
 function C_ArtifactUI.GetRelicInfoByItemID()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", 0, "", ""
 end
 function C_ArtifactUI.GetRelicLockedReason()
 	return nil --[[string?​]]
 end
 function C_ArtifactUI.GetRelicSlotType()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ArtifactUI.GetRespecArtifactArtInfo()
-	return {textureKit = setmetatable({}, {__index = string}), titleName = setmetatable({}, {__index = string}), titleColor = setmetatable({}, {__index = ColorMixin}), barDisconnectedColor = setmetatable({}, {__index = ColorMixin}), barConnectedColor = setmetatable({}, {__index = ColorMixin}), uiModelSceneID = 0, spellVisualKitID = 0}
+	return {textureKit = "", titleName = "", titleColor = setmetatable({}, {__index = ColorMixin}), barDisconnectedColor = setmetatable({}, {__index = ColorMixin}), barConnectedColor = setmetatable({}, {__index = ColorMixin}), uiModelSceneID = 0, spellVisualKitID = 0}
 end
 function C_ArtifactUI.GetRespecArtifactInfo()
-	return 0, nil --[[number?​]], setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, 0, 0, 0, nil --[[number?​]], nil --[[number?​]], false, 0
+	return 0, nil --[[number?​]], "", 0, 0, 0, 0, 0, 0, nil --[[number?​]], nil --[[number?​]], false, 0
 end
 function C_ArtifactUI.GetRespecCost()
 	return 0
@@ -1123,7 +1131,7 @@ function C_AuctionHouse.RequestMoreItemSearchResults()
 	return false
 end
 function C_AuctionHouse.RequestOwnedAuctionBidderInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AuctionHouse.SearchForFavorites()
 	return
@@ -1166,7 +1174,7 @@ function C_AzeriteEmpoweredItem.GetPowerInfo()
 	return {spellID = 0, azeritePowerID = 0}
 end
 function C_AzeriteEmpoweredItem.GetPowerText()
-	return {name = setmetatable({}, {__index = string}), description = setmetatable({}, {__index = string})}
+	return {name = "", description = ""}
 end
 function C_AzeriteEmpoweredItem.GetSpecsForPower()
 	return {} --[[AzeriteSpecInfo[]​]]
@@ -1221,10 +1229,10 @@ function C_AzeriteEssence.CloseForge()
 	return
 end
 function C_AzeriteEssence.GetEssenceHyperlink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_AzeriteEssence.GetEssenceInfo()
-	return {icon = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), valid = false, unlocked = false, ID = 0, rank = 0}
+	return {icon = 0, name = "", valid = false, unlocked = false, ID = 0, rank = 0}
 end
 function C_AzeriteEssence.GetEssences()
 	return {} --[[AzeriteEssenceInfo[]​]]
@@ -1368,7 +1376,7 @@ function C_BarberShop.GetCurrentCameraZoom()
 	return 0
 end
 function C_BarberShop.GetCurrentCharacterData()
-	return {fileName = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), createScreenIconAtlas = setmetatable({}, {__index = string}), alternateFormRaceData = nil --[[CharacterAlternateFormData?​]], sex = 0 --[[Enum.UnitSex​]]}
+	return {fileName = "", name = "", createScreenIconAtlas = "", alternateFormRaceData = nil --[[CharacterAlternateFormData?​]], sex = 0 --[[Enum.UnitSex​]]}
 end
 function C_BarberShop.GetCurrentCost()
 	return 0
@@ -1477,13 +1485,13 @@ function C_BlackMarket.Close()
 	return
 end
 function C_BlackMarket.GetHotItem()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, false, 0, 0, setmetatable({}, {__index = string}), 0, 0
+	return "", "", 0, "", false, 0, "", "", 0, 0, 0, false, 0, 0, "", 0, 0
 end
 function C_BlackMarket.GetItemInfoByID()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, false, 0, 0, setmetatable({}, {__index = string}), 0, 0
+	return "", "", 0, "", false, 0, "", "", 0, 0, 0, false, 0, 0, "", 0, 0
 end
 function C_BlackMarket.GetItemInfoByIndex()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, false, 0, 0, setmetatable({}, {__index = string}), 0, 0
+	return "", "", 0, "", false, 0, "", "", 0, 0, 0, false, 0, 0, "", 0, 0
 end
 function C_BlackMarket.GetNumItems()
 	return 0
@@ -1511,7 +1519,7 @@ function C_CVar.GetCVarDefault()
 	return nil --[[string?​]]
 end
 function C_CVar.GetCVarInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, false
+	return "", "", false, false, false, false, false
 end
 function C_CVar.RegisterCVar()
 	return
@@ -1623,13 +1631,13 @@ function C_Calendar.EventGetClubId()
 	return nil --[[string?​]]
 end
 function C_Calendar.EventGetInvite()
-	return {inviteIsMine = false, className = nil --[[string?​]], classID = nil --[[number?​]], classFilename = nil --[[string?​]], inviteStatus = nil --[[(Enum.CalendarStatus)?​]], guid = setmetatable({}, {__index = string}), name = nil --[[string?​]], type = 0 --[[Enum.CalendarInviteType​]], level = 0, notes = setmetatable({}, {__index = string}), modStatus = nil --[[string?​]]}
+	return {inviteIsMine = false, className = nil --[[string?​]], classID = nil --[[number?​]], classFilename = nil --[[string?​]], inviteStatus = nil --[[(Enum.CalendarStatus)?​]], guid = "", name = nil --[[string?​]], type = 0 --[[Enum.CalendarInviteType​]], level = 0, notes = "", modStatus = nil --[[string?​]]}
 end
 function C_Calendar.EventGetInviteResponseTime()
 	return {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}
 end
 function C_Calendar.EventGetInviteSortCriterion()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function C_Calendar.EventGetSelectedInvite()
 	return nil --[[number?​]]
@@ -1710,7 +1718,7 @@ function C_Calendar.GetClubCalendarEvents()
 	return {} --[[CalendarDayEvent[]​]]
 end
 function C_Calendar.GetDayEvent()
-	return {dontDisplayEnd = false, startTime = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, isCustomTitle = false, isLocked = false, dontDisplayBanner = false, sequenceIndex = 0, eventType = 0 --[[Enum.CalendarEventType​]], eventID = 0, inviteType = 0 --[[Enum.CalendarInviteType​]], endTime = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, modStatus = setmetatable({}, {__index = string}), difficulty = 0, iconTexture = nil --[[integer?​]], title = setmetatable({}, {__index = string}), inviteStatus = 0 --[[Enum.CalendarStatus​]], difficultyName = setmetatable({}, {__index = string}), sequenceType = setmetatable({}, {__index = string}), clubID = setmetatable({}, {__index = string}), numSequenceDays = 0, calendarType = setmetatable({}, {__index = string}), invitedBy = setmetatable({}, {__index = string})}
+	return {dontDisplayEnd = false, startTime = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, isCustomTitle = false, isLocked = false, dontDisplayBanner = false, sequenceIndex = 0, eventType = 0 --[[Enum.CalendarEventType​]], eventID = 0, inviteType = 0 --[[Enum.CalendarInviteType​]], endTime = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, modStatus = "", difficulty = 0, iconTexture = nil --[[integer?​]], title = "", inviteStatus = 0 --[[Enum.CalendarStatus​]], difficultyName = "", sequenceType = "", clubID = "", numSequenceDays = 0, calendarType = "", invitedBy = ""}
 end
 function C_Calendar.GetDefaultGuildFilter()
 	return {maxLevel = 0, minLevel = 0, rank = 0}
@@ -1722,19 +1730,19 @@ function C_Calendar.GetEventIndexInfo()
 	return nil --[[CalendarEventIndexInfo?​]]
 end
 function C_Calendar.GetEventInfo()
-	return {title = setmetatable({}, {__index = string}), lockoutTime = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, isAutoApprove = false, time = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, isLocked = false, description = setmetatable({}, {__index = string}), textureIndex = nil --[[number?​]], eventType = 0 --[[Enum.CalendarEventType​]], repeatOption = 0 --[[Enum.CalendarEventRepeatOptions​]], inviteStatus = nil --[[(Enum.CalendarStatus)?​]], hasPendingInvite = false, inviteType = nil --[[(Enum.CalendarInviteType)?​]], communityName = nil --[[string?​]], maxSize = 0, creator = nil --[[string?​]], calendarType = setmetatable({}, {__index = string})}
+	return {title = "", lockoutTime = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, isAutoApprove = false, time = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, isLocked = false, description = "", textureIndex = nil --[[number?​]], eventType = 0 --[[Enum.CalendarEventType​]], repeatOption = 0 --[[Enum.CalendarEventRepeatOptions​]], inviteStatus = nil --[[(Enum.CalendarStatus)?​]], hasPendingInvite = false, inviteType = nil --[[(Enum.CalendarInviteType)?​]], communityName = nil --[[string?​]], maxSize = 0, creator = nil --[[string?​]], calendarType = ""}
 end
 function C_Calendar.GetFirstPendingInvite()
 	return nil --[[number?​]]
 end
 function C_Calendar.GetGuildEventInfo()
-	return {minute = 0, month = 0, weekday = 0, year = 0, eventType = 0 --[[Enum.CalendarEventType​]], monthDay = 0, inviteStatus = 0 --[[Enum.CalendarStatus​]], title = setmetatable({}, {__index = string}), texture = setmetatable({}, {__index = integer}), hour = 0, eventID = 0, calendarType = setmetatable({}, {__index = string}), clubID = setmetatable({}, {__index = string})}
+	return {minute = 0, month = 0, weekday = 0, year = 0, eventType = 0 --[[Enum.CalendarEventType​]], monthDay = 0, inviteStatus = 0 --[[Enum.CalendarStatus​]], title = "", texture = 0, hour = 0, eventID = 0, calendarType = "", clubID = ""}
 end
 function C_Calendar.GetGuildEventSelectionInfo()
 	return {eventIndex = 0, offsetMonths = 0, monthDay = 0}
 end
 function C_Calendar.GetHolidayInfo()
-	return {startTime = nil --[[CalendarTime?​]], name = setmetatable({}, {__index = string}), endTime = nil --[[CalendarTime?​]], texture = setmetatable({}, {__index = integer}), description = setmetatable({}, {__index = string})}
+	return {startTime = nil --[[CalendarTime?​]], name = "", endTime = nil --[[CalendarTime?​]], texture = 0, description = ""}
 end
 function C_Calendar.GetMaxCreateDate()
 	return {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}
@@ -1761,7 +1769,7 @@ function C_Calendar.GetNumPendingInvites()
 	return 0
 end
 function C_Calendar.GetRaidInfo()
-	return {calendarType = setmetatable({}, {__index = string}), difficultyName = nil --[[string?​]], name = setmetatable({}, {__index = string}), time = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, raidID = 0, difficulty = 0}
+	return {calendarType = "", difficultyName = nil --[[string?​]], name = "", time = {monthDay = 0, minute = 0, month = 0, hour = 0, weekday = 0, year = 0}, raidID = 0, difficulty = 0}
 end
 function C_Calendar.IsActionPending()
 	return false
@@ -1844,7 +1852,7 @@ function C_ChallengeMode.GetActiveKeystoneInfo()
 	return 0, {} --[[number[]​]], false
 end
 function C_ChallengeMode.GetAffixInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", "", 0
 end
 function C_ChallengeMode.GetChallengeCompletionInfo()
 	return {members = {} --[[ChallengeModeCompletionMemberInfo[]​]], isAffixRecord = nil --[[boolean?​]], time = nil --[[number?​]], oldOverallDungeonScore = nil --[[number?​]], isMapRecord = nil --[[boolean?​]], practiceRun = nil --[[boolean?​]], onTime = nil --[[boolean?​]], isEligibleForScore = nil --[[boolean?​]], keystoneUpgradeLevels = nil --[[number?​]], level = nil --[[number?​]], mapChallengeModeID = nil --[[number?​]], newOverallDungeonScore = nil --[[number?​]]}
@@ -1868,7 +1876,7 @@ function C_ChallengeMode.GetMapTable()
 	return {} --[[number[]​]]
 end
 function C_ChallengeMode.GetMapUIInfo()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[number?​]], 0
+	return "", 0, 0, nil --[[number?​]], 0
 end
 function C_ChallengeMode.GetOverallDungeonScore()
 	return 0
@@ -1980,7 +1988,7 @@ function C_ChatInfo.GetChannelInfoFromIdentifier()
 	return nil --[[ChatChannelInfo?​]]
 end
 function C_ChatInfo.GetChannelRosterInfo()
-	return setmetatable({}, {__index = string}), false, false, setmetatable({}, {__index = string})
+	return "", false, false, ""
 end
 function C_ChatInfo.GetChannelRuleset()
 	return 0 --[[Enum.ChatChannelRuleset​]]
@@ -1989,19 +1997,19 @@ function C_ChatInfo.GetChannelRulesetForChannelID()
 	return 0 --[[Enum.ChatChannelRuleset​]]
 end
 function C_ChatInfo.GetChannelShortcut()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ChatInfo.GetChannelShortcutForChannelID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ChatInfo.GetChatLineSenderGUID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ChatInfo.GetChatLineSenderName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ChatInfo.GetChatLineText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ChatInfo.GetChatTypeName()
 	return nil --[[string?​]]
@@ -2067,7 +2075,7 @@ function C_ChatInfo.RegisterAddonMessagePrefix()
 	return 0 --[[Enum.RegisterAddonMessagePrefixResult​]]
 end
 function C_ChatInfo.ReplaceIconAndGroupExpressions()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ChatInfo.RequestCanLocalWhisperTarget()
 	return
@@ -2116,7 +2124,7 @@ function C_ClassTalents.CanCreateNewConfig()
 	return false
 end
 function C_ClassTalents.CanEditTalents()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_ClassTalents.CommitConfig()
 	return false
@@ -2158,7 +2166,7 @@ function C_ClassTalents.HasUnspentTalentPoints()
 	return false, 0, 0
 end
 function C_ClassTalents.ImportLoadout()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_ClassTalents.InitializeViewLoadout()
 	return
@@ -2208,13 +2216,13 @@ function C_ClickBindings.GetBindingType()
 	return 0 --[[Enum.ClickBindingType​]]
 end
 function C_ClickBindings.GetEffectiveInteractionButton()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ClickBindings.GetProfileInfo()
 	return {} --[[ClickBindingInfo[]​]]
 end
 function C_ClickBindings.GetStringFromModifiers()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ClickBindings.GetTutorialShown()
 	return false
@@ -2335,7 +2343,7 @@ function C_Club.GetGuildClubId()
 	return nil --[[string?​]]
 end
 function C_Club.GetInfoFromLastCommunityChatLine()
-	return {messageId = {position = 0, epoch = 0}, edited = false, content = setmetatable({}, {__index = string}), destroyed = false, author = {clubType = nil --[[(Enum.ClubType)?​]], overallDungeonScore = nil --[[number?​]], lastOnlineDay = nil --[[number?​]], lastOnlineMonth = nil --[[number?​]], lastOnlineHour = nil --[[number?​]], profession2Name = nil --[[string?​]], zone = nil --[[string?​]], isSelf = false, timerunningSeasonID = nil --[[number?​]], guid = nil --[[string?​]], role = nil --[[(Enum.ClubRoleIdentifier)?​]], memberNote = nil --[[string?​]], guildRankOrder = nil --[[number?​]], guildRank = nil --[[string?​]], faction = nil --[[(Enum.PvPFaction)?​]], profession2ID = nil --[[number?​]], profession1ID = nil --[[number?​]], profession1Name = nil --[[string?​]], profession1Rank = nil --[[number?​]], presence = 0 --[[Enum.ClubMemberPresence​]], name = nil --[[string?​]], officerNote = nil --[[string?​]], classID = nil --[[number?​]], race = nil --[[number?​]], bnetAccountId = nil --[[number?​]], lastOnlineYear = nil --[[number?​]], memberId = 0, profession2Rank = nil --[[number?​]], level = nil --[[number?​]], isRemoteChat = nil --[[boolean?​]], achievementPoints = nil --[[number?​]]}, destroyer = nil --[[ClubMemberInfo?​]]}, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0 --[[Enum.ClubType​]]
+	return {messageId = {position = 0, epoch = 0}, edited = false, content = "", destroyed = false, author = {clubType = nil --[[(Enum.ClubType)?​]], overallDungeonScore = nil --[[number?​]], lastOnlineDay = nil --[[number?​]], lastOnlineMonth = nil --[[number?​]], lastOnlineHour = nil --[[number?​]], profession2Name = nil --[[string?​]], zone = nil --[[string?​]], isSelf = false, timerunningSeasonID = nil --[[number?​]], guid = nil --[[string?​]], role = nil --[[(Enum.ClubRoleIdentifier)?​]], memberNote = nil --[[string?​]], guildRankOrder = nil --[[number?​]], guildRank = nil --[[string?​]], faction = nil --[[(Enum.PvPFaction)?​]], profession2ID = nil --[[number?​]], profession1ID = nil --[[number?​]], profession1Name = nil --[[string?​]], profession1Rank = nil --[[number?​]], presence = 0 --[[Enum.ClubMemberPresence​]], name = nil --[[string?​]], officerNote = nil --[[string?​]], classID = nil --[[number?​]], race = nil --[[number?​]], bnetAccountId = nil --[[number?​]], lastOnlineYear = nil --[[number?​]], memberId = 0, profession2Rank = nil --[[number?​]], level = nil --[[number?​]], isRemoteChat = nil --[[boolean?​]], achievementPoints = nil --[[number?​]]}, destroyer = nil --[[ClubMemberInfo?​]]}, "", "", 0 --[[Enum.ClubType​]]
 end
 function C_Club.GetInvitationCandidates()
 	return {} --[[ClubInvitationCandidateInfo[]​]]
@@ -2528,7 +2536,7 @@ function C_ClubFinder.GetRecruitingClubInfoFromClubID()
 	return nil --[[RecruitingClubInfo?​]]
 end
 function C_ClubFinder.GetRecruitingClubInfoFromFinderGUID()
-	return {realmName = nil --[[string?​]], localeSet = false, numActiveMembers = 0, isGuild = false, cached = 0, guildLeader = setmetatable({}, {__index = string}), lastPosterGUID = setmetatable({}, {__index = string}), recruitingSpecIds = {} --[[number[]​]], comment = setmetatable({}, {__index = string}), isCrossFaction = false, cacheRequested = 0, recruitmentLocale = 0, clubFinderGUID = setmetatable({}, {__index = string}), recruitmentFlags = 0, tabardInfo = nil --[[GuildTabardInfo?​]], lastUpdatedTime = 0, name = setmetatable({}, {__index = string}), emblemInfo = 0, clubId = setmetatable({}, {__index = string}), minILvl = 0}
+	return {realmName = nil --[[string?​]], localeSet = false, numActiveMembers = 0, isGuild = false, cached = 0, guildLeader = "", lastPosterGUID = "", recruitingSpecIds = {} --[[number[]​]], comment = "", isCrossFaction = false, cacheRequested = 0, recruitmentLocale = 0, clubFinderGUID = "", recruitmentFlags = 0, tabardInfo = nil --[[GuildTabardInfo?​]], lastUpdatedTime = 0, name = "", emblemInfo = 0, clubId = "", minILvl = 0}
 end
 function C_ClubFinder.GetStatusOfPostingFromClubId()
 	return {} --[[Enum.ClubFinderClubPostingStatusFlags[]​]]
@@ -2820,7 +2828,7 @@ function C_Commentator.GetPlayerItemCooldownInfoByUnit()
 	return 0, 0, false
 end
 function C_Commentator.GetPlayerOverrideName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Commentator.GetPlayerSpellCharges()
 	return 0, 0, 0, 0
@@ -2862,10 +2870,10 @@ function C_Commentator.GetTrackedSpellsByUnit()
 	return nil --[[number[]?​]]
 end
 function C_Commentator.GetUnitData()
-	return {absorbTotal = 0, powerTypeToken = setmetatable({}, {__index = string}), healthMax = 0, powerMax = 0, health = 0, isFeignDeath = false, power = 0, isDeadOrGhost = false}
+	return {absorbTotal = 0, powerTypeToken = "", healthMax = 0, powerMax = 0, health = 0, isFeignDeath = false, power = 0, isDeadOrGhost = false}
 end
 function C_Commentator.GetWargameInfo()
-	return setmetatable({}, {__index = string}), 0, 0, false
+	return "", 0, 0, false
 end
 function C_Commentator.HasTrackedAuras()
 	return false, false
@@ -3067,7 +3075,7 @@ function C_ConsoleScriptCollection.GetElements()
 	return {} --[[ConsoleScriptCollectionElementData[]​]]
 end
 function C_ConsoleScriptCollection.GetScriptData()
-	return {params = setmetatable({}, {__index = string}), help = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), script = setmetatable({}, {__index = string}), ID = 0, isLuaScript = false}
+	return {params = "", help = "", name = "", script = "", ID = 0, isLuaScript = false}
 end
 C_Container = {}
 function C_Container.ContainerIDToInventoryID()
@@ -3083,7 +3091,7 @@ function C_Container.GetBackpackSellJunkDisabled()
 	return false
 end
 function C_Container.GetBagName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Container.GetBagSlotFlag()
 	return false
@@ -3101,25 +3109,25 @@ function C_Container.GetContainerItemDurability()
 	return 0, 0
 end
 function C_Container.GetContainerItemEquipmentSetInfo()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_Container.GetContainerItemID()
 	return 0
 end
 function C_Container.GetContainerItemInfo()
-	return {iconFileID = setmetatable({}, {__index = integer}), itemID = 0, isLocked = false, hyperlink = setmetatable({}, {__index = string}), isReadable = false, hasNoValue = false, isFiltered = false, hasLoot = false, stackCount = 0, quality = nil --[[(Enum.ItemQuality)?​]], itemName = setmetatable({}, {__index = string}), isBound = false}
+	return {iconFileID = 0, itemID = 0, isLocked = false, hyperlink = "", isReadable = false, hasNoValue = false, isFiltered = false, hasLoot = false, stackCount = 0, quality = nil --[[(Enum.ItemQuality)?​]], itemName = "", isBound = false}
 end
 function C_Container.GetContainerItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Container.GetContainerItemPurchaseCurrency()
-	return {currencyCount = 0, iconFileID = nil --[[number?​]], name = setmetatable({}, {__index = string})}
+	return {currencyCount = 0, iconFileID = nil --[[number?​]], name = ""}
 end
 function C_Container.GetContainerItemPurchaseInfo()
 	return {money = 0, itemCount = 0, hasEnchants = false, refundSeconds = 0, currencyCount = 0}
 end
 function C_Container.GetContainerItemPurchaseItem()
-	return {hyperlink = setmetatable({}, {__index = string}), iconFileID = nil --[[number?​]], itemCount = 0}
+	return {hyperlink = "", iconFileID = nil --[[number?​]], itemCount = 0}
 end
 function C_Container.GetContainerItemQuestInfo()
 	return {isActive = false, questID = nil --[[number?​]], isQuestItem = false}
@@ -3219,16 +3227,16 @@ function C_ContentTracking.GetCurrentTrackingTarget()
 	return 0 --[[Enum.ContentTrackingTargetType​]], 0
 end
 function C_ContentTracking.GetEncounterTrackingInfo()
-	return {encounterName = setmetatable({}, {__index = string}), lfgDungeonID = nil --[[number?​]], groupFinderActivityID = nil --[[number?​]], subText = nil --[[string?​]], instanceName = setmetatable({}, {__index = string}), journalInstanceID = nil --[[number?​]], difficultyID = nil --[[number?​]], journalEncounterID = nil --[[number?​]]}
+	return {encounterName = "", lfgDungeonID = nil --[[number?​]], groupFinderActivityID = nil --[[number?​]], subText = nil --[[string?​]], instanceName = "", journalInstanceID = nil --[[number?​]], difficultyID = nil --[[number?​]], journalEncounterID = nil --[[number?​]]}
 end
 function C_ContentTracking.GetNextWaypointForTrackable()
 	return 0 --[[Enum.ContentTrackingResult​]], nil --[[ContentTrackingMapInfo?​]]
 end
 function C_ContentTracking.GetObjectiveText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ContentTracking.GetTitle()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ContentTracking.GetTrackablesOnMap()
 	return 0 --[[Enum.ContentTrackingResult​]], {} --[[ContentTrackingMapInfo[]​]]
@@ -3237,10 +3245,10 @@ function C_ContentTracking.GetTrackedIDs()
 	return {} --[[number[]​]]
 end
 function C_ContentTracking.GetVendorTrackingInfo()
-	return {currencyType = nil --[[number?​]], creatureName = setmetatable({}, {__index = string}), zoneName = nil --[[string?​]], cost = nil --[[number?​]]}
+	return {currencyType = nil --[[number?​]], creatureName = "", zoneName = nil --[[string?​]], cost = nil --[[number?​]]}
 end
 function C_ContentTracking.GetWaypointText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ContentTracking.IsNavigable()
 	return 0 --[[Enum.ContentTrackingResult​]], false
@@ -3327,7 +3335,7 @@ function C_CovenantPreview.CloseFromUI()
 	return
 end
 function C_CovenantPreview.GetCovenantInfoForPlayerChoiceResponseID()
-	return {mountID = 0, featureInfo = {description = setmetatable({}, {__index = string}), texture = 0, name = setmetatable({}, {__index = string})}, covenantCrest = setmetatable({}, {__index = string}), description = setmetatable({}, {__index = string}), covenantName = setmetatable({}, {__index = string}), covenantAbilities = {} --[[CovenantAbilityInfo[]​]], fromPlayerChoice = false, transmogSetID = 0, textureKit = setmetatable({}, {__index = string}), covenantZone = setmetatable({}, {__index = string}), covenantSoulbinds = {} --[[CovenantSoulbindInfo[]​]]}
+	return {mountID = 0, featureInfo = {description = "", texture = 0, name = ""}, covenantCrest = "", description = "", covenantName = "", covenantAbilities = {} --[[CovenantAbilityInfo[]​]], fromPlayerChoice = false, transmogSetID = 0, textureKit = "", covenantZone = "", covenantSoulbinds = {} --[[CovenantSoulbindInfo[]​]]}
 end
 C_CovenantSanctumUI = {}
 function C_CovenantSanctumUI.CanAccessReservoir()
@@ -3530,28 +3538,28 @@ function C_CurrencyInfo.GetAzeriteCurrencyID()
 	return 0
 end
 function C_CurrencyInfo.GetBackpackCurrencyInfo()
-	return {iconFileID = setmetatable({}, {__index = integer}), quantity = 0, currencyTypesID = 0, name = setmetatable({}, {__index = string})}
+	return {iconFileID = 0, quantity = 0, currencyTypesID = 0, name = ""}
 end
 function C_CurrencyInfo.GetBasicCurrencyInfo()
-	return {actualAmount = 0, icon = 0, name = setmetatable({}, {__index = string}), description = setmetatable({}, {__index = string}), displayAmount = 0, quality = 0}
+	return {actualAmount = 0, icon = 0, name = "", description = "", displayAmount = 0, quality = 0}
 end
 function C_CurrencyInfo.GetCoinIcon()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function C_CurrencyInfo.GetCoinText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_CurrencyInfo.GetCoinTextureString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_CurrencyInfo.GetCostToTransferCurrency()
 	return nil --[[number?​]]
 end
 function C_CurrencyInfo.GetCurrencyContainerInfo()
-	return {actualAmount = 0, icon = 0, name = setmetatable({}, {__index = string}), description = setmetatable({}, {__index = string}), displayAmount = 0, quality = 0}
+	return {actualAmount = 0, icon = 0, name = "", description = "", displayAmount = 0, quality = 0}
 end
 function C_CurrencyInfo.GetCurrencyDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_CurrencyInfo.GetCurrencyFilter()
 	return 0 --[[Enum.CurrencyFilterType​]]
@@ -3560,19 +3568,19 @@ function C_CurrencyInfo.GetCurrencyIDFromLink()
 	return 0
 end
 function C_CurrencyInfo.GetCurrencyInfo()
-	return {currencyID = 0, canEarnPerWeek = false, description = setmetatable({}, {__index = string}), isAccountTransferable = false, quantityEarnedThisWeek = 0, quality = 0 --[[Enum.ItemQuality​]], quantity = 0, useTotalEarnedForMaxQty = false, transferPercentage = nil --[[number?​]], isShowInBackpack = false, trackedQuantity = 0, isAccountWide = false, maxWeeklyQuantity = 0, isHeaderExpanded = false, totalEarned = 0, rechargingAmountPerCycle = 0, isTradeable = false, isHeader = false, rechargingCycleDurationMS = 0, iconFileID = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), currencyListDepth = 0, isTypeUnused = false, discovered = false, maxQuantity = 0}
+	return {currencyID = 0, canEarnPerWeek = false, description = "", isAccountTransferable = false, quantityEarnedThisWeek = 0, quality = 0 --[[Enum.ItemQuality​]], quantity = 0, useTotalEarnedForMaxQty = false, transferPercentage = nil --[[number?​]], isShowInBackpack = false, trackedQuantity = 0, isAccountWide = false, maxWeeklyQuantity = 0, isHeaderExpanded = false, totalEarned = 0, rechargingAmountPerCycle = 0, isTradeable = false, isHeader = false, rechargingCycleDurationMS = 0, iconFileID = 0, name = "", currencyListDepth = 0, isTypeUnused = false, discovered = false, maxQuantity = 0}
 end
 function C_CurrencyInfo.GetCurrencyInfoFromLink()
-	return {currencyID = 0, canEarnPerWeek = false, description = setmetatable({}, {__index = string}), isAccountTransferable = false, quantityEarnedThisWeek = 0, quality = 0 --[[Enum.ItemQuality​]], quantity = 0, useTotalEarnedForMaxQty = false, transferPercentage = nil --[[number?​]], isShowInBackpack = false, trackedQuantity = 0, isAccountWide = false, maxWeeklyQuantity = 0, isHeaderExpanded = false, totalEarned = 0, rechargingAmountPerCycle = 0, isTradeable = false, isHeader = false, rechargingCycleDurationMS = 0, iconFileID = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), currencyListDepth = 0, isTypeUnused = false, discovered = false, maxQuantity = 0}
+	return {currencyID = 0, canEarnPerWeek = false, description = "", isAccountTransferable = false, quantityEarnedThisWeek = 0, quality = 0 --[[Enum.ItemQuality​]], quantity = 0, useTotalEarnedForMaxQty = false, transferPercentage = nil --[[number?​]], isShowInBackpack = false, trackedQuantity = 0, isAccountWide = false, maxWeeklyQuantity = 0, isHeaderExpanded = false, totalEarned = 0, rechargingAmountPerCycle = 0, isTradeable = false, isHeader = false, rechargingCycleDurationMS = 0, iconFileID = 0, name = "", currencyListDepth = 0, isTypeUnused = false, discovered = false, maxQuantity = 0}
 end
 function C_CurrencyInfo.GetCurrencyLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_CurrencyInfo.GetCurrencyListInfo()
-	return {currencyID = 0, canEarnPerWeek = false, description = setmetatable({}, {__index = string}), isAccountTransferable = false, quantityEarnedThisWeek = 0, quality = 0 --[[Enum.ItemQuality​]], quantity = 0, useTotalEarnedForMaxQty = false, transferPercentage = nil --[[number?​]], isShowInBackpack = false, trackedQuantity = 0, isAccountWide = false, maxWeeklyQuantity = 0, isHeaderExpanded = false, totalEarned = 0, rechargingAmountPerCycle = 0, isTradeable = false, isHeader = false, rechargingCycleDurationMS = 0, iconFileID = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), currencyListDepth = 0, isTypeUnused = false, discovered = false, maxQuantity = 0}
+	return {currencyID = 0, canEarnPerWeek = false, description = "", isAccountTransferable = false, quantityEarnedThisWeek = 0, quality = 0 --[[Enum.ItemQuality​]], quantity = 0, useTotalEarnedForMaxQty = false, transferPercentage = nil --[[number?​]], isShowInBackpack = false, trackedQuantity = 0, isAccountWide = false, maxWeeklyQuantity = 0, isHeaderExpanded = false, totalEarned = 0, rechargingAmountPerCycle = 0, isTradeable = false, isHeader = false, rechargingCycleDurationMS = 0, iconFileID = 0, name = "", currencyListDepth = 0, isTypeUnused = false, discovered = false, maxQuantity = 0}
 end
 function C_CurrencyInfo.GetCurrencyListLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_CurrencyInfo.GetCurrencyListSize()
 	return 0
@@ -3715,7 +3723,7 @@ function C_DelvesUI.GetCreatureDisplayInfoForCompanion()
 	return 0
 end
 function C_DelvesUI.GetCurioLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_DelvesUI.GetCurioNodeForCompanion()
 	return 0
@@ -3767,10 +3775,10 @@ function C_DelvesUI.SaveSeenCuriosBySlotType()
 end
 C_EditMode = {}
 function C_EditMode.ConvertLayoutInfoToString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_EditMode.ConvertStringToLayoutInfo()
-	return {layoutType = 0 --[[Enum.EditModeLayoutType​]], layoutName = setmetatable({}, {__index = string}), systems = {} --[[EditModeSystemInfo[]​]]}
+	return {layoutType = 0 --[[Enum.EditModeLayoutType​]], layoutName = "", systems = {} --[[EditModeSystemInfo[]​]]}
 end
 function C_EditMode.GetAccountSettings()
 	return {} --[[EditModeSettingInfo[]​]]
@@ -3804,7 +3812,7 @@ function C_EncounterJournal.GetDungeonEntrancesForMap()
 	return {} --[[DungeonEntranceMapInfo[]​]]
 end
 function C_EncounterJournal.GetEncounterJournalLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_EncounterJournal.GetEncountersOnMap()
 	return {} --[[EncounterJournalMapEncounterInfo[]​]]
@@ -3822,7 +3830,7 @@ function C_EncounterJournal.GetSectionIconFlags()
 	return nil --[[number[]?​]]
 end
 function C_EncounterJournal.GetSectionInfo()
-	return {abilityIcon = setmetatable({}, {__index = integer}), creatureDisplayID = 0, headerType = 0, siblingSectionID = nil --[[number?​]], link = setmetatable({}, {__index = string}), spellID = 0, title = setmetatable({}, {__index = string}), firstChildSectionID = nil --[[number?​]], uiModelSceneID = 0, startsOpen = false, filteredByDifficulty = false, description = nil --[[string?​]]}
+	return {abilityIcon = 0, creatureDisplayID = 0, headerType = 0, siblingSectionID = nil --[[number?​]], link = "", spellID = 0, title = "", firstChildSectionID = nil --[[number?​]], uiModelSceneID = 0, startsOpen = false, filteredByDifficulty = false, description = nil --[[string?​]]}
 end
 function C_EncounterJournal.GetSlotFilter()
 	return 0 --[[Enum.ItemSlotFilterType​]]
@@ -3893,7 +3901,7 @@ function C_EquipmentSet.GetEquipmentSetIDs()
 	return {} --[[number[]​]]
 end
 function C_EquipmentSet.GetEquipmentSetInfo()
-	return setmetatable({}, {__index = string}), 0, 0, false, 0, 0, 0, 0, 0
+	return "", 0, 0, false, 0, 0, 0, 0, 0
 end
 function C_EquipmentSet.GetIgnoredSlots()
 	return {} --[[boolean[]​]]
@@ -3936,7 +3944,7 @@ function C_EventToastManager.GetLevelUpDisplayToastsFromLevel()
 	return {} --[[EventToastInfo[]​]]
 end
 function C_EventToastManager.GetNextToastToDisplay()
-	return {subIcon = nil --[[string?​]], hideDefaultAtlas = nil --[[boolean?​]], eventType = 0 --[[Enum.EventToastEventType​]], subtitle = setmetatable({}, {__index = string}), sortOrder = 0, uiWidgetSetID = nil --[[number?​]], uiTextureKit = setmetatable({}, {__index = string}), flags = 0, hideSoundKitID = nil --[[number?​]], titleTooltipUiWidgetSetID = nil --[[number?​]], eventToastID = 0, iconFileID = setmetatable({}, {__index = integer}), titleTooltip = nil --[[string?​]], subtitleTooltip = nil --[[string?​]], extraUiWidgetSetID = nil --[[number?​]], showSoundKitID = nil --[[number?​]], link = setmetatable({}, {__index = string}), time = nil --[[number?​]], subtitleTooltipUiWidgetSetID = nil --[[number?​]], title = setmetatable({}, {__index = string}), colorTint = nil --[[ColorMixin?​]], displayType = 0 --[[Enum.EventToastDisplayType​]], instructionText = setmetatable({}, {__index = string}), qualityString = nil --[[string?​]], quality = nil --[[number?​]]}
+	return {subIcon = nil --[[string?​]], hideDefaultAtlas = nil --[[boolean?​]], eventType = 0 --[[Enum.EventToastEventType​]], subtitle = "", sortOrder = 0, uiWidgetSetID = nil --[[number?​]], uiTextureKit = "", flags = 0, hideSoundKitID = nil --[[number?​]], titleTooltipUiWidgetSetID = nil --[[number?​]], eventToastID = 0, iconFileID = 0, titleTooltip = nil --[[string?​]], subtitleTooltip = nil --[[string?​]], extraUiWidgetSetID = nil --[[number?​]], showSoundKitID = nil --[[number?​]], link = "", time = nil --[[number?​]], subtitleTooltipUiWidgetSetID = nil --[[number?​]], title = "", colorTint = nil --[[ColorMixin?​]], displayType = 0 --[[Enum.EventToastDisplayType​]], instructionText = "", qualityString = nil --[[string?​]], quality = nil --[[number?​]]}
 end
 function C_EventToastManager.RemoveCurrentToast()
 	return
@@ -3986,10 +3994,10 @@ function C_FriendList.DelIgnoreByIndex()
 	return
 end
 function C_FriendList.GetFriendInfo()
-	return {afk = false, connected = false, area = nil --[[string?​]], rafLinkType = 0 --[[Enum.RafLinkType​]], guid = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), className = nil --[[string?​]], level = 0, notes = nil --[[string?​]], dnd = false}
+	return {afk = false, connected = false, area = nil --[[string?​]], rafLinkType = 0 --[[Enum.RafLinkType​]], guid = "", name = "", className = nil --[[string?​]], level = 0, notes = nil --[[string?​]], dnd = false}
 end
 function C_FriendList.GetFriendInfoByIndex()
-	return {afk = false, connected = false, area = nil --[[string?​]], rafLinkType = 0 --[[Enum.RafLinkType​]], guid = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), className = nil --[[string?​]], level = 0, notes = nil --[[string?​]], dnd = false}
+	return {afk = false, connected = false, area = nil --[[string?​]], rafLinkType = 0 --[[Enum.RafLinkType​]], guid = "", name = "", className = nil --[[string?​]], level = 0, notes = nil --[[string?​]], dnd = false}
 end
 function C_FriendList.GetIgnoreName()
 	return nil --[[string?​]]
@@ -4013,7 +4021,7 @@ function C_FriendList.GetSelectedIgnore()
 	return nil --[[number?​]]
 end
 function C_FriendList.GetWhoInfo()
-	return {classStr = setmetatable({}, {__index = string}), filename = nil --[[string?​]], fullName = setmetatable({}, {__index = string}), fullGuildName = setmetatable({}, {__index = string}), area = setmetatable({}, {__index = string}), raceStr = setmetatable({}, {__index = string}), level = 0, timerunningSeasonID = nil --[[number?​]], gender = 0}
+	return {classStr = "", filename = nil --[[string?​]], fullName = "", fullGuildName = "", area = "", raceStr = "", level = 0, timerunningSeasonID = nil --[[number?​]], gender = 0}
 end
 function C_FriendList.IsFriend()
 	return false
@@ -4156,7 +4164,7 @@ function C_GameRules.GetGameRuleAsFloat()
 	return 0
 end
 function C_GameRules.GetGameRuleAsFrameStrata()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_GameRules.IsGameRuleActive()
 	return false
@@ -4259,13 +4267,13 @@ function C_Garrison.GetAvailableRecruits()
 	return
 end
 function C_Garrison.GetBasicMissionInfo()
-	return {inProgress = false, isZoneSupport = false, mapPosY = 0, basecost = 0, requiredChampionCount = 0, cost = 0, overmaxSucceeded = false, typeAtlas = setmetatable({}, {__index = string}), offerEndTime = 0, canStart = false, missionEndTime = nil --[[number?​]], timeLeftSeconds = nil --[[number?​]], locTextureKit = setmetatable({}, {__index = string}), mapPosX = 0, missionID = 0, level = 0, isMaxLevel = false, durationSeconds = 0, isRare = false, overmaxRewards = {icon = setmetatable({}, {__index = string}), title = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), followerXP = 0, tooltip = setmetatable({}, {__index = string})}, offeredGarrMissionTextureID = 0, description = setmetatable({}, {__index = string}), offerTimeRemaining = setmetatable({}, {__index = string}), numFollowers = 0, requiredSuccessChance = 0, followers = magicFake("table"), xp = 0, isTutorialMission = false, type = setmetatable({}, {__index = string}), costCurrencyTypesID = 0, rewards = {quantity = 0, icon = 0, title = setmetatable({}, {__index = string}), currencyID = 0}, timeLeft = nil --[[string?​]], iLevel = 0, location = setmetatable({}, {__index = string}), completed = false, followerTypeID = 0 --[[Enum.GarrisonFollowerType​]], name = setmetatable({}, {__index = string}), areaID = 0, missionScalar = 0, hasBonusEffect = false, duration = setmetatable({}, {__index = string})}
+	return {inProgress = false, isZoneSupport = false, mapPosY = 0, basecost = 0, requiredChampionCount = 0, cost = 0, overmaxSucceeded = false, typeAtlas = "", offerEndTime = 0, canStart = false, missionEndTime = nil --[[number?​]], timeLeftSeconds = nil --[[number?​]], locTextureKit = "", mapPosX = 0, missionID = 0, level = 0, isMaxLevel = false, durationSeconds = 0, isRare = false, overmaxRewards = {icon = "", title = "", name = "", followerXP = 0, tooltip = ""}, offeredGarrMissionTextureID = 0, description = "", offerTimeRemaining = "", numFollowers = 0, requiredSuccessChance = 0, followers = magicFake("table"), xp = 0, isTutorialMission = false, type = "", costCurrencyTypesID = 0, rewards = {quantity = 0, icon = 0, title = "", currencyID = 0}, timeLeft = nil --[[string?​]], iLevel = 0, location = "", completed = false, followerTypeID = 0 --[[Enum.GarrisonFollowerType​]], name = "", areaID = 0, missionScalar = 0, hasBonusEffect = false, duration = ""}
 end
 function C_Garrison.GetBuffedFollowersForMission()
 	return
 end
 function C_Garrison.GetBuildingInfo()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), 0, 0, 0, 0, setmetatable({}, {__index = string}), false, false, magicFake("table"), {} --[[number[]​]], false, false, false
+	return 0, "", "", 0, "", 0, 0, 0, 0, "", false, false, magicFake("table"), {} --[[number[]​]], false, false, false
 end
 function C_Garrison.GetBuildingLockInfo()
 	return
@@ -4385,7 +4393,7 @@ function C_Garrison.GetFollowerDisplayID()
 	return
 end
 function C_Garrison.GetFollowerInfo()
-	return {iLevel = 0, displayIDs = {} --[[DisplayInfo[]​]], followerTypeID = 0, xp = nil --[[number?​]], isSoulbind = nil --[[boolean?​]], quality = 0 --[[Enum.ItemQuality​]], displayHeight = 0, followerID = magicFake("string|number"), status = nil --[[string?​]], slotSoundKitID = nil --[[number?​]], scale = 0, portraitIconID = 0, isCollected = nil --[[boolean?​]], isAutoTroop = nil --[[boolean?​]], levelXP = nil --[[number?​]], garrFollowerID = nil --[[number?​]], classSpec = 0, className = setmetatable({}, {__index = string}), classAtlas = setmetatable({}, {__index = string}), isTroop = nil --[[boolean?​]], displayScale = 0, name = setmetatable({}, {__index = string}), isFavorite = false, level = 0, height = 0, isMaxLevel = false}
+	return {iLevel = 0, displayIDs = {} --[[DisplayInfo[]​]], followerTypeID = 0, xp = nil --[[number?​]], isSoulbind = nil --[[boolean?​]], quality = 0 --[[Enum.ItemQuality​]], displayHeight = 0, followerID = magicFake("string|number"), status = nil --[[string?​]], slotSoundKitID = nil --[[number?​]], scale = 0, portraitIconID = 0, isCollected = nil --[[boolean?​]], isAutoTroop = nil --[[boolean?​]], levelXP = nil --[[number?​]], garrFollowerID = nil --[[number?​]], classSpec = 0, className = "", classAtlas = "", isTroop = nil --[[boolean?​]], displayScale = 0, name = "", isFavorite = false, level = 0, height = 0, isMaxLevel = false}
 end
 function C_Garrison.GetFollowerInfoForBuilding()
 	return
@@ -4412,7 +4420,7 @@ function C_Garrison.GetFollowerLinkByID()
 	return
 end
 function C_Garrison.GetFollowerMissionCompleteInfo()
-	return {displayIDs = {} --[[FollowerDisplayID[]​]], targetImpactSoundID = nil --[[number?​]], castSoundID = nil --[[number?​]], impactID = nil --[[number?​]], impactDelay = nil --[[number?​]], quality = 0, isTroop = false, boardIndex = 0, currentXP = 0, castID = nil --[[number?​]], targetImpactID = nil --[[number?​]], maxXP = 0, textureKit = setmetatable({}, {__index = string}), health = 0, scale = 0, role = 0, className = nil --[[string?​]], classAtlas = setmetatable({}, {__index = string}), portraitIconID = setmetatable({}, {__index = integer}), maxHealth = 0, movementType = nil --[[number?​]], name = setmetatable({}, {__index = string}), level = 0, height = 0, impactSoundID = nil --[[number?​]]}
+	return {displayIDs = {} --[[FollowerDisplayID[]​]], targetImpactSoundID = nil --[[number?​]], castSoundID = nil --[[number?​]], impactID = nil --[[number?​]], impactDelay = nil --[[number?​]], quality = 0, isTroop = false, boardIndex = 0, currentXP = 0, castID = nil --[[number?​]], targetImpactID = nil --[[number?​]], maxXP = 0, textureKit = "", health = 0, scale = 0, role = 0, className = nil --[[string?​]], classAtlas = "", portraitIconID = 0, maxHealth = 0, movementType = nil --[[number?​]], name = "", level = 0, height = 0, impactSoundID = nil --[[number?​]]}
 end
 function C_Garrison.GetFollowerMissionTimeLeft()
 	return
@@ -4526,7 +4534,7 @@ function C_Garrison.GetLandingPageShipmentInfo()
 	return
 end
 function C_Garrison.GetLandingPageShipmentInfoByContainerID()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0
+	return "", 0, 0, 0, 0, 0, 0, "", "", 0, 0, 0, 0
 end
 function C_Garrison.GetLooseShipments()
 	return {} --[[number[]​]]
@@ -4544,13 +4552,13 @@ function C_Garrison.GetMissionCost()
 	return
 end
 function C_Garrison.GetMissionDeploymentInfo()
-	return {environmentTexture = setmetatable({}, {__index = integer}), xp = 0, environment = nil --[[string?​]], location = setmetatable({}, {__index = string}), enemies = {} --[[GarrisonEnemyEncounterInfo[]​]], environmentDesc = nil --[[string?​]], isExhausting = false, locTextureKit = setmetatable({}, {__index = string})}
+	return {environmentTexture = 0, xp = 0, environment = nil --[[string?​]], location = "", enemies = {} --[[GarrisonEnemyEncounterInfo[]​]], environmentDesc = nil --[[string?​]], isExhausting = false, locTextureKit = ""}
 end
 function C_Garrison.GetMissionDisplayIDs()
 	return
 end
 function C_Garrison.GetMissionEncounterIconInfo()
-	return {portraitFileDataID = setmetatable({}, {__index = integer}), isElite = false, isRare = false, missionScalar = 0}
+	return {portraitFileDataID = 0, isElite = false, isRare = false, missionScalar = 0}
 end
 function C_Garrison.GetMissionLink()
 	return
@@ -4607,7 +4615,7 @@ function C_Garrison.GetOwnedBuildingInfo()
 	return
 end
 function C_Garrison.GetOwnedBuildingInfoAbbrev()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, false, 0, 0, false, false, false
+	return 0, "", "", 0, 0, false, 0, 0, false, false, false
 end
 function C_Garrison.GetPartyBuffs()
 	return
@@ -4667,7 +4675,7 @@ function C_Garrison.GetTabForPlot()
 	return
 end
 function C_Garrison.GetTalentInfo()
-	return {startTime = 0, description = setmetatable({}, {__index = string}), ignoreTalent = false, researchCurrencyCosts = {} --[[GarrisonTalentCurrencyCostInfo[]​]], talentRank = 0, isBeingResearched = false, ability = {icon = 0, isSpecialization = false, counters = {} --[[GarrisonAbilityEffect[]​]], description = setmetatable({}, {__index = string}), temporary = false, name = setmetatable({}, {__index = string}), category = nil --[[string?​]], id = 0, isEmptySlot = false, isTrait = false}, talentMaxRank = 0, id = 0, prerequisiteTalentID = nil --[[number?​]], type = 0, icon = 0, treeID = 0, selected = false, perkSpellID = 0, socketInfo = {socketType = 0, misc1 = 0, misc0 = 0, socketSubtype = 0}, playerConditionReason = nil --[[string?​]], tier = 0, uiOrder = 0, talentAvailability = 0 --[[Enum.GarrisonTalentAvailability​]], researched = false, name = setmetatable({}, {__index = string}), timeRemaining = 0, researchDescription = nil --[[string?​]], researchDuration = 0, researchGoldCost = 0}
+	return {startTime = 0, description = "", ignoreTalent = false, researchCurrencyCosts = {} --[[GarrisonTalentCurrencyCostInfo[]​]], talentRank = 0, isBeingResearched = false, ability = {icon = 0, isSpecialization = false, counters = {} --[[GarrisonAbilityEffect[]​]], description = "", temporary = false, name = "", category = nil --[[string?​]], id = 0, isEmptySlot = false, isTrait = false}, talentMaxRank = 0, id = 0, prerequisiteTalentID = nil --[[number?​]], type = 0, icon = 0, treeID = 0, selected = false, perkSpellID = 0, socketInfo = {socketType = 0, misc1 = 0, misc0 = 0, socketSubtype = 0}, playerConditionReason = nil --[[string?​]], tier = 0, uiOrder = 0, talentAvailability = 0 --[[Enum.GarrisonTalentAvailability​]], researched = false, name = "", timeRemaining = 0, researchDescription = nil --[[string?​]], researchDuration = 0, researchGoldCost = 0}
 end
 function C_Garrison.GetTalentPointsSpentInTalentTree()
 	return 0
@@ -4676,7 +4684,7 @@ function C_Garrison.GetTalentTreeIDsByClassID()
 	return {} --[[number[]​]]
 end
 function C_Garrison.GetTalentTreeInfo()
-	return {isThemed = false, textureKit = setmetatable({}, {__index = string}), title = setmetatable({}, {__index = string}), talents = {} --[[GarrisonTalentInfo[]​]], featureSubtype = 0, isClassAgnostic = false, featureType = 0, treeID = 0}
+	return {isThemed = false, textureKit = "", title = "", talents = {} --[[GarrisonTalentInfo[]​]], featureSubtype = 0, isClassAgnostic = false, featureType = 0, treeID = 0}
 end
 function C_Garrison.GetTalentTreeResetInfo()
 	return 0, {} --[[GarrisonTalentCurrencyCostInfo[]​]]
@@ -4865,7 +4873,7 @@ function C_GossipInfo.ForceGossip()
 	return false
 end
 function C_GossipInfo.GetActiveDelveGossip()
-	return {gossipOptionID = nil --[[number?​]], failureDescription = nil --[[string?​]], rewards = {} --[[GossipOptionRewardInfo[]​]], spellID = nil --[[number?​]], status = 0 --[[Enum.GossipOptionStatus​]], selectOptionWhenOnlyOption = false, name = setmetatable({}, {__index = string}), overrideIconID = nil --[[integer?​]], orderIndex = 0, flags = 0, icon = setmetatable({}, {__index = integer})}
+	return {gossipOptionID = nil --[[number?​]], failureDescription = nil --[[string?​]], rewards = {} --[[GossipOptionRewardInfo[]​]], spellID = nil --[[number?​]], status = 0 --[[Enum.GossipOptionStatus​]], selectOptionWhenOnlyOption = false, name = "", overrideIconID = nil --[[integer?​]], orderIndex = 0, flags = 0, icon = 0}
 end
 function C_GossipInfo.GetActiveQuests()
 	return {} --[[GossipQuestUIInfo[]​]]
@@ -4880,7 +4888,7 @@ function C_GossipInfo.GetCustomGossipDescriptionString()
 	return nil --[[string?​]]
 end
 function C_GossipInfo.GetFriendshipReputation()
-	return {reaction = setmetatable({}, {__index = string}), texture = 0, maxRep = 0, overrideColor = nil --[[number?​]], reactionThreshold = 0, nextThreshold = nil --[[number?​]], name = nil --[[string?​]], text = setmetatable({}, {__index = string}), reversedColor = false, standing = 0, friendshipFactionID = 0}
+	return {reaction = "", texture = 0, maxRep = 0, overrideColor = nil --[[number?​]], reactionThreshold = 0, nextThreshold = nil --[[number?​]], name = nil --[[string?​]], text = "", reversedColor = false, standing = 0, friendshipFactionID = 0}
 end
 function C_GossipInfo.GetFriendshipReputationRanks()
 	return {currentLevel = 0, maxLevel = 0}
@@ -4907,7 +4915,7 @@ function C_GossipInfo.GetPoiInfo()
 	return nil --[[GossipPoiInfo?​]]
 end
 function C_GossipInfo.GetText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_GossipInfo.RefreshOptions()
 	return
@@ -5024,7 +5032,7 @@ function C_Heirloom.GetCollectedHeirloomFilter()
 	return
 end
 function C_Heirloom.GetHeirloomInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), 0, 0, false, 0, 0, 0
+	return "", "", false, "", 0, 0, false, 0, 0, 0
 end
 function C_Heirloom.GetHeirloomItemIDFromDisplayedIndex()
 	return
@@ -5128,7 +5136,7 @@ function C_InvasionInfo.GetInvasionForUiMapID()
 	return nil --[[number?​]]
 end
 function C_InvasionInfo.GetInvasionInfo()
-	return {position = setmetatable({}, {__index = Vector2DMixin}), name = setmetatable({}, {__index = string}), invasionID = 0, rewardQuestID = nil --[[number?​]], atlasName = setmetatable({}, {__index = string})}
+	return {position = setmetatable({}, {__index = Vector2DMixin}), name = "", invasionID = 0, rewardQuestID = nil --[[number?​]], atlasName = ""}
 end
 function C_InvasionInfo.GetInvasionTimeLeft()
 	return nil --[[number?​]]
@@ -5235,7 +5243,7 @@ function C_Item.GetItemChildInfo()
 	return {} --[[number[]​]]
 end
 function C_Item.GetItemClassInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Item.GetItemConversionOutputIcon()
 	return nil --[[integer?​]]
@@ -5247,16 +5255,16 @@ function C_Item.GetItemCount()
 	return 0
 end
 function C_Item.GetItemCreationContext()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function C_Item.GetItemFamily()
 	return nil --[[number?​]]
 end
 function C_Item.GetItemGUID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Item.GetItemGem()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_Item.GetItemGemID()
 	return 0
@@ -5277,16 +5285,16 @@ function C_Item.GetItemIconByID()
 	return nil --[[integer?​]]
 end
 function C_Item.GetItemInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0 --[[Enum.ItemQuality​]], 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, 0, 0, 0, nil --[[number?​]], false
+	return "", "", 0 --[[Enum.ItemQuality​]], 0, 0, "", "", 0, "", 0, 0, 0, 0, 0, 0, nil --[[number?​]], false
 end
 function C_Item.GetItemInfoInstant()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0
+	return 0, "", "", "", 0, 0, 0
 end
 function C_Item.GetItemInventorySlotInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Item.GetItemInventorySlotKey()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Item.GetItemInventoryType()
 	return nil --[[(Enum.InventoryType)?​]]
@@ -5331,16 +5339,16 @@ function C_Item.GetItemQualityByID()
 	return nil --[[(Enum.ItemQuality)?​]]
 end
 function C_Item.GetItemQualityColor()
-	return 0, 0, 0, setmetatable({}, {__index = string})
+	return 0, 0, 0, ""
 end
 function C_Item.GetItemSetInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Item.GetItemSpecInfo()
 	return {} --[[number[]​]]
 end
 function C_Item.GetItemSpell()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function C_Item.GetItemStatDelta()
 	return magicFake("table")
@@ -5349,7 +5357,7 @@ function C_Item.GetItemStats()
 	return magicFake("table")
 end
 function C_Item.GetItemSubClassInfo()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function C_Item.GetItemUniqueness()
 	return 0, 0
@@ -5358,7 +5366,7 @@ function C_Item.GetItemUniquenessByID()
 	return false, nil --[[string?​]], nil --[[number?​]], nil --[[number?​]]
 end
 function C_Item.GetLimitedCurrencyItemInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, 0
+	return "", 0, 0, 0, 0
 end
 function C_Item.GetSetBonusesForSpecializationByItemID()
 	return {} --[[number[]​]]
@@ -5544,16 +5552,16 @@ function C_ItemUpgrade.GetHighWatermarkSlotForItem()
 	return 0
 end
 function C_ItemUpgrade.GetItemHyperlink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ItemUpgrade.GetItemUpgradeCurrentLevel()
 	return 0, false
 end
 function C_ItemUpgrade.GetItemUpgradeEffect()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_ItemUpgrade.GetItemUpgradeItemInfo()
-	return {maxItemLevel = 0, minItemLevel = 0, highWatermarkSlot = 0, customUpgradeString = nil --[[string?​]], upgradeCostTypesForSeason = {} --[[ItemUpgradeSeasonalCostType[]​]], maxUpgrade = 0, name = setmetatable({}, {__index = string}), displayQuality = 0, itemUpgradeable = false, upgradeLevelInfos = {} --[[ItemUpgradeLevelInfo[]​]], currUpgrade = 0, iconID = 0}
+	return {maxItemLevel = 0, minItemLevel = 0, highWatermarkSlot = 0, customUpgradeString = nil --[[string?​]], upgradeCostTypesForSeason = {} --[[ItemUpgradeSeasonalCostType[]​]], maxUpgrade = 0, name = "", displayQuality = 0, itemUpgradeable = false, upgradeLevelInfos = {} --[[ItemUpgradeLevelInfo[]​]], currUpgrade = 0, iconID = 0}
 end
 function C_ItemUpgrade.GetItemUpgradePvpItemLevelDeltaValues()
 	return 0, 0
@@ -5585,22 +5593,22 @@ function C_LFGInfo.AreCrossFactionGroupQueuesAllowed()
 	return false
 end
 function C_LFGInfo.CanPlayerUseGroupFinder()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_LFGInfo.CanPlayerUseLFD()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_LFGInfo.CanPlayerUseLFR()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_LFGInfo.CanPlayerUsePVP()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_LFGInfo.CanPlayerUsePremadeGroup()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_LFGInfo.CanPlayerUseScenarioFinder()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_LFGInfo.ConfirmLfgExpandSearch()
 	return
@@ -5615,7 +5623,7 @@ function C_LFGInfo.GetAllEntriesForCategory()
 	return {} --[[number[]​]]
 end
 function C_LFGInfo.GetDungeonInfo()
-	return {iconID = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), link = nil --[[string?​]]}
+	return {iconID = 0, name = "", link = nil --[[string?​]]}
 end
 function C_LFGInfo.GetLFDLockStates()
 	return {} --[[LFGLockInfo[]​]]
@@ -5691,13 +5699,13 @@ function C_LFGList.DoesEntryTitleMatchPrebuiltTitle()
 	return false
 end
 function C_LFGList.GetActiveEntryInfo()
-	return {newPlayerFriendly = false, autoAccept = false, duration = 0, privateGroup = false, requiredPvpRating = nil --[[number?​]], voiceChat = setmetatable({}, {__index = string}), activityIDs = {} --[[number[]​]], requiredItemLevel = 0, requiredHonorLevel = 0, requiredDungeonScore = nil --[[number?​]], name = setmetatable({}, {__index = string}), questID = nil --[[number?​]], isCrossFactionListing = false, playstyle = nil --[[(Enum.LFGEntryPlaystyle)?​]], comment = setmetatable({}, {__index = string})}
+	return {newPlayerFriendly = false, autoAccept = false, duration = 0, privateGroup = false, requiredPvpRating = nil --[[number?​]], voiceChat = "", activityIDs = {} --[[number[]​]], requiredItemLevel = 0, requiredHonorLevel = 0, requiredDungeonScore = nil --[[number?​]], name = "", questID = nil --[[number?​]], isCrossFactionListing = false, playstyle = nil --[[(Enum.LFGEntryPlaystyle)?​]], comment = ""}
 end
 function C_LFGList.GetActivityFullName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_LFGList.GetActivityGroupInfo()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function C_LFGList.GetActivityIDForQuestID()
 	return
@@ -5706,28 +5714,28 @@ function C_LFGList.GetActivityInfoExpensive()
 	return false
 end
 function C_LFGList.GetActivityInfoTable()
-	return {isCurrentRaidActivity = false, filters = 0, isMythicPlusActivity = false, useHonorLevel = false, redirectedDifficultyID = 0, showQuickJoinToast = false, useDungeonRoleExpectations = false, isMythicActivity = false, isRatedPvpActivity = false, shortName = setmetatable({}, {__index = string}), minLevel = 0, orderIndex = 0, groupFinderActivityGroupID = 0, maxLevelSuggestion = 0, ilvlSuggestion = 0, minLevelSuggestion = 0, difficultyID = 0, maxNumPlayers = 0, isNormalActivity = false, mapID = 0, isPvpActivity = false, displayType = 0 --[[Enum.LFGListDisplayType​]], isHeroicActivity = false, categoryID = 0, fullName = setmetatable({}, {__index = string}), allowCrossFaction = false}
+	return {isCurrentRaidActivity = false, filters = 0, isMythicPlusActivity = false, useHonorLevel = false, redirectedDifficultyID = 0, showQuickJoinToast = false, useDungeonRoleExpectations = false, isMythicActivity = false, isRatedPvpActivity = false, shortName = "", minLevel = 0, orderIndex = 0, groupFinderActivityGroupID = 0, maxLevelSuggestion = 0, ilvlSuggestion = 0, minLevelSuggestion = 0, difficultyID = 0, maxNumPlayers = 0, isNormalActivity = false, mapID = 0, isPvpActivity = false, displayType = 0 --[[Enum.LFGListDisplayType​]], isHeroicActivity = false, categoryID = 0, fullName = "", allowCrossFaction = false}
 end
 function C_LFGList.GetAdvancedFilter()
 	return {hasTank = nil --[[boolean?​]], activities = {} --[[number[]​]], hasHealer = nil --[[boolean?​]], difficultyMythicPlus = nil --[[boolean?​]], difficultyMythic = nil --[[boolean?​]], needsTank = nil --[[boolean?​]], needsHealer = nil --[[boolean?​]], needsMyClass = nil --[[boolean?​]], minimumRating = nil --[[number?​]], difficultyNormal = nil --[[boolean?​]], difficultyHeroic = nil --[[boolean?​]], needsDamage = nil --[[boolean?​]]}
 end
 function C_LFGList.GetApplicantBestDungeonScore()
-	return {finishedSuccess = false, bestRunDurationMs = 0, bestRunLevel = 0, mapName = setmetatable({}, {__index = string}), mapScore = 0, bestLevelIncrement = 0}
+	return {finishedSuccess = false, bestRunDurationMs = 0, bestRunLevel = 0, mapName = "", mapScore = 0, bestLevelIncrement = 0}
 end
 function C_LFGList.GetApplicantDungeonScoreForListing()
-	return {finishedSuccess = false, bestRunDurationMs = 0, bestRunLevel = 0, mapName = setmetatable({}, {__index = string}), mapScore = 0, bestLevelIncrement = 0}
+	return {finishedSuccess = false, bestRunDurationMs = 0, bestRunLevel = 0, mapName = "", mapScore = 0, bestLevelIncrement = 0}
 end
 function C_LFGList.GetApplicantInfo()
-	return {isNew = false, displayOrderID = 0, numMembers = 0, pendingApplicationStatus = nil --[[string?​]], comment = setmetatable({}, {__index = string}), applicantID = 0, applicationStatus = setmetatable({}, {__index = string})}
+	return {isNew = false, displayOrderID = 0, numMembers = 0, pendingApplicationStatus = nil --[[string?​]], comment = "", applicantID = 0, applicationStatus = ""}
 end
 function C_LFGList.GetApplicantMemberInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, false, false, false, setmetatable({}, {__index = string}), nil --[[boolean?​]], 0, 0
+	return "", "", "", 0, 0, 0, false, false, false, "", nil --[[boolean?​]], 0, 0
 end
 function C_LFGList.GetApplicantMemberStats()
 	return magicFake("table")
 end
 function C_LFGList.GetApplicantPvpRatingInfoForListing()
-	return {activityName = setmetatable({}, {__index = string}), tier = 0, rating = 0, bracket = 0}
+	return {activityName = "", tier = 0, rating = 0, bracket = 0}
 end
 function C_LFGList.GetApplicants()
 	return magicFake("table")
@@ -5766,7 +5774,7 @@ function C_LFGList.GetLanguageSearchFilter()
 	return
 end
 function C_LFGList.GetLfgCategoryInfo()
-	return {preferCurrentArea = false, searchPromptOverride = nil --[[string?​]], name = setmetatable({}, {__index = string}), autoChooseActivity = false, showPlaystyleDropdown = false, separateRecommended = false, allowCrossFaction = false}
+	return {preferCurrentArea = false, searchPromptOverride = nil --[[string?​]], name = "", autoChooseActivity = false, showPlaystyleDropdown = false, separateRecommended = false, allowCrossFaction = false}
 end
 function C_LFGList.GetNumApplicants()
 	return
@@ -5784,7 +5792,7 @@ function C_LFGList.GetOwnedKeystoneActivityAndGroupAndLevel()
 	return 0, 0, 0
 end
 function C_LFGList.GetPlaystyleString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_LFGList.GetPremadeGroupFinderStyle()
 	return 0 --[[Enum.PremadeGroupFinderStyle​]]
@@ -5799,16 +5807,16 @@ function C_LFGList.GetSearchResultFriends()
 	return {} --[[string[]​]], {} --[[string[]​]], {} --[[string[]​]]
 end
 function C_LFGList.GetSearchResultInfo()
-	return {age = 0, autoAccept = false, numBNetFriends = 0, voiceChat = setmetatable({}, {__index = string}), isDelisted = false, activityIDs = {} --[[number[]​]], requiredPvpRating = nil --[[number?​]], crossFactionListing = nil --[[boolean?​]], requiredItemLevel = 0, leaderFactionGroup = 0, comment = setmetatable({}, {__index = string}), playstyle = nil --[[(Enum.LFGEntryPlaystyle)?​]], leaderName = nil --[[string?​]], newPlayerFriendly = nil --[[boolean?​]], requiredHonorLevel = 0, partyGUID = setmetatable({}, {__index = string}), leaderOverallDungeonScore = nil --[[number?​]], requiredDungeonScore = nil --[[number?​]], leaderPvpRatingInfo = {} --[[PvpRatingInfo[]​]], isWarMode = false, questID = nil --[[number?​]], numMembers = 0, hasSelf = false, numCharFriends = 0, name = setmetatable({}, {__index = string}), numGuildMates = 0, searchResultID = 0, leaderBestDungeonScoreInfo = nil --[[BestDungeonScoreMapInfo?​]], leaderDungeonScoreInfo = {} --[[BestDungeonScoreMapInfo[]​]]}
+	return {age = 0, autoAccept = false, numBNetFriends = 0, voiceChat = "", isDelisted = false, activityIDs = {} --[[number[]​]], requiredPvpRating = nil --[[number?​]], crossFactionListing = nil --[[boolean?​]], requiredItemLevel = 0, leaderFactionGroup = 0, comment = "", playstyle = nil --[[(Enum.LFGEntryPlaystyle)?​]], leaderName = nil --[[string?​]], newPlayerFriendly = nil --[[boolean?​]], requiredHonorLevel = 0, partyGUID = "", leaderOverallDungeonScore = nil --[[number?​]], requiredDungeonScore = nil --[[number?​]], leaderPvpRatingInfo = {} --[[PvpRatingInfo[]​]], isWarMode = false, questID = nil --[[number?​]], numMembers = 0, hasSelf = false, numCharFriends = 0, name = "", numGuildMates = 0, searchResultID = 0, leaderBestDungeonScoreInfo = nil --[[BestDungeonScoreMapInfo?​]], leaderDungeonScoreInfo = {} --[[BestDungeonScoreMapInfo[]​]]}
 end
 function C_LFGList.GetSearchResultLeaderInfo()
-	return {isLeader = false, assignedRole = setmetatable({}, {__index = string}), lfgRoles = {healer = false, tank = false, dps = false}, className = setmetatable({}, {__index = string}), classFilename = setmetatable({}, {__index = string}), name = nil --[[string?​]], areaName = nil --[[string?​]], specName = nil --[[string?​]], level = nil --[[number?​]]}
+	return {isLeader = false, assignedRole = "", lfgRoles = {healer = false, tank = false, dps = false}, className = "", classFilename = "", name = nil --[[string?​]], areaName = nil --[[string?​]], specName = nil --[[string?​]], level = nil --[[number?​]]}
 end
 function C_LFGList.GetSearchResultMemberCounts()
 	return
 end
 function C_LFGList.GetSearchResultPlayerInfo()
-	return {isLeader = false, assignedRole = setmetatable({}, {__index = string}), lfgRoles = {healer = false, tank = false, dps = false}, className = setmetatable({}, {__index = string}), classFilename = setmetatable({}, {__index = string}), name = nil --[[string?​]], areaName = nil --[[string?​]], specName = nil --[[string?​]], level = nil --[[number?​]]}
+	return {isLeader = false, assignedRole = "", lfgRoles = {healer = false, tank = false, dps = false}, className = "", classFilename = "", name = nil --[[string?​]], areaName = nil --[[string?​]], specName = nil --[[string?​]], level = nil --[[number?​]]}
 end
 function C_LFGList.GetSearchResults()
 	return nil --[[number?​]], {} --[[number[]​]]
@@ -5905,13 +5913,13 @@ function C_LegendaryCrafting.GetRuneforgeLegendaryUpgradeCost()
 	return {} --[[CurrencyCost[]​]]
 end
 function C_LegendaryCrafting.GetRuneforgeModifierInfo()
-	return setmetatable({}, {__index = string}), {} --[[string[]​]]
+	return "", {} --[[string[]​]]
 end
 function C_LegendaryCrafting.GetRuneforgeModifiers()
 	return {} --[[number[]​]]
 end
 function C_LegendaryCrafting.GetRuneforgePowerInfo()
-	return {iconFileID = setmetatable({}, {__index = integer}), slots = {} --[[string[]​]], runeforgePowerID = 0, matchesCovenant = false, state = 0 --[[Enum.RuneforgePowerState​]], specName = nil --[[string?​]], source = nil --[[string?​]], name = setmetatable({}, {__index = string}), description = setmetatable({}, {__index = string}), covenantID = nil --[[number?​]], matchesSpec = false, descriptionSpellID = 0}
+	return {iconFileID = 0, slots = {} --[[string[]​]], runeforgePowerID = 0, matchesCovenant = false, state = 0 --[[Enum.RuneforgePowerState​]], specName = nil --[[string?​]], source = nil --[[string?​]], name = "", description = "", covenantID = nil --[[number?​]], matchesSpec = false, descriptionSpellID = 0}
 end
 function C_LegendaryCrafting.GetRuneforgePowerSlots()
 	return {} --[[string[]​]]
@@ -6038,7 +6046,7 @@ function C_MacOptions.AreOSShortcutsDisabled()
 	return nil --[[boolean?​]], false
 end
 function C_MacOptions.GetGameBundleName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_MacOptions.HasNewStyleInputMonitoring()
 	return false
@@ -6069,7 +6077,7 @@ function C_Macro.GetMacroName()
 	return nil --[[string?​]]
 end
 function C_Macro.GetSelectedMacroIcon()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function C_Macro.RunMacroText()
 	return
@@ -6132,7 +6140,7 @@ function C_Map.CloseWorldMapInteraction()
 	return
 end
 function C_Map.GetAreaInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Map.GetBestMapForUnit()
 	return nil --[[number?​]]
@@ -6144,7 +6152,7 @@ function C_Map.GetFallbackWorldMapID()
 	return 0
 end
 function C_Map.GetMapArtBackgroundAtlas()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Map.GetMapArtHelpTextPosition()
 	return 0 --[[Enum.MapCanvasPosition​]]
@@ -6177,16 +6185,16 @@ function C_Map.GetMapGroupMembersInfo()
 	return {} --[[UiMapGroupMemberInfo[]​]]
 end
 function C_Map.GetMapHighlightInfoAtPosition()
-	return setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0
+	return 0, "", 0, 0, 0, 0, 0, 0
 end
 function C_Map.GetMapHighlightPulseInfo()
-	return setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0
+	return 0, "", 0, 0, 0, 0, 0, 0
 end
 function C_Map.GetMapInfo()
-	return {mapID = 0, name = setmetatable({}, {__index = string}), flags = 0 --[[Enum.UIMapFlag​]], mapType = 0 --[[Enum.UIMapType​]], parentMapID = 0}
+	return {mapID = 0, name = "", flags = 0 --[[Enum.UIMapFlag​]], mapType = 0 --[[Enum.UIMapType​]], parentMapID = 0}
 end
 function C_Map.GetMapInfoAtPosition()
-	return {mapID = 0, name = setmetatable({}, {__index = string}), flags = 0 --[[Enum.UIMapFlag​]], mapType = 0 --[[Enum.UIMapType​]], parentMapID = 0}
+	return {mapID = 0, name = "", flags = 0 --[[Enum.UIMapFlag​]], mapType = 0 --[[Enum.UIMapType​]], parentMapID = 0}
 end
 function C_Map.GetMapLevels()
 	return 0, 0, nil --[[number?​]], nil --[[number?​]]
@@ -6213,7 +6221,7 @@ function C_Map.GetUserWaypointFromHyperlink()
 	return {uiMapID = 0, position = setmetatable({}, {__index = Vector2DMixin}), z = nil --[[number?​]]}
 end
 function C_Map.GetUserWaypointHyperlink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Map.GetUserWaypointPositionForMap()
 	return setmetatable({}, {__index = Vector2DMixin})
@@ -6251,7 +6259,7 @@ function C_MerchantFrame.GetBuybackItemID()
 	return 0
 end
 function C_MerchantFrame.GetItemInfo()
-	return {isPurchasable = nil --[[boolean?​]], currencyID = nil --[[number?​]], stackCount = nil --[[number?​]], isQuestStartItem = nil --[[boolean?​]], isUsable = nil --[[boolean?​]], price = nil --[[number?​]], name = nil --[[string?​]], texture = setmetatable({}, {__index = integer}), spellID = nil --[[number?​]], numAvailable = nil --[[number?​]], hasExtendedCost = nil --[[boolean?​]]}
+	return {isPurchasable = nil --[[boolean?​]], currencyID = nil --[[number?​]], stackCount = nil --[[number?​]], isQuestStartItem = nil --[[boolean?​]], isUsable = nil --[[boolean?​]], price = nil --[[number?​]], name = nil --[[string?​]], texture = 0, spellID = nil --[[number?​]], numAvailable = nil --[[number?​]], hasExtendedCost = nil --[[boolean?​]]}
 end
 function C_MerchantFrame.GetNumJunkItems()
 	return 0
@@ -6355,17 +6363,17 @@ function C_ModelInfo.GetModelSceneActorDisplayInfoByID()
 	return {animationKitID = nil --[[number?​]], animSpeed = 0, animation = 0, alpha = 0, spellVisualKitID = nil --[[number?​]], scale = 0, animationVariation = 0}
 end
 function C_ModelInfo.GetModelSceneActorInfoByID()
-	return {roll = 0, modelActorDisplayID = nil --[[number?​]], useCenterForOriginX = false, normalizeScaleAggressiveness = nil --[[number?​]], useCenterForOriginY = false, position = setmetatable({}, {__index = Vector3DMixin}), pitch = 0, useCenterForOriginZ = false, modelActorID = 0, scriptTag = setmetatable({}, {__index = string}), yaw = 0}
+	return {roll = 0, modelActorDisplayID = nil --[[number?​]], useCenterForOriginX = false, normalizeScaleAggressiveness = nil --[[number?​]], useCenterForOriginY = false, position = setmetatable({}, {__index = Vector3DMixin}), pitch = 0, useCenterForOriginZ = false, modelActorID = 0, scriptTag = "", yaw = 0}
 end
 function C_ModelInfo.GetModelSceneCameraInfoByID()
-	return {cameraType = setmetatable({}, {__index = string}), roll = 0, modelSceneCameraID = 0, zoomedYawOffset = 0, minZoomDistance = 0, zoomedTargetOffset = setmetatable({}, {__index = Vector3DMixin}), maxZoomDistance = 0, zoomedRollOffset = 0, zoomedPitchOffset = 0, zoomDistance = 0, pitch = 0, flags = 0 --[[Enum.ModelSceneSetting​]], target = setmetatable({}, {__index = Vector3DMixin}), scriptTag = setmetatable({}, {__index = string}), yaw = 0}
+	return {cameraType = "", roll = 0, modelSceneCameraID = 0, zoomedYawOffset = 0, minZoomDistance = 0, zoomedTargetOffset = setmetatable({}, {__index = Vector3DMixin}), maxZoomDistance = 0, zoomedRollOffset = 0, zoomedPitchOffset = 0, zoomDistance = 0, pitch = 0, flags = 0 --[[Enum.ModelSceneSetting​]], target = setmetatable({}, {__index = Vector3DMixin}), scriptTag = "", yaw = 0}
 end
 function C_ModelInfo.GetModelSceneInfoByID()
 	return 0 --[[Enum.ModelSceneType​]], {} --[[number[]​]], {} --[[number[]​]], 0
 end
 C_ModifiedInstance = {}
 function C_ModifiedInstance.GetModifiedInstanceInfoFromMapID()
-	return {lfrItemLevel = nil --[[number?​]], mythicItemLevel = nil --[[number?​]], normalItemLevel = nil --[[number?​]], description = setmetatable({}, {__index = string}), uiTextureKit = setmetatable({}, {__index = string}), heroicItemLevel = nil --[[number?​]]}
+	return {lfrItemLevel = nil --[[number?​]], mythicItemLevel = nil --[[number?​]], normalItemLevel = nil --[[number?​]], description = "", uiTextureKit = "", heroicItemLevel = nil --[[number?​]]}
 end
 C_MountJournal = {}
 function C_MountJournal.ApplyMountEquipment()
@@ -6402,10 +6410,10 @@ function C_MountJournal.GetDisplayedMountID()
 	return 0
 end
 function C_MountJournal.GetDisplayedMountInfo()
-	return setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = integer}), false, false, 0, false, false, nil --[[number?​]], false, false, 0, false
+	return "", 0, 0, false, false, 0, false, false, nil --[[number?​]], false, false, 0, false
 end
 function C_MountJournal.GetDisplayedMountInfoExtra()
-	return nil --[[number?​]], setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, 0, 0, 0, 0, false
+	return nil --[[number?​]], "", "", false, 0, 0, 0, 0, false
 end
 function C_MountJournal.GetDynamicFlightModeSpellID()
 	return 0
@@ -6429,10 +6437,10 @@ function C_MountJournal.GetMountIDs()
 	return {} --[[number[]​]]
 end
 function C_MountJournal.GetMountInfoByID()
-	return setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = integer}), false, false, 0, false, false, nil --[[number?​]], false, false, 0, false
+	return "", 0, 0, false, false, 0, false, false, nil --[[number?​]], false, false, 0, false
 end
 function C_MountJournal.GetMountInfoExtraByID()
-	return nil --[[number?​]], setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, 0, 0, 0, 0, false
+	return nil --[[number?​]], "", "", false, 0, 0, 0, 0, false
 end
 function C_MountJournal.GetMountLink()
 	return nil --[[string?​]]
@@ -6654,7 +6662,7 @@ function C_Navigation.GetFrame()
 	return nil --[[ScriptRegion?​]]
 end
 function C_Navigation.GetNearestPartyMemberToken()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Navigation.GetTargetState()
 	return 0 --[[Enum.NavigationState​]]
@@ -6692,7 +6700,7 @@ function C_PaperDollInfo.GetInspectAzeriteItemEmpoweredChoices()
 	return {} --[[number[]​]]
 end
 function C_PaperDollInfo.GetInspectGuildInfo()
-	return 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return 0, 0, "", ""
 end
 function C_PaperDollInfo.GetInspectItemLevel()
 	return 0
@@ -6759,10 +6767,10 @@ function C_PartyInfo.GetInviteConfirmationInvalidQueues()
 	return {} --[[QueueSpecificInfo[]​]]
 end
 function C_PartyInfo.GetInviteReferralInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0 --[[Enum.PartyRequestJoinRelation​]], false, setmetatable({}, {__index = string})
+	return "", "", 0 --[[Enum.PartyRequestJoinRelation​]], false, ""
 end
 function C_PartyInfo.GetMinItemLevel()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function C_PartyInfo.GetMinLevel()
 	return 0
@@ -6824,19 +6832,19 @@ function C_PerksActivities.GetAllPerksActivityTags()
 	return {tagName = {} --[[string[]​]]}
 end
 function C_PerksActivities.GetPerksActivitiesInfo()
-	return {activePerksMonth = 0, displayMonthName = setmetatable({}, {__index = string}), secondsRemaining = 0, thresholds = {} --[[PerksActivityThresholdInfo[]​]], activities = {} --[[PerksActivityInfo[]​]]}
+	return {activePerksMonth = 0, displayMonthName = "", secondsRemaining = 0, thresholds = {} --[[PerksActivityThresholdInfo[]​]], activities = {} --[[PerksActivityInfo[]​]]}
 end
 function C_PerksActivities.GetPerksActivitiesPendingCompletion()
 	return {pendingIDs = {} --[[number[]​]]}
 end
 function C_PerksActivities.GetPerksActivityChatLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_PerksActivities.GetPerksActivityInfo()
 	return nil --[[PerksActivityInfo?​]]
 end
 function C_PerksActivities.GetPerksUIThemePrefix()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_PerksActivities.GetTrackedPerksActivities()
 	return {trackedIDs = {} --[[number[]​]]}
@@ -6858,7 +6866,7 @@ function C_PerksProgram.GetAvailableVendorItemIDs()
 	return {} --[[number[]​]]
 end
 function C_PerksProgram.GetCategoryInfo()
-	return {displayName = setmetatable({}, {__index = string}), ID = 0, defaultUIModelSceneID = 0}
+	return {displayName = "", ID = 0, defaultUIModelSceneID = 0}
 end
 function C_PerksProgram.GetCurrencyAmount()
 	return 0
@@ -6867,7 +6875,7 @@ function C_PerksProgram.GetDraggedPerksVendorItem()
 	return 0
 end
 function C_PerksProgram.GetFrozenPerksVendorItemInfo()
-	return {mountID = 0, description = setmetatable({}, {__index = string}), perksVendorCategoryID = 0, price = 0, perksVendorItemID = 0, mountTypeName = setmetatable({}, {__index = string}), uiGroupInfo = nil --[[PerksVendorItemUIGroupInfo?​]], subItems = {} --[[PerksVendorSubItemInfo[]​]], showSaleBanner = false, doesNotExpire = false, itemID = 0, iconTexture = setmetatable({}, {__index = string}), isPurchasePending = false, transmogSetID = 0, speciesID = 0, subItemsLoaded = false, purchased = false, name = setmetatable({}, {__index = string}), timeRemaining = 0, refundable = false, itemModifiedAppearanceID = 0, originalPrice = nil --[[number?​]]}
+	return {mountID = 0, description = "", perksVendorCategoryID = 0, price = 0, perksVendorItemID = 0, mountTypeName = "", uiGroupInfo = nil --[[PerksVendorItemUIGroupInfo?​]], subItems = {} --[[PerksVendorSubItemInfo[]​]], showSaleBanner = false, doesNotExpire = false, itemID = 0, iconTexture = "", isPurchasePending = false, transmogSetID = 0, speciesID = 0, subItemsLoaded = false, purchased = false, name = "", timeRemaining = 0, refundable = false, itemModifiedAppearanceID = 0, originalPrice = nil --[[number?​]]}
 end
 function C_PerksProgram.GetPendingChestRewards()
 	return {} --[[PerksProgramPendingChestRewards[]​]]
@@ -6879,7 +6887,7 @@ function C_PerksProgram.GetTimeRemaining()
 	return 0
 end
 function C_PerksProgram.GetVendorItemInfo()
-	return {mountID = 0, description = setmetatable({}, {__index = string}), perksVendorCategoryID = 0, price = 0, perksVendorItemID = 0, mountTypeName = setmetatable({}, {__index = string}), uiGroupInfo = nil --[[PerksVendorItemUIGroupInfo?​]], subItems = {} --[[PerksVendorSubItemInfo[]​]], showSaleBanner = false, doesNotExpire = false, itemID = 0, iconTexture = setmetatable({}, {__index = string}), isPurchasePending = false, transmogSetID = 0, speciesID = 0, subItemsLoaded = false, purchased = false, name = setmetatable({}, {__index = string}), timeRemaining = 0, refundable = false, itemModifiedAppearanceID = 0, originalPrice = nil --[[number?​]]}
+	return {mountID = 0, description = "", perksVendorCategoryID = 0, price = 0, perksVendorItemID = 0, mountTypeName = "", uiGroupInfo = nil --[[PerksVendorItemUIGroupInfo?​]], subItems = {} --[[PerksVendorSubItemInfo[]​]], showSaleBanner = false, doesNotExpire = false, itemID = 0, iconTexture = "", isPurchasePending = false, transmogSetID = 0, speciesID = 0, subItemsLoaded = false, purchased = false, name = "", timeRemaining = 0, refundable = false, itemModifiedAppearanceID = 0, originalPrice = nil --[[number?​]]}
 end
 function C_PerksProgram.GetVendorItemInfoRefundTimeLeft()
 	return 0
@@ -6946,10 +6954,10 @@ function C_PetBattles.GetAbilityEffectInfo()
 	return 0
 end
 function C_PetBattles.GetAbilityInfo()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), 0, 0, false
+	return 0, "", "", 0, "", 0, 0, false
 end
 function C_PetBattles.GetAbilityInfoByID()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), 0, 0, false
+	return 0, "", "", 0, "", 0, 0, false
 end
 function C_PetBattles.GetAbilityProcTurnIndex()
 	return 0
@@ -6964,7 +6972,7 @@ function C_PetBattles.GetActivePet()
 	return 0
 end
 function C_PetBattles.GetAllEffectNames()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_PetBattles.GetAllStates()
 	return magicFake("table<string, number>")
@@ -6991,7 +6999,7 @@ function C_PetBattles.GetHealth()
 	return 0
 end
 function C_PetBattles.GetIcon()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function C_PetBattles.GetLevel()
 	return 0
@@ -7000,7 +7008,7 @@ function C_PetBattles.GetMaxHealth()
 	return 0
 end
 function C_PetBattles.GetName()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_PetBattles.GetNumAuras()
 	return 0
@@ -7009,7 +7017,7 @@ function C_PetBattles.GetNumPets()
 	return 0
 end
 function C_PetBattles.GetPVPMatchmakingInfo()
-	return setmetatable({}, {__index = string}), 0, 0
+	return "", 0, 0
 end
 function C_PetBattles.GetPetSpeciesID()
 	return 0
@@ -7116,10 +7124,10 @@ function C_PetJournal.ClearSearchFilter()
 	return
 end
 function C_PetJournal.FindPetIDByName()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function C_PetJournal.GetBattlePetLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_PetJournal.GetDisplayIDByIndex()
 	return nil --[[number?​]]
@@ -7149,10 +7157,10 @@ function C_PetJournal.GetNumPetsNeedingFanfare()
 	return
 end
 function C_PetJournal.GetOwnedBattlePetString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_PetJournal.GetPetAbilityInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0
+	return "", 0, 0
 end
 function C_PetJournal.GetPetAbilityList()
 	return {} --[[number[]​]], {} --[[number[]​]]
@@ -7164,19 +7172,19 @@ function C_PetJournal.GetPetCooldownByGUID()
 	return 0, 0, 0
 end
 function C_PetJournal.GetPetInfoByIndex()
-	return setmetatable({}, {__index = string}), 0, false, setmetatable({}, {__index = string}), 0, false, false, setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, false
+	return "", 0, false, "", 0, false, false, "", 0, 0, 0, "", "", false, false, false, false, false
 end
 function C_PetJournal.GetPetInfoByItemID()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, false, 0, 0
+	return "", 0, 0, 0, "", "", false, false, false, false, false, 0, 0
 end
 function C_PetJournal.GetPetInfoByPetID()
-	return 0, setmetatable({}, {__index = string}), 0, 0, 0, 0, false, setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, false
+	return 0, "", 0, 0, 0, 0, false, "", 0, 0, "", "", "", false, false, false, false, false
 end
 function C_PetJournal.GetPetInfoBySpeciesID()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, false, 0, 0
+	return "", 0, 0, 0, "", "", false, false, false, false, false, 0, 0
 end
 function C_PetJournal.GetPetInfoTableByPetID()
-	return {unique = false, canBattle = false, xp = 0, petType = 0, speciesID = 0, sourceText = setmetatable({}, {__index = string}), customName = nil --[[string?​]], maxXP = 0, displayID = 0, icon = setmetatable({}, {__index = integer}), tradable = false, description = setmetatable({}, {__index = string}), creatureID = 0, name = nil --[[string?​]], isFavorite = false, isWild = false, petLevel = 0, obtainable = false}
+	return {unique = false, canBattle = false, xp = 0, petType = 0, speciesID = 0, sourceText = "", customName = nil --[[string?​]], maxXP = 0, displayID = 0, icon = 0, tradable = false, description = "", creatureID = 0, name = nil --[[string?​]], isFavorite = false, isWild = false, petLevel = 0, obtainable = false}
 end
 function C_PetJournal.GetPetLoadOutInfo()
 	return nil --[[string?​]], 0, 0, 0, false
@@ -7191,7 +7199,7 @@ function C_PetJournal.GetPetStats()
 	return 0, 0, 0, 0, 0
 end
 function C_PetJournal.GetPetSummonInfo()
-	return false, 0 --[[Enum.PetJournalError​]], setmetatable({}, {__index = string})
+	return false, 0 --[[Enum.PetJournalError​]], ""
 end
 function C_PetJournal.GetPetTeamAverageLevel()
 	return 0
@@ -7203,7 +7211,7 @@ function C_PetJournal.GetSummonRandomFavoritePetGUID()
 	return
 end
 function C_PetJournal.GetSummonedPetGUID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_PetJournal.HasFavoritePets()
 	return false
@@ -7333,7 +7341,7 @@ function C_Ping.GetDefaultPingOptions()
 	return {} --[[PingTypeInfo[]​]]
 end
 function C_Ping.GetTextureKitForType()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Ping.SendMacroPing()
 	return
@@ -7389,7 +7397,7 @@ function C_PingSecure.SetTogglePingListenerCallback()
 end
 C_PlayerChoice = {}
 function C_PlayerChoice.GetCurrentPlayerChoiceInfo()
-	return {keepOpenAfterChoice = false, objectGUID = setmetatable({}, {__index = string}), closeUISoundKitID = nil --[[number?​]], questionText = setmetatable({}, {__index = string}), hideWarboardHeader = false, options = {} --[[PlayerChoiceOptionInfo[]​]], uiTextureKit = setmetatable({}, {__index = string}), choiceID = 0, soundKitID = nil --[[number?​]], pendingChoiceText = setmetatable({}, {__index = string})}
+	return {keepOpenAfterChoice = false, objectGUID = "", closeUISoundKitID = nil --[[number?​]], questionText = "", hideWarboardHeader = false, options = {} --[[PlayerChoiceOptionInfo[]​]], uiTextureKit = "", choiceID = 0, soundKitID = nil --[[number?​]], pendingChoiceText = ""}
 end
 function C_PlayerChoice.GetNumRerolls()
 	return 0
@@ -7417,7 +7425,7 @@ function C_PlayerInfo.CanPlayerUseAreaLoot()
 	return false
 end
 function C_PlayerInfo.CanPlayerUseMountEquipment()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_PlayerInfo.CanUseItem()
 	return false
@@ -7456,7 +7464,7 @@ function C_PlayerInfo.GetPetStableCreatureDisplayInfoID()
 	return 0
 end
 function C_PlayerInfo.GetPlayerCharacterData()
-	return {fileName = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), createScreenIconAtlas = setmetatable({}, {__index = string}), alternateFormRaceData = nil --[[CharacterAlternateFormData?​]], sex = 0 --[[Enum.UnitSex​]]}
+	return {fileName = "", name = "", createScreenIconAtlas = "", alternateFormRaceData = nil --[[CharacterAlternateFormData?​]], sex = 0 --[[Enum.UnitSex​]]}
 end
 function C_PlayerInfo.GetPlayerMythicPlusRatingSummary()
 	return {runs = {} --[[MythicPlusRatingMapSummary[]​]], currentSeasonScore = 0}
@@ -7486,10 +7494,10 @@ function C_PlayerInfo.IsMirrorImage()
 	return false
 end
 function C_PlayerInfo.IsPlayerEligibleForNPE()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_PlayerInfo.IsPlayerEligibleForNPEv2()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_PlayerInfo.IsPlayerInChromieTime()
 	return false
@@ -7561,16 +7569,16 @@ function C_ProfSpecs.GetConfigIDForSkillLine()
 	return 0
 end
 function C_ProfSpecs.GetCurrencyInfoForSkillLine()
-	return {currencyName = setmetatable({}, {__index = string}), numAvailable = 0}
+	return {currencyName = "", numAvailable = 0}
 end
 function C_ProfSpecs.GetDefaultSpecSkillLine()
 	return nil --[[number?​]]
 end
 function C_ProfSpecs.GetDescriptionForPath()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ProfSpecs.GetDescriptionForPerk()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ProfSpecs.GetEntryIDForPerk()
 	return 0
@@ -7585,13 +7593,13 @@ function C_ProfSpecs.GetRootPathForTab()
 	return nil --[[number?​]]
 end
 function C_ProfSpecs.GetSourceTextForPath()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ProfSpecs.GetSpecTabIDsForSkillLine()
 	return {} --[[number[]​]]
 end
 function C_ProfSpecs.GetSpecTabInfo()
-	return {enabled = nil --[[boolean?​]], errorReason = setmetatable({}, {__index = string})}
+	return {enabled = nil --[[boolean?​]], errorReason = ""}
 end
 function C_ProfSpecs.GetSpendCurrencyForPath()
 	return nil --[[number?​]]
@@ -7656,7 +7664,7 @@ function C_PvP.CanDisplayKillingBlows()
 	return false
 end
 function C_PvP.CanPlayerUseRatedPVPUI()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_PvP.CanToggleWarMode()
 	return false
@@ -7701,7 +7709,7 @@ function C_PvP.GetBattlefieldFlagPosition()
 	return nil --[[number?​]], nil --[[number?​]], 0
 end
 function C_PvP.GetBattlefieldVehicleInfo()
-	return {y = 0, atlas = setmetatable({}, {__index = string}), textureHeight = 0, isPlayer = false, x = 0, textureWidth = 0, name = setmetatable({}, {__index = string}), isOccupied = false, isAlive = false, facing = 0, shouldDrawBelowPlayerBlips = false}
+	return {y = 0, atlas = "", textureHeight = 0, isPlayer = false, x = 0, textureWidth = 0, name = "", isOccupied = false, isAlive = false, facing = 0, shouldDrawBelowPlayerBlips = false}
 end
 function C_PvP.GetBattlefieldVehicles()
 	return {} --[[BattlefieldVehicleInfo[]​]]
@@ -7806,7 +7814,7 @@ function C_PvP.GetSeasonBestInfo()
 	return 0, nil --[[number?​]]
 end
 function C_PvP.GetSkirmishInfo()
-	return {instanceType = 0, icon = setmetatable({}, {__index = integer}), name = setmetatable({}, {__index = string}), shortDescription = setmetatable({}, {__index = string}), minPlayers = 0, maxPlayers = 0, longDescription = setmetatable({}, {__index = string})}
+	return {instanceType = 0, icon = 0, name = "", shortDescription = "", minPlayers = 0, maxPlayers = 0, longDescription = ""}
 end
 function C_PvP.GetSpecialEventBrawlInfo()
 	return nil --[[PvpBrawlInfo?​]]
@@ -7827,7 +7835,7 @@ function C_PvP.GetWeeklyChestInfo()
 	return false, false, false, 0
 end
 function C_PvP.GetZonePVPInfo()
-	return setmetatable({}, {__index = string}), false, nil --[[string?​]]
+	return "", false, nil --[[string?​]]
 end
 function C_PvP.HasArenaSkirmishWinToday()
 	return false
@@ -8048,7 +8056,7 @@ function C_QuestLog.GetNextWaypointForMap()
 	return 0, 0
 end
 function C_QuestLog.GetNextWaypointText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_QuestLog.GetNumQuestLogEntries()
 	return 0, 0
@@ -8084,7 +8092,7 @@ function C_QuestLog.GetQuestLogMajorFactionReputationRewards()
 	return {} --[[QuestRewardReputationInfo[]​]]
 end
 function C_QuestLog.GetQuestLogPortraitGiver()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, nil --[[number?​]]
+	return 0, "", "", 0, nil --[[number?​]]
 end
 function C_QuestLog.GetQuestObjectives()
 	return {} --[[QuestObjectiveInfo[]​]]
@@ -8387,13 +8395,13 @@ function C_ReportSystem.GetMajorCategoriesForReportType()
 	return {} --[[Enum.ReportMajorCategory[]​]]
 end
 function C_ReportSystem.GetMajorCategoryString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ReportSystem.GetMinorCategoriesForReportTypeAndMajorCategory()
 	return {} --[[Enum.ReportMinorCategory[]​]]
 end
 function C_ReportSystem.GetMinorCategoryString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ReportSystem.ReportServerLag()
 	return
@@ -8527,19 +8535,19 @@ function C_Scenario.TreatScenarioAsDungeon()
 end
 C_ScenarioInfo = {}
 function C_ScenarioInfo.GetCriteriaInfo()
-	return {elapsed = nil --[[number?​]], duration = nil --[[number?​]], isWeightedProgress = nil --[[boolean?​]], description = setmetatable({}, {__index = string}), totalQuantity = nil --[[number?​]], isFormatted = nil --[[boolean?​]], criteriaType = nil --[[number?​]], completed = nil --[[boolean?​]], assetID = nil --[[number?​]], quantityString = setmetatable({}, {__index = string}), quantity = nil --[[number?​]], criteriaID = 0, flags = nil --[[number?​]], failed = nil --[[boolean?​]]}
+	return {elapsed = nil --[[number?​]], duration = nil --[[number?​]], isWeightedProgress = nil --[[boolean?​]], description = "", totalQuantity = nil --[[number?​]], isFormatted = nil --[[boolean?​]], criteriaType = nil --[[number?​]], completed = nil --[[boolean?​]], assetID = nil --[[number?​]], quantityString = "", quantity = nil --[[number?​]], criteriaID = 0, flags = nil --[[number?​]], failed = nil --[[boolean?​]]}
 end
 function C_ScenarioInfo.GetCriteriaInfoByStep()
-	return {elapsed = nil --[[number?​]], duration = nil --[[number?​]], isWeightedProgress = nil --[[boolean?​]], description = setmetatable({}, {__index = string}), totalQuantity = nil --[[number?​]], isFormatted = nil --[[boolean?​]], criteriaType = nil --[[number?​]], completed = nil --[[boolean?​]], assetID = nil --[[number?​]], quantityString = setmetatable({}, {__index = string}), quantity = nil --[[number?​]], criteriaID = 0, flags = nil --[[number?​]], failed = nil --[[boolean?​]]}
+	return {elapsed = nil --[[number?​]], duration = nil --[[number?​]], isWeightedProgress = nil --[[boolean?​]], description = "", totalQuantity = nil --[[number?​]], isFormatted = nil --[[boolean?​]], criteriaType = nil --[[number?​]], completed = nil --[[boolean?​]], assetID = nil --[[number?​]], quantityString = "", quantity = nil --[[number?​]], criteriaID = 0, flags = nil --[[number?​]], failed = nil --[[boolean?​]]}
 end
 function C_ScenarioInfo.GetJailersTowerTypeString()
 	return nil --[[string?​]]
 end
 function C_ScenarioInfo.GetScenarioInfo()
-	return {numStages = 0, xp = 0, area = setmetatable({}, {__index = string}), isComplete = false, money = 0, currentStage = 0, name = setmetatable({}, {__index = string}), type = 0, uiTextureKit = setmetatable({}, {__index = string}), flags = 0, scenarioID = 0}
+	return {numStages = 0, xp = 0, area = "", isComplete = false, money = 0, currentStage = 0, name = "", type = 0, uiTextureKit = "", flags = 0, scenarioID = 0}
 end
 function C_ScenarioInfo.GetScenarioStepInfo()
-	return {stepFailed = false, rewardQuestID = 0, stepID = 0, description = setmetatable({}, {__index = string}), widgetSetID = nil --[[number?​]], isBonusStep = false, title = setmetatable({}, {__index = string}), shouldShowBonusObjective = false, isForCurrentStepOnly = false, weightedProgress = nil --[[number?​]], spells = {} --[[ScenarioStepSpellInfo[]​]], numCriteria = 0}
+	return {stepFailed = false, rewardQuestID = 0, stepID = 0, description = "", widgetSetID = nil --[[number?​]], isBonusStep = false, title = "", shouldShowBonusObjective = false, isForCurrentStepOnly = false, weightedProgress = nil --[[number?​]], spells = {} --[[ScenarioStepSpellInfo[]​]], numCriteria = 0}
 end
 C_ScrappingMachineUI = {}
 function C_ScrappingMachineUI.CloseScrappingMachine()
@@ -8555,7 +8563,7 @@ function C_ScrappingMachineUI.GetScrapSpellID()
 	return 0
 end
 function C_ScrappingMachineUI.GetScrappingMachineName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_ScrappingMachineUI.HasScrappableItems()
 	return false
@@ -8625,10 +8633,10 @@ function C_SocialQueue.GetConfig()
 	return {THROTTLE_DF_MAX_ITEM_LEVEL = 0, THROTTLE_RF_PRIORITY_ABOVE = 0, THROTTLE_PRIORITY_SPIKE = 0, THROTTLE_MIN_THRESHOLD = 0, THROTTLE_LFGLIST_PRIORITY_ABOVE = 0, TOAST_DURATION = 0, THROTTLE_PVP_PRIORITY_LOW = 0, THROTTLE_LFGLIST_PRIORITY_BELOW = 0, QUEUE_MULTIPLIER = 0, TOASTS_DISABLED = false, PLAYER_FRIEND_VALUE = 0, THROTTLE_RF_ILVL_SCALING_ABOVE = 0, THROTTLE_PVP_HONOR_THRESHOLD = 0, THROTTLE_PVP_PRIORITY_NORMAL = 0, THROTTLE_INITIAL_THRESHOLD = 0, DELAY_DURATION = 0, THROTTLE_DECAY_TIME = 0, THROTTLE_LFGLIST_PRIORITY_DEFAULT = 0, THROTTLE_LFGLIST_ILVL_SCALING_ABOVE = 0, PLAYER_MULTIPLIER = 0, THROTTLE_LFGLIST_ILVL_SCALING_BELOW = 0, PLAYER_GUILD_VALUE = 0, THROTTLE_DF_BEST_PRIORITY = 0}
 end
 function C_SocialQueue.GetGroupForPlayer()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function C_SocialQueue.GetGroupInfo()
-	return false, 0, false, false, false, false, false, setmetatable({}, {__index = string})
+	return false, 0, false, false, false, false, false, ""
 end
 function C_SocialQueue.GetGroupMembers()
 	return {} --[[SocialQueuePlayerInfo[]​]]
@@ -8723,7 +8731,7 @@ function C_Soulbinds.GetConduitDisplayed()
 	return 0
 end
 function C_Soulbinds.GetConduitHyperlink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Soulbinds.GetConduitIDPendingInstall()
 	return 0
@@ -8741,10 +8749,10 @@ function C_Soulbinds.GetInstalledConduitID()
 	return 0
 end
 function C_Soulbinds.GetNode()
-	return {row = 0, icon = setmetatable({}, {__index = integer}), parentNodeIDs = {} --[[number[]​]], conduitType = nil --[[(Enum.SoulbindConduitType)?​]], conduitID = 0, failureRenownRequirement = nil --[[number?​]], spellID = 0, conduitRank = 0, state = 0 --[[Enum.SoulbindNodeState​]], socketEnhanced = nil --[[boolean?​]], playerConditionReason = nil --[[string?​]], column = 0, ID = 0}
+	return {row = 0, icon = 0, parentNodeIDs = {} --[[number[]​]], conduitType = nil --[[(Enum.SoulbindConduitType)?​]], conduitID = 0, failureRenownRequirement = nil --[[number?​]], spellID = 0, conduitRank = 0, state = 0 --[[Enum.SoulbindNodeState​]], socketEnhanced = nil --[[boolean?​]], playerConditionReason = nil --[[string?​]], column = 0, ID = 0}
 end
 function C_Soulbinds.GetSoulbindData()
-	return {cvarIndex = 0, description = setmetatable({}, {__index = string}), playerConditionReason = nil --[[string?​]], unlocked = false, tree = {editable = false, nodes = {} --[[SoulbindNode[]​]]}, textureKit = setmetatable({}, {__index = string}), name = setmetatable({}, {__index = string}), activationSoundKitID = 0, modelSceneData = {modelSceneActorID = 0, creatureDisplayInfoID = 0}, ID = 0, covenantID = 0}
+	return {cvarIndex = 0, description = "", playerConditionReason = nil --[[string?​]], unlocked = false, tree = {editable = false, nodes = {} --[[SoulbindNode[]​]]}, textureKit = "", name = "", activationSoundKitID = 0, modelSceneData = {modelSceneActorID = 0, creatureDisplayInfoID = 0}, ID = 0, covenantID = 0}
 end
 function C_Soulbinds.GetSpecsAssignedToSoulbind()
 	return {} --[[number[]​]]
@@ -8800,13 +8808,13 @@ function C_Sound.PlayVocalErrorSound()
 end
 C_SpecializationInfo = {}
 function C_SpecializationInfo.CanPlayerUsePVPTalentUI()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_SpecializationInfo.CanPlayerUseTalentSpecUI()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_SpecializationInfo.CanPlayerUseTalentUI()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_SpecializationInfo.GetAllSelectedPvpTalentIDs()
 	return {} --[[number[]​]]
@@ -8877,19 +8885,19 @@ function C_Spell.DoesSpellExist()
 	return false
 end
 function C_Spell.GetDeadlyDebuffInfo()
-	return {warningText = setmetatable({}, {__index = string}), priority = 0, criticalTimeRemainingMs = nil --[[number?​]], soundKitID = nil --[[number?​]], criticalStacks = nil --[[number?​]]}
+	return {warningText = "", priority = 0, criticalTimeRemainingMs = nil --[[number?​]], soundKitID = nil --[[number?​]], criticalStacks = nil --[[number?​]]}
 end
 function C_Spell.GetMawPowerBorderAtlasBySpellID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetMawPowerLinkBySpellID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetOverrideSpell()
 	return 0
 end
 function C_Spell.GetSchoolString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetSpellAutoCast()
 	return false, false
@@ -8904,25 +8912,25 @@ function C_Spell.GetSpellCooldown()
 	return {modRate = 0, startTime = 0, isEnabled = false, duration = 0}
 end
 function C_Spell.GetSpellDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetSpellIDForSpellIdentifier()
 	return 0
 end
 function C_Spell.GetSpellInfo()
-	return {maxRange = 0, castTime = 0, name = setmetatable({}, {__index = string}), spellID = 0, iconID = setmetatable({}, {__index = integer}), minRange = 0, originalIconID = setmetatable({}, {__index = integer})}
+	return {maxRange = 0, castTime = 0, name = "", spellID = 0, iconID = 0, minRange = 0, originalIconID = 0}
 end
 function C_Spell.GetSpellLevelLearned()
 	return 0
 end
 function C_Spell.GetSpellLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetSpellLossOfControlCooldown()
 	return 0, 0
 end
 function C_Spell.GetSpellName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetSpellPowerCost()
 	return {} --[[SpellPowerCostInfo[]​]]
@@ -8934,13 +8942,13 @@ function C_Spell.GetSpellSkillLineAbilityRank()
 	return 0
 end
 function C_Spell.GetSpellSubtext()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.GetSpellTexture()
-	return setmetatable({}, {__index = integer}), setmetatable({}, {__index = integer})
+	return 0, 0
 end
 function C_Spell.GetSpellTradeSkillLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Spell.IsAutoAttackSpell()
 	return false
@@ -9040,22 +9048,22 @@ function C_SpellBook.GetSpellBookItemCooldown()
 	return {modRate = 0, startTime = 0, isEnabled = false, duration = 0}
 end
 function C_SpellBook.GetSpellBookItemDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_SpellBook.GetSpellBookItemInfo()
-	return {subName = setmetatable({}, {__index = string}), isPassive = false, skillLineIndex = nil --[[number?​]], actionID = 0, name = setmetatable({}, {__index = string}), isOffSpec = false, iconID = setmetatable({}, {__index = integer}), itemType = 0 --[[Enum.SpellBookItemType​]], spellID = nil --[[number?​]]}
+	return {subName = "", isPassive = false, skillLineIndex = nil --[[number?​]], actionID = 0, name = "", isOffSpec = false, iconID = 0, itemType = 0 --[[Enum.SpellBookItemType​]], spellID = nil --[[number?​]]}
 end
 function C_SpellBook.GetSpellBookItemLevelLearned()
 	return 0
 end
 function C_SpellBook.GetSpellBookItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_SpellBook.GetSpellBookItemLossOfControlCooldown()
 	return 0, 0
 end
 function C_SpellBook.GetSpellBookItemName()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_SpellBook.GetSpellBookItemPowerCost()
 	return {} --[[SpellPowerCostInfo[]​]]
@@ -9064,22 +9072,22 @@ function C_SpellBook.GetSpellBookItemSkillLineIndex()
 	return nil --[[number?​]]
 end
 function C_SpellBook.GetSpellBookItemTexture()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function C_SpellBook.GetSpellBookItemTradeSkillLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_SpellBook.GetSpellBookItemType()
 	return 0 --[[Enum.SpellBookItemType​]], 0, nil --[[number?​]]
 end
 function C_SpellBook.GetSpellBookSkillLineInfo()
-	return {isGuild = false, itemIndexOffset = 0, shouldHide = false, name = setmetatable({}, {__index = string}), offSpecID = nil --[[number?​]], iconID = setmetatable({}, {__index = integer}), specID = nil --[[number?​]], numSpellBookItems = 0}
+	return {isGuild = false, itemIndexOffset = 0, shouldHide = false, name = "", offSpecID = nil --[[number?​]], iconID = 0, specID = nil --[[number?​]], numSpellBookItems = 0}
 end
 function C_SpellBook.GetTrackedNameplateCooldownSpells()
 	return {} --[[number[]​]]
 end
 function C_SpellBook.HasPetSpells()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function C_SpellBook.IsAutoAttackSpellBookItem()
 	return false
@@ -9188,7 +9196,7 @@ function C_SummonInfo.ConfirmSummon()
 	return
 end
 function C_SummonInfo.GetSummonConfirmAreaName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_SummonInfo.GetSummonConfirmSummoner()
 	return nil --[[string?​]]
@@ -9216,13 +9224,13 @@ function C_SuperTrack.GetHighestPrioritySuperTrackingType()
 	return nil --[[(Enum.SuperTrackingType)?​]]
 end
 function C_SuperTrack.GetNextWaypointForMap()
-	return 0, 0, setmetatable({}, {__index = string})
+	return 0, 0, ""
 end
 function C_SuperTrack.GetSuperTrackedContent()
 	return 0 --[[Enum.ContentTrackingType​]], 0
 end
 function C_SuperTrack.GetSuperTrackedItemName()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_SuperTrack.GetSuperTrackedMapPin()
 	return 0 --[[Enum.SuperTrackingMapPinType​]], 0
@@ -9297,7 +9305,7 @@ function C_TTSSettings.GetVoiceOptionID()
 	return 0
 end
 function C_TTSSettings.GetVoiceOptionName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TTSSettings.MarkCharacterSettingsSaved()
 	return
@@ -9359,7 +9367,7 @@ function C_TaskQuest.GetQuestIconUIWidgetSet()
 	return 0
 end
 function C_TaskQuest.GetQuestInfoByQuestID()
-	return setmetatable({}, {__index = string}), nil --[[number?​]], nil --[[boolean?​]], nil --[[boolean?​]]
+	return "", nil --[[number?​]], nil --[[boolean?​]], nil --[[boolean?​]]
 end
 function C_TaskQuest.GetQuestLocation()
 	return 0, 0
@@ -9418,10 +9426,10 @@ function C_Texture.GetAtlasInfo()
 	return {filename = nil --[[string?​]], rawSize = setmetatable({}, {__index = Vector2DMixin}), rightTexCoord = 0, leftTexCoord = 0, bottomTexCoord = 0, topTexCoord = 0, width = 0, sliceData = nil --[[UITextureSliceData?​]], file = nil --[[integer?​]], tilesVertically = false, height = 0, tilesHorizontally = false}
 end
 function C_Texture.GetCraftingReagentQualityChatIcon()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Texture.GetFilenameFromFileDataID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Texture.GetTitleIconTexture()
 	return
@@ -9728,7 +9736,7 @@ function C_ToyBox.GetToyFromIndex()
 	return 0
 end
 function C_ToyBox.GetToyInfo()
-	return 0, setmetatable({}, {__index = string}), 0, false, false, 0 --[[Enum.ItemQuality​]]
+	return 0, "", 0, false, false, 0 --[[Enum.ItemQuality​]]
 end
 function C_ToyBox.GetToyLink()
 	return nil --[[string?​]]
@@ -9859,7 +9867,7 @@ function C_TradeSkillUI.GetAllRecipeIDs()
 	return {} --[[number[]​]]
 end
 function C_TradeSkillUI.GetBaseProfessionInfo()
-	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = setmetatable({}, {__index = string}), skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = setmetatable({}, {__index = string}), professionID = 0, parentProfessionID = nil --[[number?​]]}
+	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = "", skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = "", professionID = 0, parentProfessionID = nil --[[number?​]]}
 end
 function C_TradeSkillUI.GetCategories()
 	return {} --[[number[]​]]
@@ -9868,7 +9876,7 @@ function C_TradeSkillUI.GetCategoryInfo()
 	return magicFake("table")
 end
 function C_TradeSkillUI.GetChildProfessionInfo()
-	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = setmetatable({}, {__index = string}), skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = setmetatable({}, {__index = string}), professionID = 0, parentProfessionID = nil --[[number?​]]}
+	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = "", skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = "", professionID = 0, parentProfessionID = nil --[[number?​]]}
 end
 function C_TradeSkillUI.GetChildProfessionInfos()
 	return {} --[[ProfessionInfo[]​]]
@@ -9955,16 +9963,16 @@ function C_TradeSkillUI.GetProfessionForCursorItem()
 	return nil --[[(Enum.Profession)?​]]
 end
 function C_TradeSkillUI.GetProfessionInfoByRecipeID()
-	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = setmetatable({}, {__index = string}), skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = setmetatable({}, {__index = string}), professionID = 0, parentProfessionID = nil --[[number?​]]}
+	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = "", skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = "", professionID = 0, parentProfessionID = nil --[[number?​]]}
 end
 function C_TradeSkillUI.GetProfessionInfoBySkillLineID()
-	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = setmetatable({}, {__index = string}), skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = setmetatable({}, {__index = string}), professionID = 0, parentProfessionID = nil --[[number?​]]}
+	return {isPrimaryProfession = false, profession = nil --[[(Enum.Profession)?​]], professionName = "", skillLevel = 0, sourceCounter = 0, skillModifier = 0, maxSkillLevel = 0, parentProfessionName = nil --[[string?​]], expansionName = "", professionID = 0, parentProfessionID = nil --[[number?​]]}
 end
 function C_TradeSkillUI.GetProfessionInventorySlots()
 	return {} --[[number[]​]]
 end
 function C_TradeSkillUI.GetProfessionNameForSkillLineAbility()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetProfessionSkillLineID()
 	return 0
@@ -9979,22 +9987,22 @@ function C_TradeSkillUI.GetQualitiesForRecipe()
 	return nil --[[number[]?​]]
 end
 function C_TradeSkillUI.GetReagentDifficultyText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetReagentRequirementItemIDs()
 	return {} --[[number[]​]]
 end
 function C_TradeSkillUI.GetReagentSlotStatus()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_TradeSkillUI.GetRecipeCooldown()
 	return
 end
 function C_TradeSkillUI.GetRecipeDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetRecipeFixedReagentItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetRecipeInfo()
 	return nil --[[TradeSkillRecipeInfo?​]]
@@ -10006,7 +10014,7 @@ function C_TradeSkillUI.GetRecipeItemLevelFilter()
 	return
 end
 function C_TradeSkillUI.GetRecipeItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetRecipeItemNameFilter()
 	return
@@ -10021,7 +10029,7 @@ function C_TradeSkillUI.GetRecipeQualityItemIDs()
 	return nil --[[number[]?​]]
 end
 function C_TradeSkillUI.GetRecipeQualityReagentItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetRecipeRepeatCount()
 	return 0
@@ -10030,7 +10038,7 @@ function C_TradeSkillUI.GetRecipeRequirements()
 	return {} --[[CraftingRecipeRequirement[]​]]
 end
 function C_TradeSkillUI.GetRecipeSchematic()
-	return {icon = 0, quantityMax = 0, productQuality = nil --[[number?​]], hasCraftingOperationInfo = false, quantityMin = 0, recipeID = 0, recipeType = nil --[[(Enum.TradeskillRecipeType)?​]], name = setmetatable({}, {__index = string}), reagentSlotSchematics = {} --[[CraftingReagentSlotSchematic[]​]], outputItemID = nil --[[number?​]], isRecraft = false}
+	return {icon = 0, quantityMax = 0, productQuality = nil --[[number?​]], hasCraftingOperationInfo = false, quantityMin = 0, recipeID = 0, recipeType = nil --[[(Enum.TradeskillRecipeType)?​]], name = "", reagentSlotSchematics = {} --[[CraftingReagentSlotSchematic[]​]], outputItemID = nil --[[number?​]], isRecraft = false}
 end
 function C_TradeSkillUI.GetRecipeSourceText()
 	return
@@ -10066,10 +10074,10 @@ function C_TradeSkillUI.GetSubCategories()
 	return
 end
 function C_TradeSkillUI.GetTradeSkillDisplayName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TradeSkillUI.GetTradeSkillLineForRecipe()
-	return 0, setmetatable({}, {__index = string}), 0
+	return 0, "", 0
 end
 function C_TradeSkillUI.GetTradeSkillListLink()
 	return nil --[[string?​]]
@@ -10223,7 +10231,7 @@ function C_TradeSkillUI.StopRecipeRepeat()
 end
 C_Traits = {}
 function C_Traits.CanEditConfig()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function C_Traits.CanPurchaseRank()
 	return false
@@ -10247,10 +10255,10 @@ function C_Traits.ConfigHasStagedChanges()
 	return false
 end
 function C_Traits.GenerateImportString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Traits.GenerateInspectImportString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Traits.GetConditionInfo()
 	return {ranksGranted = nil --[[number?​]], isMet = false, type = 0, playerLevel = nil --[[number?​]], isGate = false, traitCondAccountElementID = nil --[[number?​]], specSetID = nil --[[number?​]], traitCurrencyID = nil --[[number?​]], isSufficient = false, spentAmountRequired = nil --[[number?​]], achievementID = nil --[[number?​]], tooltipFormat = nil --[[string?​]], isAlwaysMet = false, questID = nil --[[number?​]], condID = 0}
@@ -10262,7 +10270,7 @@ function C_Traits.GetConfigIDByTreeID()
 	return 0
 end
 function C_Traits.GetConfigInfo()
-	return {name = setmetatable({}, {__index = string}), treeIDs = {} --[[number[]​]], usesSharedActionBars = false, ID = 0, type = 0 --[[Enum.TraitConfigType​]]}
+	return {name = "", treeIDs = {} --[[number[]​]], usesSharedActionBars = false, ID = 0, type = 0 --[[Enum.TraitConfigType​]]}
 end
 function C_Traits.GetConfigsByType()
 	return {} --[[number[]​]]
@@ -10298,7 +10306,7 @@ function C_Traits.GetTraitCurrencyInfo()
 	return 0, 0, nil --[[number?​]], nil --[[number?​]]
 end
 function C_Traits.GetTraitDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_Traits.GetTraitSystemFlags()
 	return 0
@@ -10407,7 +10415,7 @@ function C_Transmog.GetSlotInfo()
 	return false, false, false, false, 0, false, false, nil --[[integer?​]]
 end
 function C_Transmog.GetSlotUseError()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function C_Transmog.GetSlotVisualInfo()
 	return 0, 0, 0, 0, 0, 0, false, false, 0
@@ -10474,13 +10482,13 @@ function C_TransmogCollection.GetAppearanceSourceDrops()
 	return {} --[[TransmogAppearanceJournalEncounterInfo[]​]]
 end
 function C_TransmogCollection.GetAppearanceSourceInfo()
-	return 0 --[[Enum.TransmogCollectionType​]], 0, false, setmetatable({}, {__index = integer}), false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), nil --[[number?​]], 0
+	return 0 --[[Enum.TransmogCollectionType​]], 0, false, 0, false, "", "", nil --[[number?​]], 0
 end
 function C_TransmogCollection.GetAppearanceSources()
 	return {} --[[AppearanceSourceInfo[]​]]
 end
 function C_TransmogCollection.GetArtifactAppearanceStrings()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_TransmogCollection.GetCategoryAppearances()
 	return {} --[[TransmogCategoryAppearanceInfo[]​]]
@@ -10492,7 +10500,7 @@ function C_TransmogCollection.GetCategoryForItem()
 	return 0 --[[Enum.TransmogCollectionType​]]
 end
 function C_TransmogCollection.GetCategoryInfo()
-	return setmetatable({}, {__index = string}), nil --[[boolean?​]], nil --[[boolean?​]], nil --[[boolean?​]], nil --[[boolean?​]], nil --[[boolean?​]]
+	return "", nil --[[boolean?​]], nil --[[boolean?​]], nil --[[boolean?​]], nil --[[boolean?​]], nil --[[boolean?​]]
 end
 function C_TransmogCollection.GetCategoryTotal()
 	return 0
@@ -10513,10 +10521,10 @@ function C_TransmogCollection.GetFilteredCategoryTotal()
 	return 0
 end
 function C_TransmogCollection.GetIllusionInfo()
-	return {isUsable = false, isHideVisual = false, visualID = 0, sourceID = 0, icon = setmetatable({}, {__index = integer}), isCollected = false}
+	return {isUsable = false, isHideVisual = false, visualID = 0, sourceID = 0, icon = 0, isCollected = false}
 end
 function C_TransmogCollection.GetIllusionStrings()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), nil --[[string?​]]
+	return "", "", nil --[[string?​]]
 end
 function C_TransmogCollection.GetIllusions()
 	return {} --[[TransmogIllusionInfo[]​]]
@@ -10543,10 +10551,10 @@ function C_TransmogCollection.GetNumTransmogSources()
 	return 0
 end
 function C_TransmogCollection.GetOutfitHyperlinkFromItemTransmogInfoList()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TransmogCollection.GetOutfitInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer})
+	return "", 0
 end
 function C_TransmogCollection.GetOutfitItemTransmogInfoList()
 	return {} --[[ItemTransmogInfoMixin[]​]]
@@ -10558,7 +10566,7 @@ function C_TransmogCollection.GetPairedArtifactAppearance()
 	return 0
 end
 function C_TransmogCollection.GetSourceIcon()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function C_TransmogCollection.GetSourceInfo()
 	return {isValidSourceForPlayer = false, playerCanCollect = false, meetsTransmogPlayerCondition = nil --[[boolean?​]], sourceID = 0, itemModID = 0, invType = nil --[[number?​]], quality = nil --[[number?​]], categoryID = nil --[[(Enum.TransmogCollectionType)?​]], isHideVisual = nil --[[boolean?​]], itemID = 0, sourceType = nil --[[number?​]], inventorySlot = nil --[[number?​]], name = nil --[[string?​]], useErrorType = nil --[[(Enum.TransmogUseErrorType)?​]], visualID = 0, useError = nil --[[string?​]], isCollected = false}
@@ -10567,7 +10575,7 @@ function C_TransmogCollection.GetSourceItemID()
 	return 0
 end
 function C_TransmogCollection.GetSourceRequiredHoliday()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_TransmogCollection.GetUncollectedShown()
 	return false
@@ -10709,7 +10717,7 @@ function C_TransmogSets.GetLatestSource()
 	return 0
 end
 function C_TransmogSets.GetSetInfo()
-	return {baseSetID = nil --[[number?​]], setID = 0, label = nil --[[string?​]], hiddenUntilCollected = false, description = nil --[[string?​]], expansionID = 0, classMask = 0, uiOrder = 0, patchID = 0, validForCharacter = false, name = setmetatable({}, {__index = string}), favorite = false, limitedTimeSet = false, requiredFaction = nil --[[string?​]], collected = false}
+	return {baseSetID = nil --[[number?​]], setID = 0, label = nil --[[string?​]], hiddenUntilCollected = false, description = nil --[[string?​]], expansionID = 0, classMask = 0, uiOrder = 0, patchID = 0, validForCharacter = false, name = "", favorite = false, limitedTimeSet = false, requiredFaction = nil --[[string?​]], collected = false}
 end
 function C_TransmogSets.GetSetNewSources()
 	return {} --[[number[]​]]
@@ -11121,7 +11129,7 @@ function C_VoiceChat.GetMasterVolumeScale()
 	return 0
 end
 function C_VoiceChat.GetMemberGUID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_VoiceChat.GetMemberID()
 	return nil --[[number?​]]
@@ -11308,16 +11316,16 @@ function C_WeeklyRewards.GetActivityEncounterInfo()
 	return {} --[[WeeklyRewardActivityEncounterInfo[]​]]
 end
 function C_WeeklyRewards.GetConquestWeeklyProgress()
-	return {maxUnlocks = 0, displayType = 0 --[[Enum.ConquestProgressBarDisplayType​]], maxProgress = 0, sampleItemHyperlink = setmetatable({}, {__index = string}), unlocksCompleted = 0, progress = 0}
+	return {maxUnlocks = 0, displayType = 0 --[[Enum.ConquestProgressBarDisplayType​]], maxProgress = 0, sampleItemHyperlink = "", unlocksCompleted = 0, progress = 0}
 end
 function C_WeeklyRewards.GetDifficultyIDForActivityTier()
 	return 0
 end
 function C_WeeklyRewards.GetExampleRewardItemHyperlinks()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function C_WeeklyRewards.GetItemHyperlink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function C_WeeklyRewards.GetNextActivitiesIncrease()
 	return false, nil --[[number?​]], nil --[[number?​]], nil --[[number?​]]
@@ -11522,7 +11530,7 @@ function C_WowTokenUI.StartTokenSell()
 end
 C_XMLUtil = {}
 function C_XMLUtil.GetTemplateInfo()
-	return {keyValues = {} --[[XMLTemplateKeyValue[]​]], inherits = nil --[[string?​]], type = setmetatable({}, {__index = string}), sourceLocation = setmetatable({}, {__index = string}), height = 0, width = 0}
+	return {keyValues = {} --[[XMLTemplateKeyValue[]​]], inherits = nil --[[string?​]], type = "", sourceLocation = "", height = 0, width = 0}
 end
 function C_XMLUtil.GetTemplates()
 	return {} --[[XMLTemplateListInfo[]​]]
@@ -11788,7 +11796,7 @@ function CannotBeResurrected()
 	return
 end
 function CaseAccentInsensitiveParse()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function CastPetAction()
 	return
@@ -12026,10 +12034,10 @@ function CollapseWarGameHeader()
 end
 ColorMixin = {}
 function ColorMixin.GenerateHexColor()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ColorMixin.GenerateHexColorMarkup()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ColorMixin.GetRGB()
 	return 0, 0, 0
@@ -12053,7 +12061,7 @@ function ColorMixin.SetRGBA()
 	return
 end
 function ColorMixin.WrapTextInColorCode()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function CombatLogAddFilter()
 	return
@@ -12066,10 +12074,10 @@ function CombatLogClearEntries()
 end
 CombatLogFont = setmetatable({}, {__index = Font})
 function CombatLogGetCurrentEntry()
-	return 0, setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, magicFake("any")
+	return 0, "", false, "", "", 0, 0, "", "", 0, 0, magicFake("any")
 end
 function CombatLogGetCurrentEventInfo()
-	return 0, setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, magicFake("any")
+	return 0, "", false, "", "", 0, 0, "", "", 0, 0, magicFake("any")
 end
 function CombatLogGetNumEntries()
 	return
@@ -12193,14 +12201,13 @@ function ContinuableContainer.Create()
 	return magicFake("table")
 end
 function ContinuableContainer.GetNumOutstandingLoads()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function ContinuableContainer.RecheckEvictableContinuables()
 	return false
 end
 ContinuableContainer.continuables = {}
 ContinuableContainer.evictableObjects = {}
-ContinuableContainer.numOutstanding = setmetatable({}, {__index = integer})
 function ContinuableContainer.onContinuableLoadedCallback()
 	return
 end
@@ -12218,10 +12225,10 @@ function CreateAndInitFromMixin()
 	return magicFake("<T>")
 end
 function CreateAtlasMarkup()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function CreateAtlasMarkupWithAtlasSize()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function CreateColor()
 	return setmetatable({}, {__index = ColorMixin})
@@ -12248,7 +12255,7 @@ function CreateNewRaidProfile()
 	return
 end
 function CreateTextureMarkup()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function CreateVector2D()
 	return setmetatable({}, {__index = Vector2DMixin})
@@ -12312,7 +12319,7 @@ function DeclineGuild()
 	return
 end
 function DeclineName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function DeclineQuest()
 	return
@@ -12439,7 +12446,7 @@ function EJ_GetContentTuningID()
 	return 0
 end
 function EJ_GetCreatureInfo()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0
+	return 0, "", "", 0, 0, 0
 end
 function EJ_GetCurrentTier()
 	return 0
@@ -12448,19 +12455,19 @@ function EJ_GetDifficulty()
 	return 0
 end
 function EJ_GetEncounterInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), 0, 0, 0
+	return "", "", 0, 0, "", 0, 0, 0
 end
 function EJ_GetEncounterInfoByIndex()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), 0, 0, 0
+	return "", "", 0, 0, "", 0, 0, 0
 end
 function EJ_GetInstanceByIndex()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), false, 0
+	return 0, "", "", 0, 0, 0, 0, 0, "", false, 0
 end
 function EJ_GetInstanceForMap()
 	return 0
 end
 function EJ_GetInstanceInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), false, 0
+	return "", "", 0, 0, 0, 0, 0, "", false, 0
 end
 function EJ_GetInvTypeSortOrder()
 	return 0
@@ -12469,7 +12476,7 @@ function EJ_GetLootFilter()
 	return 0, 0
 end
 function EJ_GetMapEncounter()
-	return 0, 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string})
+	return 0, 0, 0, "", "", 0, 0, ""
 end
 function EJ_GetNumEncountersForLootByIndex()
 	return 0
@@ -12487,7 +12494,7 @@ function EJ_GetSearchProgress()
 	return 0
 end
 function EJ_GetSearchResult()
-	return 0, 0, 0, 0, 0, setmetatable({}, {__index = string})
+	return 0, 0, 0, 0, 0, ""
 end
 function EJ_GetSearchSize()
 	return 0
@@ -12496,7 +12503,7 @@ function EJ_GetSectionPath()
 	return 0, nil --[[number?​]], nil --[[number?​]]
 end
 function EJ_GetTierInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function EJ_HandleLinkPath()
 	return 0, nil --[[number?​]], nil --[[number?​]], nil --[[number?​]]
@@ -12603,7 +12610,6 @@ EmbeddedItemTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTemp
 EmbeddedItemTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 EmbeddedItemTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 EmbeddedItemTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-EmbeddedItemTooltip.textLeft1Font = setmetatable({}, {__index = string})
 EmbeddedItemTooltipGarrisonFollowerTooltip = {}
 EmbeddedItemTooltipStatusBar = {}
 EmbeddedItemTooltipTextLeft1 = {}
@@ -12646,7 +12652,6 @@ EmbeddedItemTooltipTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltip
 EmbeddedItemTooltipTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 EmbeddedItemTooltipTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 EmbeddedItemTooltipTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-EmbeddedItemTooltipTooltip.textLeft1Font = setmetatable({}, {__index = string})
 EmbeddedItemTooltipTooltipStatusBar = {}
 EmbeddedItemTooltipTooltipTextLeft1 = {}
 EmbeddedItemTooltipTooltipTextLeft2 = {}
@@ -12698,7 +12703,7 @@ function EnumerateFrames()
 	return nil --[[Frame?​]]
 end
 function EnumerateServerChannels()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function EquipCursorItem()
 	return
@@ -12725,7 +12730,7 @@ function EventFrameMixin.OnSizeChanged_Intrinsic()
 end
 EventRegistry = setmetatable({}, {__index = CallbackRegistryMixin})
 function EventRegistry.GetEventCounts()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function EventRegistry.OnAttributeChanged()
 	return
@@ -12843,22 +12848,22 @@ function ForfeitDuel()
 	return
 end
 function FormatFraction()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function FormatLargeNumber()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function FormatPercentage()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function FormatShortDate()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function FormatUnreadMailTooltip()
 	return
 end
 function FormatValueWithSign()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function FrameDeltaLerp()
 	return 0
@@ -13066,7 +13071,6 @@ GameNoHeaderTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTemp
 GameNoHeaderTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 GameNoHeaderTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 GameNoHeaderTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-GameNoHeaderTooltip.textLeft1Font = setmetatable({}, {__index = string})
 GameNoHeaderTooltipStatusBar = {}
 GameNoHeaderTooltipTextLeft1 = {}
 GameNoHeaderTooltipTextLeft2 = {}
@@ -13109,7 +13113,6 @@ GameSmallHeaderTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtT
 GameSmallHeaderTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 GameSmallHeaderTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 GameSmallHeaderTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-GameSmallHeaderTooltip.textLeft1Font = setmetatable({}, {__index = string})
 GameSmallHeaderTooltipStatusBar = {}
 GameSmallHeaderTooltipTextLeft1 = {}
 GameSmallHeaderTooltipTextLeft2 = {}
@@ -13496,7 +13499,6 @@ GameTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTemplate_Sha
 GameTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 GameTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 GameTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-GameTooltip.textLeft1Font = setmetatable({}, {__index = string})
 GameTooltipDataMixin = setmetatable({}, {__index = TooltipDataHandlerMixin})
 function GameTooltipDataMixin.GetItem()
 	return
@@ -13523,7 +13525,6 @@ function GameTooltipDataMixin.SetWorldCursor()
 	return
 end
 GameTooltipDefaultContainer = {}
-GameTooltipDefaultContainer.system = setmetatable({}, {__index = integer})
 GameTooltipGarrisonFollowerTooltip = {}
 GameTooltipHeader = setmetatable({}, {__index = Font})
 GameTooltipHeaderText = setmetatable({}, {__index = Font})
@@ -13570,7 +13571,6 @@ GameTooltipTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTempl
 GameTooltipTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 GameTooltipTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 GameTooltipTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-GameTooltipTooltip.textLeft1Font = setmetatable({}, {__index = string})
 GameTooltipTooltipStatusBar = {}
 GameTooltipTooltipTextLeft1 = {}
 GameTooltipTooltipTextLeft2 = {}
@@ -13635,22 +13635,22 @@ function GetAchievementComparisonInfo()
 	return false, 0, 0, 0
 end
 function GetAchievementCriteriaInfo()
-	return setmetatable({}, {__index = string}), 0, false, 0, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), 0, false, 0, 0
+	return "", 0, false, 0, 0, "", 0, 0, "", 0, false, 0, 0
 end
 function GetAchievementCriteriaInfoByID()
-	return setmetatable({}, {__index = string}), 0, false, 0, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), 0, false, 0, 0
+	return "", 0, false, 0, 0, "", 0, 0, "", 0, false, 0, 0
 end
 function GetAchievementGuildRep()
 	return
 end
 function GetAchievementInfo()
-	return 0, setmetatable({}, {__index = string}), 0, false, 0, 0, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), false, false, setmetatable({}, {__index = string}), false
+	return 0, "", 0, false, 0, 0, 0, "", 0, 0, "", false, false, "", false
 end
 function GetAchievementInfoFromHyperlink()
 	return nil --[[number?​]], nil --[[boolean?​]]
 end
 function GetAchievementLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetAchievementNumCriteria()
 	return 0
@@ -13686,19 +13686,19 @@ function GetActionCount()
 	return 0
 end
 function GetActionInfo()
-	return setmetatable({}, {__index = string}), magicFake("string|number"), setmetatable({}, {__index = string})
+	return "", magicFake("string|number"), ""
 end
 function GetActionLossOfControlCooldown()
 	return 0, 0
 end
 function GetActionText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetActionTexture()
 	return nil --[[integer?​]]
 end
 function GetActiveArtifactByRace()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string})
+	return "", "", "", "", "", 0, ""
 end
 function GetActiveLevel()
 	return
@@ -13725,13 +13725,13 @@ function GetAddOnEnableState()
 	return 0
 end
 function GetAddOnInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false
+	return "", "", "", false, "", "", false
 end
 function GetAddOnMemoryUsage()
 	return 0
 end
 function GetAddOnMetadata()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetAddOnOptionalDependencies()
 	return magicFake("unknown")
@@ -13743,25 +13743,25 @@ function GetAlternativeDefaultLanguage()
 	return
 end
 function GetArchaeologyInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetArchaeologyRaceInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, 0
+	return "", 0, 0, 0, 0, 0
 end
 function GetArchaeologyRaceInfoByID()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, 0
+	return "", 0, 0, 0, 0, 0
 end
 function GetAreaSpiritHealerTime()
 	return 0
 end
 function GetAreaText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetArenaOpponentSpec()
 	return 0, 0
 end
 function GetArtifactInfoByRace()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), 0, 0
+	return "", "", 0, "", "", 0, "", 0, 0
 end
 function GetArtifactProgress()
 	return 0, 0, 0
@@ -13782,7 +13782,7 @@ function GetAutoDeclineGuildInvites()
 	return false
 end
 function GetAutoQuestPopUp()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function GetAvailableBandwidth()
 	return 0
@@ -13794,7 +13794,7 @@ function GetAvailableLocaleInfo()
 	return {} --[[LocaleInfo[]​]]
 end
 function GetAvailableLocales()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetAvailableQuestInfo()
 	return false, 0, false, false, 0, false
@@ -13833,16 +13833,16 @@ function GetBattlefieldPortExpiration()
 	return 0
 end
 function GetBattlefieldScore()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, setmetatable({}, {__index = string})
+	return "", 0, 0, 0, 0, 0, "", "", "", 0, 0, 0, 0, 0, 0, ""
 end
 function GetBattlefieldStatData()
 	return 0
 end
 function GetBattlefieldStatus()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, false, false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false
+	return "", "", 0, false, false, "", "", "", false, "", "", false
 end
 function GetBattlefieldTeamInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0
+	return "", 0, 0, 0
 end
 function GetBattlefieldTimeWaited()
 	return 0
@@ -13851,7 +13851,7 @@ function GetBattlefieldWinner()
 	return nil --[[number?​]]
 end
 function GetBattlegroundInfo()
-	return setmetatable({}, {__index = string}), false, false, false, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", false, false, false, 0, "", 0, 0, "", 0, "", "", 0
 end
 function GetBattlegroundPoints()
 	return 0, 0
@@ -13866,22 +13866,22 @@ function GetBillingTimeRested()
 	return 0
 end
 function GetBindLocation()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetBinding()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), nil --[[string?​]], nil --[[string?​]], nil --[[string?​]]
+	return "", "", nil --[[string?​]], nil --[[string?​]], nil --[[string?​]]
 end
 function GetBindingAction()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetBindingByKey()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetBindingKey()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetBindingText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetBlockChance()
 	return 0
@@ -13893,7 +13893,7 @@ function GetBonusBarOffset()
 	return 0
 end
 function GetBuildInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", "", "", 0, "", ""
 end
 function GetButtonMetatable()
 	return magicFake("table")
@@ -13917,7 +13917,7 @@ function GetCVarDefault()
 	return nil --[[string?​]]
 end
 function GetCVarInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, false
+	return "", "", false, false, false, false, false
 end
 function GetCallPetSpellInfo()
 	return
@@ -13935,7 +13935,7 @@ function GetCategoryAchievementPoints()
 	return
 end
 function GetCategoryInfo()
-	return setmetatable({}, {__index = string}), 0, 0
+	return "", 0, 0
 end
 function GetCategoryList()
 	return {} --[[number[]​]]
@@ -13947,25 +13947,25 @@ function GetCemeteryPreference()
 	return 0
 end
 function GetChannelDisplayInfo()
-	return setmetatable({}, {__index = string}), false, nil --[[boolean?​]], nil --[[number?​]], nil --[[number?​]], nil --[[boolean?​]], setmetatable({}, {__index = string}), 0
+	return "", false, nil --[[boolean?​]], nil --[[number?​]], nil --[[number?​]], nil --[[boolean?​]], "", 0
 end
 function GetChannelList()
-	return 0, setmetatable({}, {__index = string}), false, magicFake("unknown")
+	return 0, "", false, magicFake("unknown")
 end
 function GetChannelName()
-	return 0, setmetatable({}, {__index = string}), 0, false
+	return 0, "", 0, false
 end
 function GetChatTypeIndex()
 	return 0
 end
 function GetChatWindowChannels()
-	return setmetatable({}, {__index = string}), 0, magicFake("any")
+	return "", 0, magicFake("any")
 end
 function GetChatWindowInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, false, false, 0, false
+	return "", 0, 0, 0, 0, 0, false, false, 0, false
 end
 function GetChatWindowMessages()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetChatWindowSavedDimensions()
 	return
@@ -13974,19 +13974,19 @@ function GetChatWindowSavedPosition()
 	return
 end
 function GetClassColor()
-	return 0, 0, 0, setmetatable({}, {__index = string})
+	return 0, 0, 0, ""
 end
 function GetClassColorObj()
-	return {GenerateHexColorMarkup = magicFake("function"), GetRGB = magicFake("function"), GenerateHexColor = magicFake("function"), r = 0, SetRGB = magicFake("function"), IsEqualTo = magicFake("function"), g = 0, b = 0, a = nil --[[number?​]], WrapTextInColorCode = magicFake("function"), GetRGBAAsBytes = magicFake("function"), GetRGBA = magicFake("function"), SetRGBA = magicFake("function"), GetRGBAsBytes = magicFake("function"), colorStr = setmetatable({}, {__index = string})}
+	return {GenerateHexColorMarkup = magicFake("function"), GetRGB = magicFake("function"), GenerateHexColor = magicFake("function"), r = 0, SetRGB = magicFake("function"), IsEqualTo = magicFake("function"), g = 0, b = 0, a = nil --[[number?​]], WrapTextInColorCode = magicFake("function"), GetRGBAAsBytes = magicFake("function"), GetRGBA = magicFake("function"), SetRGBA = magicFake("function"), GetRGBAsBytes = magicFake("function"), colorStr = ""}
 end
 function GetClassColoredTextForUnit()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetClassIDFromSpecID()
 	return nil --[[number?​]]
 end
 function GetClassInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", "", 0
 end
 function GetClassicExpansionLevel()
 	return 0
@@ -13998,13 +13998,13 @@ function GetClientDisplayExpansionLevel()
 	return 0
 end
 function GetCoinIcon()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function GetCoinText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCoinTextureString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCombatRating()
 	return nil --[[number?​]]
@@ -14019,7 +14019,7 @@ function GetComboPoints()
 	return 0
 end
 function GetCompanionInfo()
-	return 0, setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, 0
+	return 0, "", 0, "", false, 0
 end
 function GetComparisonAchievementPoints()
 	return
@@ -14028,7 +14028,7 @@ function GetComparisonCategoryNumAchievements()
 	return
 end
 function GetComparisonStatistic()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCorpseRecoveryDelay()
 	return 0
@@ -14049,10 +14049,10 @@ function GetCriteriaSpell()
 	return
 end
 function GetCurrenciesString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCurrencyString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCurrentArenaSeason()
 	return 0
@@ -14070,7 +14070,7 @@ function GetCurrentGlyphNameForSpell()
 	return
 end
 function GetCurrentGraphicsAPI()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCurrentGraphicsSetting()
 	return
@@ -14088,7 +14088,7 @@ function GetCurrentRegion()
 	return 0
 end
 function GetCurrentRegionName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetCurrentScaledResolution()
 	return
@@ -14112,10 +14112,10 @@ function GetDailyQuestsCompleted()
 	return
 end
 function GetDeathRecapLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetDefaultLanguage()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function GetDefaultScale()
 	return 0
@@ -14127,7 +14127,7 @@ function GetDetailedItemLevelInfo()
 	return 0, false, 0
 end
 function GetDifficultyInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, nil --[[number?​]], false, nil --[[number?​]], nil --[[number?​]]
+	return "", "", false, false, false, false, nil --[[number?​]], false, nil --[[number?​]], nil --[[number?​]]
 end
 function GetDodgeChance()
 	return 0
@@ -14154,7 +14154,7 @@ function GetErrorCallstackHeight()
 	return nil --[[number?​]]
 end
 function GetEventTime()
-	return 0, 0, setmetatable({}, {__index = string}), 0
+	return 0, 0, "", 0
 end
 function GetExistingSocketInfo()
 	return
@@ -14190,7 +14190,7 @@ function GetFailedTalentIDs()
 	return
 end
 function GetFileIDFromPath()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function GetFileStreamingStatus()
 	return 0
@@ -14202,7 +14202,7 @@ function GetFinalAtlasFromTextureKitIfExists()
 	return nil --[[string?​]]
 end
 function GetFinalNameFromTextureKit()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetFlexRaidDungeonInfo()
 	return
@@ -14211,10 +14211,10 @@ function GetFlyoutID()
 	return
 end
 function GetFlyoutInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, false
+	return "", "", 0, false
 end
 function GetFlyoutSlotInfo()
-	return 0, 0, false, setmetatable({}, {__index = string}), 0
+	return 0, 0, false, "", 0
 end
 function GetFollowerTypeIDFromSpell()
 	return
@@ -14247,13 +14247,13 @@ function GetGMTicket()
 	return
 end
 function GetGameMessageInfo()
-	return setmetatable({}, {__index = string}), nil --[[number?​]], nil --[[number?​]]
+	return "", nil --[[number?​]], nil --[[number?​]]
 end
 function GetGameTime()
 	return 0, 0
 end
 function GetGraphicsAPIs()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetGraphicsCVarValueForQualityLevel()
 	return
@@ -14280,19 +14280,19 @@ function GetGuildBankItemInfo()
 	return 0, 0, false, false, 0
 end
 function GetGuildBankItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetGuildBankMoney()
 	return 0
 end
 function GetGuildBankMoneyTransaction()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0
+	return "", "", 0, 0, 0, 0, 0
 end
 function GetGuildBankTabCost()
 	return
 end
 function GetGuildBankTabInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, 0, 0, false
+	return "", "", false, false, 0, 0, false
 end
 function GetGuildBankTabPermissions()
 	return false, false, false, 0
@@ -14301,7 +14301,7 @@ function GetGuildBankText()
 	return
 end
 function GetGuildBankTransaction()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0
+	return "", "", "", 0, 0, 0, 0, 0, 0, 0
 end
 function GetGuildBankWithdrawGoldLimit()
 	return 0
@@ -14325,7 +14325,7 @@ function GetGuildFactionGroup()
 	return
 end
 function GetGuildInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, nil --[[string?​]]
+	return "", "", 0, nil --[[string?​]]
 end
 function GetGuildInfoText()
 	return
@@ -14352,7 +14352,7 @@ function GetGuildRecipeInfoPostQuery()
 	return 0, 0, 0
 end
 function GetGuildRecipeMember()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function GetGuildRenameRequired()
 	return
@@ -14361,7 +14361,7 @@ function GetGuildRewardInfo()
 	return
 end
 function GetGuildRosterInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, 0, setmetatable({}, {__index = string}), 0, 0, false, false, 0, setmetatable({}, {__index = string})
+	return "", "", 0, 0, "", "", "", "", false, 0, "", 0, 0, false, false, 0, ""
 end
 function GetGuildRosterLargestAchievementPoints()
 	return
@@ -14370,7 +14370,7 @@ function GetGuildRosterLastOnline()
 	return 0, 0, 0, 0
 end
 function GetGuildRosterMOTD()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetGuildRosterSelection()
 	return 0
@@ -14382,13 +14382,13 @@ function GetGuildTabardFiles()
 	return 0, 0, 0, 0, 0, 0
 end
 function GetGuildTradeSkillInfo()
-	return 0, false, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, 0
+	return 0, false, "", "", 0, 0, 0, "", "", "", false, "", 0, "", false, 0
 end
 function GetHaste()
 	return 0
 end
 function GetHighlightedNumberDifferenceString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetHitModifier()
 	return 0
@@ -14397,22 +14397,22 @@ function GetHomePartyInfo()
 	return magicFake("table")
 end
 function GetInboxHeaderInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, false, false, false, false, false
+	return "", "", "", "", 0, 0, 0, 0, false, false, false, false, false
 end
 function GetInboxInvoiceInfo()
 	return nil --[[string?​]], nil --[[string?​]], nil --[[string?​]], 0, 0, 0, 0
 end
 function GetInboxItem()
-	return setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), 0, 0, false
+	return "", 0, "", 0, 0, false
 end
 function GetInboxItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetInboxNumItems()
 	return 0, 0
 end
 function GetInboxText()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false
+	return "", "", "", false, false, false
 end
 function GetInspectArenaData()
 	return 0, 0, 0, 0, 0
@@ -14433,13 +14433,13 @@ function GetInstanceBootTimeRemaining()
 	return 0
 end
 function GetInstanceInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), 0, 0, nil --[[boolean?​]], 0, 0, nil --[[number?​]]
+	return "", "", 0, "", 0, 0, nil --[[boolean?​]], 0, 0, nil --[[number?​]]
 end
 function GetInstanceLockTimeRemaining()
 	return 0, false, 0, 0
 end
 function GetInstanceLockTimeRemainingEncounter()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false
+	return "", "", false, false
 end
 function GetInventoryAlertStatus()
 	return 0
@@ -14469,22 +14469,22 @@ function GetInventoryItemQuality()
 	return 0 --[[Enum.ItemQuality​]]
 end
 function GetInventoryItemTexture()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function GetInventoryItemsForSlot()
 	return magicFake("table")
 end
 function GetInventorySlotInfo()
-	return 0, setmetatable({}, {__index = string}), false
+	return 0, "", false
 end
 function GetInviteConfirmationInfo()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, 0, 0, 0
+	return 0, "", "", false, false, 0, 0, 0
 end
 function GetItemChildInfo()
 	return {} --[[number[]​]]
 end
 function GetItemClassInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetItemCooldown()
 	return 0, 0, false
@@ -14493,43 +14493,43 @@ function GetItemCount()
 	return 0
 end
 function GetItemCreationContext()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function GetItemFamily()
 	return nil --[[number?​]]
 end
 function GetItemGem()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function GetItemIcon()
 	return nil --[[integer?​]]
 end
 function GetItemInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0 --[[Enum.ItemQuality​]], 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, 0, 0, 0, nil --[[number?​]], false
+	return "", "", 0 --[[Enum.ItemQuality​]], 0, 0, "", "", 0, "", 0, 0, 0, 0, 0, 0, nil --[[number?​]], false
 end
 function GetItemInfoFromHyperlink()
 	return nil --[[number?​]], nil --[[string?​]]
 end
 function GetItemInfoInstant()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0
+	return 0, "", "", "", 0, 0, 0
 end
 function GetItemInventorySlotInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetItemLevelColor()
 	return 0, 0, 0
 end
 function GetItemQualityColor()
-	return 0, 0, 0, setmetatable({}, {__index = string})
+	return 0, 0, 0, ""
 end
 function GetItemSetInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetItemSpecInfo()
 	return {} --[[number[]​]]
 end
 function GetItemSpell()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function GetItemStatDelta()
 	return magicFake("table")
@@ -14538,7 +14538,7 @@ function GetItemStats()
 	return magicFake("table")
 end
 function GetItemSubClassInfo()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function GetItemUniqueness()
 	return 0, 0
@@ -14571,7 +14571,7 @@ function GetLFDRoleRestrictions()
 	return
 end
 function GetLFGBootProposal()
-	return false, false, false, setmetatable({}, {__index = string}), 0, 0, 0, setmetatable({}, {__index = string})
+	return false, false, false, "", 0, 0, 0, ""
 end
 function GetLFGCategoryForID()
 	return
@@ -14589,10 +14589,10 @@ function GetLFGDeserterExpiration()
 	return nil --[[number?​]]
 end
 function GetLFGDungeonEncounterInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false
+	return "", "", false, false
 end
 function GetLFGDungeonInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), false, 0, 0, false, setmetatable({}, {__index = string}), 0, false, 0
+	return "", 0, 0, 0, 0, 0, 0, 0, 0, 0, "", 0, 0, "", false, 0, 0, false, "", 0, false, 0
 end
 function GetLFGDungeonNumEncounters()
 	return 0, 0
@@ -14628,7 +14628,7 @@ function GetLFGInviteRoleRestrictions()
 	return
 end
 function GetLFGProposal()
-	return false, 0, 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, 0, 0, 0, false, false, 0
+	return false, 0, 0, 0, "", "", "", false, 0, 0, 0, false, false, 0
 end
 function GetLFGProposalEncounter()
 	return
@@ -14637,7 +14637,7 @@ function GetLFGProposalMember()
 	return
 end
 function GetLFGQueueStats()
-	return false, false, false, false, false, 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0
+	return false, false, false, false, false, 0, 0, 0, 0, 0, "", 0, 0, 0, 0, 0, 0, 0
 end
 function GetLFGQueuedList()
 	return
@@ -14646,7 +14646,7 @@ function GetLFGRandomCooldownExpiration()
 	return nil --[[number?​]]
 end
 function GetLFGRandomDungeonInfo()
-	return 0, setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), false, 0, 0, false, setmetatable({}, {__index = string}), 0, false
+	return 0, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, "", 0, 0, "", false, 0, 0, false, "", 0, false
 end
 function GetLFGReadyCheckUpdate()
 	return
@@ -14661,7 +14661,7 @@ function GetLFGRoleUpdate()
 	return
 end
 function GetLFGRoleUpdateBattlegroundInfo()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetLFGRoleUpdateMember()
 	return
@@ -14679,7 +14679,7 @@ function GetLFRChoiceOrder()
 	return magicFake("table")
 end
 function GetLanguageByIndex()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function GetLatestCompletedAchievements()
 	return
@@ -14706,7 +14706,7 @@ function GetLocalGameTime()
 	return 0, 0
 end
 function GetLocale()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetLooseMacroIcons()
 	return
@@ -14718,28 +14718,28 @@ function GetLootInfo()
 	return {} --[[table[]​]]
 end
 function GetLootMethod()
-	return setmetatable({}, {__index = string}), 0, 0
+	return "", 0, 0
 end
 function GetLootRollItemInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, false, false, false, false, 0, 0, 0, 0, false
+	return "", "", 0, 0, false, false, false, false, 0, 0, 0, 0, false
 end
 function GetLootRollItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetLootRollTimeLeft()
 	return nil --[[number?​]]
 end
 function GetLootSlotInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, false, false, 0, false
+	return "", "", 0, 0, 0, false, false, 0, false
 end
 function GetLootSlotLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetLootSlotType()
 	return 0
 end
 function GetLootSourceInfo()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function GetLootSpecialization()
 	return 0
@@ -14757,10 +14757,10 @@ function GetMacroIndexByName()
 	return 0
 end
 function GetMacroInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string})
+	return "", 0, ""
 end
 function GetMacroItem()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function GetMacroItemIcons()
 	return
@@ -14772,7 +14772,7 @@ function GetManaRegen()
 	return 0, 0
 end
 function GetMasterLootCandidate()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMastery()
 	return 0
@@ -14781,7 +14781,7 @@ function GetMasteryEffect()
 	return 0, 0
 end
 function GetMawPowerLinkBySpellID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMaxBattlefieldID()
 	return 0
@@ -14832,7 +14832,7 @@ function GetMerchantItemCostInfo()
 	return 0
 end
 function GetMerchantItemCostItem()
-	return setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", 0, "", ""
 end
 function GetMerchantItemID()
 	return 0
@@ -14847,19 +14847,19 @@ function GetMerchantNumItems()
 	return 0
 end
 function GetMicroIconForRole()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMinRenderScale()
 	return
 end
 function GetMinimapZoneText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMinimumExpansionLevel()
 	return 0
 end
 function GetMirrorTimerInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0, 0, setmetatable({}, {__index = string}), 0
+	return "", 0, 0, 0, 0, "", 0
 end
 function GetMirrorTimerProgress()
 	return nil --[[number?​]]
@@ -14868,7 +14868,7 @@ function GetModResilienceDamageReduction()
 	return 0
 end
 function GetModifiedClick()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetModifiedClickAction()
 	return
@@ -14877,7 +14877,7 @@ function GetMoney()
 	return 0
 end
 function GetMoneyString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMonitorAspectRatio()
 	return
@@ -14889,10 +14889,10 @@ function GetMonitorName()
 	return
 end
 function GetMouseButtonClicked()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMouseButtonName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetMouseFoci()
 	return {} --[[ScriptRegion[]​]]
@@ -14931,7 +14931,7 @@ function GetNextPendingInviteConfirmation()
 	return
 end
 function GetNormalizedRealmName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetNumActiveQuests()
 	return 0
@@ -15165,7 +15165,7 @@ function GetNumWarGameTypes()
 	return
 end
 function GetOSLocale()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetObjectiveText()
 	return
@@ -15234,7 +15234,7 @@ function GetPetActionCooldown()
 	return 0, 0, 0
 end
 function GetPetActionInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false, false, false, 0, false, false
+	return "", "", false, false, false, false, 0, false, false
 end
 function GetPetActionSlotUsable()
 	return false
@@ -15246,7 +15246,7 @@ function GetPetExperience()
 	return 0, 0
 end
 function GetPetFoodTypes()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetPetIcon()
 	return
@@ -15264,7 +15264,7 @@ function GetPetTimeRemaining()
 	return
 end
 function GetPetitionInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), false, 0
+	return "", "", "", 0, "", false, 0
 end
 function GetPetitionNameInfo()
 	return
@@ -15276,7 +15276,7 @@ function GetPlayerFacing()
 	return nil --[[number?​]]
 end
 function GetPlayerInfoByGUID()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", "", "", "", 0, "", ""
 end
 function GetPlayerTradeCurrency()
 	return
@@ -15285,7 +15285,7 @@ function GetPlayerTradeMoney()
 	return 0
 end
 function GetPossessInfo()
-	return setmetatable({}, {__index = string}), 0, false
+	return "", 0, false
 end
 function GetPowerBarColor()
 	return magicFake("unknown")
@@ -15309,13 +15309,13 @@ function GetPrimarySpecialization()
 	return
 end
 function GetProfessionInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0, 0
+	return "", "", 0, 0, 0, 0, 0, 0, 0, 0
 end
 function GetProfessions()
 	return 0, 0, 0, 0, 0
 end
 function GetProgressText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetPromotionRank()
 	return
@@ -15327,7 +15327,7 @@ function GetPvpPowerHealing()
 	return 0
 end
 function GetPvpTalentInfoByID()
-	return 0, setmetatable({}, {__index = string}), 0, false, false, 0, false, 0, 0, false, false
+	return 0, "", 0, false, false, 0, false, 0, 0, false, false
 end
 function GetPvpTalentInfoBySpecialization()
 	return
@@ -15351,19 +15351,19 @@ function GetQuestID()
 	return 0
 end
 function GetQuestItemInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0 --[[Enum.ItemQuality​]], false, 0
+	return "", 0, 0, 0 --[[Enum.ItemQuality​]], false, 0
 end
 function GetQuestItemInfoLootType()
 	return
 end
 function GetQuestItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetQuestLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetQuestLogChoiceInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0 --[[Enum.ItemQuality​]], false, 0
+	return "", 0, 0, 0 --[[Enum.ItemQuality​]], false, 0
 end
 function GetQuestLogChoiceInfoLootType()
 	return
@@ -15378,16 +15378,16 @@ function GetQuestLogItemDrop()
 	return
 end
 function GetQuestLogItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetQuestLogLeaderBoard()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false
+	return "", "", false
 end
 function GetQuestLogPortraitTurnIn()
 	return
 end
 function GetQuestLogQuestText()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function GetQuestLogQuestType()
 	return
@@ -15402,7 +15402,7 @@ function GetQuestLogRewardHonor()
 	return
 end
 function GetQuestLogRewardInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, false, 0, 0
+	return "", "", 0, 0, false, 0, 0
 end
 function GetQuestLogRewardMoney()
 	return 0
@@ -15429,7 +15429,7 @@ function GetQuestMoneyToGet()
 	return
 end
 function GetQuestObjectiveInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, 0, 0
+	return "", "", false, 0, 0
 end
 function GetQuestPOIBlobCount()
 	return
@@ -15465,7 +15465,7 @@ function GetQuestUiMapID()
 	return
 end
 function GetRFDungeonInfo()
-	return 0, setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0, 0, 0, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), false, 0, 0, false, setmetatable({}, {__index = string}), 0, false, 0
+	return 0, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, "", 0, 0, "", false, 0, 0, false, "", 0, false, 0
 end
 function GetRaidDifficultyID()
 	return nil --[[number?​]]
@@ -15483,7 +15483,7 @@ function GetRaidProfileSavedPosition()
 	return
 end
 function GetRaidRosterInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), nil --[[string?​]], false, false, setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string})
+	return "", 0, 0, 0, "", "", nil --[[string?​]], false, false, "", false, ""
 end
 function GetRaidTargetIndex()
 	return nil --[[number?​]]
@@ -15516,13 +15516,13 @@ function GetReagentBankCost()
 	return
 end
 function GetRealZoneText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetRealmID()
 	return 0
 end
 function GetRealmName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetReleaseTimeRemaining()
 	return 0
@@ -15534,7 +15534,7 @@ function GetResSicknessDuration()
 	return nil --[[string?​]]
 end
 function GetRestState()
-	return 0, setmetatable({}, {__index = string}), 0
+	return 0, "", 0
 end
 function GetRestrictedAccountData()
 	return 0, 0, 0
@@ -15576,7 +15576,7 @@ function GetRewardSkillPoints()
 	return
 end
 function GetRewardText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetRewardTitle()
 	return
@@ -15597,22 +15597,22 @@ function GetRunningMacroButton()
 	return
 end
 function GetSavedInstanceChatLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSavedInstanceEncounterInfo()
-	return setmetatable({}, {__index = string}), 0, false, false
+	return "", 0, false, false
 end
 function GetSavedInstanceInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0, false, false, 0, false, 0, setmetatable({}, {__index = string}), 0, 0, false, 0
+	return "", 0, 0, 0, false, false, 0, false, 0, "", 0, 0, false, 0
 end
 function GetSavedWorldBossInfo()
-	return setmetatable({}, {__index = string}), 0, 0
+	return "", 0, 0
 end
 function GetScenariosChoiceOrder()
 	return magicFake("table")
 end
 function GetSchoolString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetScreenDPIScale()
 	return 0
@@ -15627,7 +15627,7 @@ function GetSecondsUntilParentalControlsKick()
 	return nil --[[number?​]]
 end
 function GetSelectedArtifactInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = string}), 0, 0, 0
+	return "", "", 0, 0, "", 0, 0, 0
 end
 function GetSelectedDisplayChannel()
 	return
@@ -15639,10 +15639,10 @@ function GetSendMailCOD()
 	return 0
 end
 function GetSendMailItem()
-	return setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = integer}), 0, 0 --[[Enum.ItemQuality​]]
+	return "", 0, 0, 0, 0 --[[Enum.ItemQuality​]]
 end
 function GetSendMailItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSendMailMoney()
 	return
@@ -15672,7 +15672,7 @@ function GetShapeshiftFormID()
 	return 0
 end
 function GetShapeshiftFormInfo()
-	return setmetatable({}, {__index = string}), false, false, 0
+	return "", false, false, 0
 end
 function GetSheathState()
 	return nil --[[number?​]]
@@ -15684,13 +15684,13 @@ function GetSocketItemBoundTradeable()
 	return false
 end
 function GetSocketItemInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0 --[[Enum.ItemQuality​]]
+	return "", 0, 0 --[[Enum.ItemQuality​]]
 end
 function GetSocketItemRefundable()
 	return false
 end
 function GetSocketTypes()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSoundEntryCount()
 	return nil --[[number?​]]
@@ -15702,16 +15702,16 @@ function GetSpecialization()
 	return 0
 end
 function GetSpecializationInfo()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), 0
+	return 0, "", "", 0, "", 0
 end
 function GetSpecializationInfoByID()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return 0, "", "", 0, "", "", ""
 end
 function GetSpecializationInfoForClassID()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), false, false, nil --[[number?​]], nil --[[number?​]]
+	return 0, "", "", 0, "", false, false, nil --[[number?​]], nil --[[number?​]]
 end
 function GetSpecializationInfoForSpecID()
-	return 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), setmetatable({}, {__index = string}), false, false, nil --[[number?​]], nil --[[number?​]]
+	return 0, "", "", 0, "", false, false, nil --[[number?​]], nil --[[number?​]]
 end
 function GetSpecializationMasterySpells()
 	return 0, 0
@@ -15720,10 +15720,10 @@ function GetSpecializationNameForSpecID()
 	return nil --[[string?​]]
 end
 function GetSpecializationRole()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSpecializationRoleByID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSpecializationRoleEnum()
 	return
@@ -15750,7 +15750,7 @@ function GetSpellBonusHealing()
 	return 0
 end
 function GetSpellBookItemName()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", "", 0
 end
 function GetSpellCharges()
 	return 0, 0, 0, 0, 0
@@ -15768,13 +15768,13 @@ function GetSpellCritChance()
 	return 0
 end
 function GetSpellDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSpellHitModifier()
 	return 0
 end
 function GetSpellInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0
+	return "", "", 0, 0, 0, 0, 0, 0
 end
 function GetSpellPenetration()
 	return 0
@@ -15783,7 +15783,7 @@ function GetSpellQueueWindow()
 	return 0
 end
 function GetSpellTabInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, false, 0
+	return "", "", 0, 0, false, 0
 end
 function GetSpellTexture()
 	return 0
@@ -15795,10 +15795,10 @@ function GetStablePetFoodTypes()
 	return magicFake("unknown")
 end
 function GetStablePetInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", "", 0, "", ""
 end
 function GetStatistic()
-	return setmetatable({}, {__index = string}), false, setmetatable({}, {__index = string})
+	return "", false, ""
 end
 function GetStatisticsCategoryList()
 	return magicFake("table")
@@ -15807,7 +15807,7 @@ function GetSturdiness()
 	return 0
 end
 function GetSubZoneText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetSuggestedGroupSize()
 	return
@@ -15819,13 +15819,13 @@ function GetTabardInfo()
 	return
 end
 function GetTalentInfo()
-	return 0, setmetatable({}, {__index = string}), 0, false, false, 0, magicFake("any"), 0, 0, false, false
+	return 0, "", 0, false, false, 0, magicFake("any"), 0, 0, false, false
 end
 function GetTalentInfoByID()
-	return 0, setmetatable({}, {__index = string}), 0, false, false, 0, magicFake("any"), 0, 0, false, false
+	return 0, "", 0, false, false, 0, magicFake("any"), 0, 0, false, false
 end
 function GetTalentInfoBySpecialization()
-	return 0, setmetatable({}, {__index = string}), 0, false, false, 0, magicFake("any"), 0, 0, false, false
+	return 0, "", 0, false, false, 0, magicFake("any"), 0, 0, false, false
 end
 function GetTalentLink()
 	return
@@ -15864,10 +15864,10 @@ function GetTexCoordsForRole()
 	return 0, 0, 0, 0
 end
 function GetText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTextureInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, 0, 0, 0, 0, 0
+	return "", "", 0, 0, 0, 0, 0, 0, 0, 0
 end
 function GetThreatStatusColor()
 	return 0, 0, 0
@@ -15882,10 +15882,10 @@ function GetTimePreciseSec()
 	return 0
 end
 function GetTitleName()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function GetTitleText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTotalAchievementPoints()
 	return 0
@@ -15894,46 +15894,46 @@ function GetTotemCannotDismiss()
 	return nil --[[boolean?​]]
 end
 function GetTotemInfo()
-	return false, setmetatable({}, {__index = string}), 0, 0, setmetatable({}, {__index = integer})
+	return false, "", 0, 0, 0
 end
 function GetTotemTimeLeft()
 	return nil --[[number?​]]
 end
 function GetTradePlayerItemInfo()
-	return setmetatable({}, {__index = string}), 0, 0, 0 --[[Enum.ItemQuality​]], setmetatable({}, {__index = string}), false
+	return "", 0, 0, 0 --[[Enum.ItemQuality​]], "", false
 end
 function GetTradePlayerItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTradeTargetItemInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0, 0, 0, setmetatable({}, {__index = string})
+	return "", "", 0, 0, 0, ""
 end
 function GetTradeTargetItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTrainerGreetingText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTrainerSelectionIndex()
 	return 0
 end
 function GetTrainerServiceAbilityReq()
-	return setmetatable({}, {__index = string}), false
+	return "", false
 end
 function GetTrainerServiceCost()
 	return 0, 0, 0
 end
 function GetTrainerServiceDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTrainerServiceIcon()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function GetTrainerServiceInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", "", "", 0
 end
 function GetTrainerServiceItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTrainerServiceLevelReq()
 	return 0
@@ -15942,7 +15942,7 @@ function GetTrainerServiceNumAbilityReq()
 	return
 end
 function GetTrainerServiceSkillLine()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetTrainerServiceSkillReq()
 	return nil --[[string?​]], 0, false
@@ -15987,7 +15987,7 @@ function GetUnitMaxHealthModifier()
 	return 0
 end
 function GetUnitName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetUnitPowerBarInfo()
 	return {minPower = 0, flashAtMinPower = false, fractionalCounter = false, opaqueFlash = false, sparkUnderFrame = false, barType = 0, ID = 0, smooth = false, forcePercentage = false, anchorTop = false, hideFromOthers = false, startInset = 0, showOnRaid = false, endInset = 0, animateNumbers = false, opaqueSpark = false}
@@ -16002,10 +16002,10 @@ function GetUnitPowerBarStringsByID()
 	return nil --[[string?​]], nil --[[string?​]], nil --[[string?​]]
 end
 function GetUnitPowerBarTextureInfo()
-	return setmetatable({}, {__index = integer}), 0, 0, 0, 0
+	return 0, 0, 0, 0, 0
 end
 function GetUnitPowerBarTextureInfoByID()
-	return setmetatable({}, {__index = integer}), 0, 0, 0, 0
+	return 0, 0, 0, 0, 0
 end
 function GetUnitPowerModifier()
 	return 0
@@ -16020,7 +16020,7 @@ function GetVehicleBarIndex()
 	return
 end
 function GetVehicleUIIndicator()
-	return setmetatable({}, {__index = integer}), 0
+	return 0, 0
 end
 function GetVehicleUIIndicatorSeat()
 	return 0, 0, 0
@@ -16032,10 +16032,10 @@ function GetVideoCaps()
 	return
 end
 function GetVoidItemHyperlinkString()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GetVoidItemInfo()
-	return 0, setmetatable({}, {__index = string}), false, false, false, 0
+	return 0, "", false, false, false, 0
 end
 function GetVoidStorageSlotPageIndex()
 	return
@@ -16044,10 +16044,10 @@ function GetVoidTransferCost()
 	return 0
 end
 function GetVoidTransferDepositInfo()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function GetVoidTransferWithdrawalInfo()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function GetVoidUnlockCost()
 	return
@@ -16065,7 +16065,7 @@ function GetWebTicket()
 	return
 end
 function GetWorldElapsedTime()
-	return setmetatable({}, {__index = string}), 0, 0
+	return "", 0, 0
 end
 function GetWorldElapsedTimers()
 	return
@@ -16080,10 +16080,10 @@ function GetXPExhaustion()
 	return nil --[[number?​]]
 end
 function GetZonePVPInfo()
-	return setmetatable({}, {__index = string}), false, nil --[[string?​]]
+	return "", false, nil --[[string?​]]
 end
 function GetZoneText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GiveMasterLoot()
 	return
@@ -16107,7 +16107,7 @@ function GuildControlGetRank()
 	return
 end
 function GuildControlGetRankName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function GuildControlSaveRank()
 	return
@@ -16546,7 +16546,7 @@ function IsInGuildGroup()
 	return false
 end
 function IsInInstance()
-	return false, setmetatable({}, {__index = string})
+	return false, ""
 end
 function IsInJailersTower()
 	return false
@@ -16582,7 +16582,7 @@ function IsItemPreferredArmorType()
 	return false
 end
 function IsJailersTowerLayerTimeLocked()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function IsKeyDown()
 	return nil --[[boolean?​]]
@@ -16762,7 +16762,7 @@ function IsSpecializationActivateSpell()
 	return
 end
 function IsSpellClassOrSpec()
-	return nil --[[string?​]], setmetatable({}, {__index = string})
+	return nil --[[string?​]], ""
 end
 function IsSpellKnown()
 	return false
@@ -16949,10 +16949,10 @@ function ItemMixin.GetInventoryType()
 	return 0 --[[Enum.InventoryType​]]
 end
 function ItemMixin.GetInventoryTypeName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemMixin.GetItemGUID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemMixin.GetItemID()
 	return 0
@@ -16961,13 +16961,13 @@ function ItemMixin.GetItemIcon()
 	return 0
 end
 function ItemMixin.GetItemLink()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemMixin.GetItemLocation()
 	return setmetatable({}, {__index = ItemLocationMixin})
 end
 function ItemMixin.GetItemName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemMixin.GetItemQuality()
 	return 0 --[[Enum.ItemQuality​]]
@@ -17019,7 +17019,6 @@ ItemRefShoppingTooltip1.TextLeft1 = setmetatable({}, {__index = SharedTooltipArt
 ItemRefShoppingTooltip1.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 ItemRefShoppingTooltip1.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 ItemRefShoppingTooltip1.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-ItemRefShoppingTooltip1.textLeft1Font = setmetatable({}, {__index = string})
 ItemRefShoppingTooltip1TextLeft1 = {}
 ItemRefShoppingTooltip1TextLeft2 = {}
 ItemRefShoppingTooltip1TextLeft3 = {}
@@ -17063,7 +17062,6 @@ ItemRefShoppingTooltip2.TextLeft1 = setmetatable({}, {__index = SharedTooltipArt
 ItemRefShoppingTooltip2.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 ItemRefShoppingTooltip2.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 ItemRefShoppingTooltip2.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-ItemRefShoppingTooltip2.textLeft1Font = setmetatable({}, {__index = string})
 ItemRefShoppingTooltip2TextLeft1 = {}
 ItemRefShoppingTooltip2TextLeft2 = {}
 ItemRefShoppingTooltip2TextLeft3 = {}
@@ -17108,7 +17106,6 @@ ItemRefTooltip.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTemplate_
 ItemRefTooltip.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 ItemRefTooltip.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 ItemRefTooltip.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-ItemRefTooltip.textLeft1Font = setmetatable({}, {__index = string})
 ItemRefTooltipMixin = {}
 function ItemRefTooltipMixin.ItemRefSetHyperlink()
 	return
@@ -17174,16 +17171,16 @@ function ItemTextGetCreator()
 	return nil --[[string?​]]
 end
 function ItemTextGetItem()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemTextGetMaterial()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemTextGetPage()
 	return 0
 end
 function ItemTextGetText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ItemTextHasNextPage()
 	return false
@@ -17230,7 +17227,7 @@ function JoinLFG()
 	return
 end
 function JoinPermanentChannel()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function JoinRatedBattlefield()
 	return
@@ -17245,7 +17242,7 @@ function JoinSkirmish()
 	return
 end
 function JoinTemporaryChannel()
-	return 0, setmetatable({}, {__index = string})
+	return 0, ""
 end
 function JumpOrAscendStart()
 	return
@@ -17350,7 +17347,7 @@ function MapUtil.GetMapCenterOnMap()
 	return magicFake("number|nil"), magicFake("number|nil")
 end
 function MapUtil.GetMapParentInfo()
-	return {mapID = 0, name = setmetatable({}, {__index = string}), flags = 0 --[[Enum.UIMapFlag​]], mapType = 0 --[[Enum.UIMapType​]], parentMapID = 0}
+	return {mapID = 0, name = "", flags = 0 --[[Enum.UIMapFlag​]], mapType = 0 --[[Enum.UIMapType​]], parentMapID = 0}
 end
 function MapUtil.IsChildMap()
 	return false
@@ -17460,7 +17457,7 @@ function MenuUtil.CreateTitle()
 	return {GetSoundKit = magicFake("function"), GetOnEnter = magicFake("function"), CreateColorSwatch = magicFake("function"), SetResponse = magicFake("function"), SetCanSelect = magicFake("function"), CreateFrame = magicFake("function"), CreateDivider = magicFake("function"), ForceOpenSubmenu = magicFake("function"), DeactivateSubmenu = magicFake("function"), Pick = magicFake("function"), CreateTitle = magicFake("function"), SetResponder = magicFake("function"), QueueSpacer = magicFake("function"), SetTooltip = magicFake("function"), CreateTemplate = magicFake("function"), QueueTitle = magicFake("function"), SetTag = magicFake("function"), SetShouldRespondIfSubmenu = magicFake("function"), GetDefaultResponse = magicFake("function"), HookOnEnter = magicFake("function"), SetTitleAndTextTooltip = magicFake("function"), CreateSpacer = magicFake("function"), AddResetter = magicFake("function"), AddInitializer = magicFake("function"), IsSelected = magicFake("function"), SetSelectionIgnored = magicFake("function"), CanOpenSubmenu = magicFake("function"), CreateButton = magicFake("function"), SetShouldPlaySoundOnSubmenuClick = magicFake("function"), GetMinimumWidth = magicFake("function"), HandleOnEnter = magicFake("function"), SetElementFactory = magicFake("function"), ShouldRespondIfSubmenu = magicFake("function"), ShouldPollEnabled = magicFake("function"), ClearQueuedDescriptions = magicFake("function"), HookOnLeave = magicFake("function"), SetScrollMode = magicFake("function"), EnumerateElementDescriptions = magicFake("function"), SetOnEnter = magicFake("function"), IsRadio = magicFake("function"), GetTag = magicFake("function"), HandleOnLeave = magicFake("function"), GetOnLeave = magicFake("function"), SetMinimumWidth = magicFake("function"), CreateRadio = magicFake("function"), GetData = magicFake("function"), SetOnLeave = magicFake("function"), SetFinalInitializer = magicFake("function"), SetGridMode = magicFake("function"), CreateCheckbox = magicFake("function"), HookResponder = magicFake("function"), IsSelectionIgnored = magicFake("function"), QueueDivider = magicFake("function"), HasElements = magicFake("function"), AddQueuedDescription = magicFake("function"), SetData = magicFake("function"), SetRadio = magicFake("function"), ShouldPlaySoundOnSubmenuClick = magicFake("function"), CanSelect = magicFake("function"), SetFinalizeGridLayout = magicFake("function"), SetIsSelected = magicFake("function"), SetMaximumWidth = magicFake("function"), Insert = magicFake("function"), ClearQueueDescriptions = magicFake("function"), SetEnabled = magicFake("function"), IsEnabled = magicFake("function"), SetSoundKit = magicFake("function")}
 end
 function MenuUtil.GetElementText()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function MenuUtil.GetSelections()
 	return
@@ -17593,7 +17590,7 @@ function MinutesToSeconds()
 	return 0
 end
 function MinutesToTime()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 MissionCombatTextFontOutline = setmetatable({}, {__index = Font})
 function Mixin()
@@ -18054,10 +18051,10 @@ function PlayerLocationMixin.GetChatLineID()
 	return 0
 end
 function PlayerLocationMixin.GetGUID()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function PlayerLocationMixin.GetUnit()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function PlayerLocationMixin.GetVoiceID()
 	return 0, 0
@@ -18352,7 +18349,7 @@ function ReplaceEnchant()
 	return
 end
 function ReplaceGenderTokens()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ReplaceGuildMaster()
 	return
@@ -18510,7 +18507,7 @@ function RestoreRaidProfileFromCopy()
 	return
 end
 function ResurrectGetOfferer()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function ResurrectHasSickness()
 	return false
@@ -18604,19 +18601,19 @@ function SearchLFGSort()
 	return
 end
 function SecondsToClock()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function SecondsToMinutes()
 	return 0
 end
 function SecondsToTime()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function SecondsToTimeAbbrev()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function SecureCmdOptionParse()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function SelectActiveQuest()
 	return
@@ -18628,7 +18625,7 @@ function SelectTrainerService()
 	return
 end
 function SelectedRealmName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function SellCursorItem()
 	return
@@ -19023,7 +19020,6 @@ ShoppingTooltip1.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTemplat
 ShoppingTooltip1.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 ShoppingTooltip1.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 ShoppingTooltip1.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-ShoppingTooltip1.textLeft1Font = setmetatable({}, {__index = string})
 ShoppingTooltip1TextLeft1 = {}
 ShoppingTooltip1TextLeft2 = {}
 ShoppingTooltip1TextLeft3 = {}
@@ -19067,7 +19063,6 @@ ShoppingTooltip2.TextLeft1 = setmetatable({}, {__index = SharedTooltipArtTemplat
 ShoppingTooltip2.TextLeft2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextLeft2})
 ShoppingTooltip2.TextRight1 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight1})
 ShoppingTooltip2.TextRight2 = setmetatable({}, {__index = SharedTooltipArtTemplate_SharedTooltipArtTemplateTextRight2})
-ShoppingTooltip2.textLeft1Font = setmetatable({}, {__index = string})
 ShoppingTooltip2TextLeft1 = {}
 ShoppingTooltip2TextLeft2 = {}
 ShoppingTooltip2TextLeft3 = {}
@@ -19270,16 +19265,16 @@ function SpellMixin.ContinueWithCancelOnSpellLoad()
 	return magicFake("function")
 end
 function SpellMixin.GetSpellDescription()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function SpellMixin.GetSpellID()
 	return 0
 end
 function SpellMixin.GetSpellName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function SpellMixin.GetSpellSubtext()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function SpellMixin.IsSpellDataCached()
 	return false
@@ -19376,7 +19371,7 @@ function StrafeRightStop()
 	return
 end
 function StripHyperlinks()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function Stuck()
 	return
@@ -19552,10 +19547,10 @@ function TaxiNodeCost()
 	return 0
 end
 function TaxiNodeGetType()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function TaxiNodeName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function TaxiNodePosition()
 	return 0, 0
@@ -19694,7 +19689,7 @@ function TransmogLocationMixin.GetSlotID()
 	return 0
 end
 function TransmogLocationMixin.GetSlotName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function TransmogLocationMixin.IsAppearance()
 	return false
@@ -19782,10 +19777,10 @@ function UnitAttackSpeed()
 	return 0, nil --[[number?​]]
 end
 function UnitAura()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[string?​]], 0, 0, setmetatable({}, {__index = string}), false, false, 0, false, false, false, false, 0, magicFake("unknown")
+	return "", 0, 0, nil --[[string?​]], 0, 0, "", false, false, 0, false, false, false, false, 0, magicFake("unknown")
 end
 function UnitAuraBySlot()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[string?​]], 0, 0, setmetatable({}, {__index = string}), false, false, 0, false, false, false, false, 0, magicFake("unknown")
+	return "", 0, 0, nil --[[string?​]], 0, 0, "", false, false, 0, false, false, false, false, 0, magicFake("unknown")
 end
 function UnitAuraSlots()
 	return nil --[[number?​]], 0
@@ -19800,7 +19795,7 @@ function UnitBattlePetType()
 	return nil --[[number?​]]
 end
 function UnitBuff()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[string?​]], 0, 0, setmetatable({}, {__index = string}), false, false, 0, false, false, false, false, 0, magicFake("unknown")
+	return "", 0, 0, nil --[[string?​]], 0, 0, "", false, false, 0, false, false, false, false, 0, magicFake("unknown")
 end
 function UnitCanAssist()
 	return false
@@ -19815,37 +19810,37 @@ function UnitCanPetBattle()
 	return false
 end
 function UnitCastingInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, false, setmetatable({}, {__index = string}), false, 0
+	return "", "", 0, 0, 0, false, "", false, 0
 end
 function UnitChannelInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = integer}), 0, 0, false, false, 0, false, 0
+	return "", "", 0, 0, 0, false, false, 0, false, 0
 end
 function UnitChromieTimeID()
 	return 0
 end
 function UnitClass()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", "", 0
 end
 function UnitClassBase()
-	return setmetatable({}, {__index = string}), 0
+	return "", 0
 end
 function UnitClassification()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function UnitControllingVehicle()
 	return false
 end
 function UnitCreatureFamily()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function UnitCreatureType()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function UnitDamage()
 	return 0, 0, 0, 0, 0, 0, 0
 end
 function UnitDebuff()
-	return setmetatable({}, {__index = string}), 0, 0, nil --[[string?​]], 0, 0, setmetatable({}, {__index = string}), false, false, 0, false, false, false, false, 0, magicFake("unknown")
+	return "", 0, 0, nil --[[string?​]], 0, 0, "", false, false, 0, false, false, false, false, 0, magicFake("unknown")
 end
 function UnitDetailedThreatSituation()
 	return false, 0, 0, 0, 0
@@ -19860,10 +19855,10 @@ function UnitExists()
 	return false
 end
 function UnitFactionGroup()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function UnitFullName()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function UnitGUID()
 	return nil --[[string?​]]
@@ -19881,7 +19876,7 @@ function UnitGetTotalHealAbsorbs()
 	return 0
 end
 function UnitGroupRolesAssigned()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function UnitGroupRolesAssignedEnum()
 	return 0
@@ -20079,10 +20074,10 @@ function UnitLevel()
 	return 0
 end
 function UnitName()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function UnitNameUnmodified()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string})
+	return "", ""
 end
 function UnitNameplateShowsWidgetsOnly()
 	return false
@@ -20094,7 +20089,7 @@ function UnitOnTaxi()
 	return false
 end
 function UnitPVPName()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 function UnitPartialPower()
 	return 0
@@ -20133,7 +20128,7 @@ function UnitPowerMax()
 	return 0
 end
 function UnitPowerType()
-	return 0 --[[Enum.PowerType​]], setmetatable({}, {__index = string}), 0, 0, 0
+	return 0 --[[Enum.PowerType​]], "", 0, 0, 0
 end
 function UnitPvpClassification()
 	return nil --[[(Enum.PvPUnitClassification)?​]]
@@ -20145,7 +20140,7 @@ function UnitQuestTrivialLevelRangeScaling()
 	return 0
 end
 function UnitRace()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), 0
+	return "", "", 0
 end
 function UnitRangedAttackPower()
 	return 0, 0, 0
@@ -20217,10 +20212,10 @@ function UnitVehicleSeatCount()
 	return 0
 end
 function UnitVehicleSeatInfo()
-	return setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), setmetatable({}, {__index = string}), false, false
+	return "", "", "", false, false
 end
 function UnitVehicleSkin()
-	return setmetatable({}, {__index = integer})
+	return 0
 end
 function UnitWeaponAttackPower()
 	return 0, 0, 0
@@ -20416,12 +20411,6 @@ WARBOARD_OPTION_TEXT_COLOR = setmetatable({}, {__index = ColorMixin})
 WARNING_FONT_COLOR = setmetatable({}, {__index = ColorMixin})
 WEB_MAJOR_FACTION_COLOR = setmetatable({}, {__index = ColorMixin})
 WHITE_FONT_COLOR = setmetatable({}, {__index = ColorMixin})
-WOW_PROJECT_BURNING_CRUSADE_CLASSIC = setmetatable({}, {__index = integer})
-WOW_PROJECT_CATACLYSM_CLASSIC = setmetatable({}, {__index = integer})
-WOW_PROJECT_CLASSIC = setmetatable({}, {__index = integer})
-WOW_PROJECT_ID = setmetatable({}, {__index = integer})
-WOW_PROJECT_MAINLINE = setmetatable({}, {__index = integer})
-WOW_PROJECT_WRATH_CLASSIC = setmetatable({}, {__index = integer})
 function WarGameRespond()
 	return
 end
@@ -20437,92 +20426,8 @@ function Wrap()
 	return 0
 end
 function WrapTextInColorCode()
-	return setmetatable({}, {__index = string})
+	return ""
 end
 YELLOW_FONT_COLOR = setmetatable({}, {__index = ColorMixin})
 YELLOW_THREAT_COLOR = setmetatable({}, {__index = ColorMixin})
 ZoneTextFont = setmetatable({}, {__index = Font})
-function addframetext()
-	return
-end
-function debuglocals()
-	return nil --[[string?​]]
-end
-function debugprofilestart()
-	return
-end
-function debugprofilestop()
-	return 0
-end
-function debugstack()
-	return setmetatable({}, {__index = string})
-end
-function forceinsecure()
-	return
-end
-function geterrorhandler()
-	return magicFake("function")
-end
-function getglobal()
-	return magicFake("any")
-end
-function hooksecurefunc()
-	return
-end
-function issecure()
-	return false
-end
-function issecurevalue()
-	return false, nil --[[string?​]]
-end
-function issecurevariable()
-	return false, nil --[[string?​]]
-end
-function pcallwithenv()
-	return false
-end
-function ripairs()
-	return magicFake("function"), magicFake("table"), 0
-end
-function scrub()
-	return magicFake("boolean|string|number|nil")
-end
-function securecall()
-	return magicFake("any")
-end
-function securecallfunction()
-	return magicFake("any")
-end
-function secureexecuterange()
-	return
-end
-function seterrorhandler()
-	return
-end
-function setglobal()
-	return
-end
-function tAppendAll()
-	return
-end
-function tCompare()
-	return false
-end
-function tContains()
-	return false
-end
-function tDeleteItem()
-	return
-end
-function tFilter()
-	return magicFake("table")
-end
-function tIndexOf()
-	return nil --[[number?​]]
-end
-function tInvert()
-	return magicFake("table")
-end
-function tUnorderedRemove()
-	return
-end

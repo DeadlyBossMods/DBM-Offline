@@ -129,6 +129,16 @@ DOC = fileName -- export expects the DOC global
 local rootUri = furi.encode(fs.absolute(fs.path(fileName)):string())
 util.enableCloseFunction()
 
+print[[
+-- Auto-generated, do not edit by hand.
+-- Generation command:
+-- `./bin/lua-language-server <DBM-Offline path>/fake-generator.lua <vscode-wow-api path>/Annotations`
+
+---@meta _ -- Actually not a meta file as it gets run, but this surpresses warnings about duplicate definitions
+
+local magicFake = require "fakes.magicfake"
+]]
+
 ---@async
 lclient():start(function (client)
 	client:registerFakers()
@@ -137,6 +147,7 @@ lclient():start(function (client)
 	}
 	ws.awaitReady(rootUri)
 	await.sleep(0.1)
+	-- TODO: this misses some class definitions that are done via locals, e.g., the frame types (but we have our own fake for those)
 	local globals = export.gatherGlobals()
 	local docs = export.makeDocs(globals, function() end)
 	for i = #docs, 1, -1 do
@@ -153,6 +164,11 @@ lclient():start(function (client)
 				filtered = true
 			end
 		end
+		-- Globals that start with a lowercase letter aren't WoW API functions but core functions/Lua extensions that we need to re-implement instead of fake
+		-- Examples: getglobal, securecall, ...
+		if doc.name:match("^%l") then
+			filtered = true
+		end
 		if filtered then
 			table.remove(docs, i)
 		end
@@ -162,7 +178,7 @@ lclient():start(function (client)
 			learnType(doc)
 		elseif doc.type == "variable" then
 			local extends = doc.defines[1].extends
-			if extends and extends.view ~= "table" and extends.view ~= "function" and extends.view ~= "number" and extends.view ~= "boolean" then
+			if extends and extends.view ~= "table" and extends.view ~= "function" and extends.view ~= "string" and extends.view ~= "number" and extends.view ~= "integer" and extends.view ~= "boolean" then
 				classes[extends.view] = true
 			end
 		end
