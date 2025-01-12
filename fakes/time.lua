@@ -8,6 +8,10 @@ function GetTime()
 	return math.floor(tick / 100)
 end
 
+function GetServerTime()
+	return GetTime()
+end
+
 -- 100 ticks per frame, each tick advances GetTimePreciseSec() but GetTime() only advances once per frame
 function Tick(amount)
 	tick = tick + (amount or 1)
