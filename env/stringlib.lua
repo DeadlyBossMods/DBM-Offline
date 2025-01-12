@@ -3,6 +3,12 @@ function string.trim(str)
 end
 
 local function splitStringImpl(delim, str, pieces, offset)
+	if type(str) == "number" then
+		str = tostring(str)
+	end
+	if type(str) ~= "string" then
+		error("string.split(): expected string got " .. type(str))
+	end
 	local start = offset
 	while str:sub(start, start) == delim and start < #str do
 		start = start + 1
