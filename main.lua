@@ -12,6 +12,9 @@ end
 if not args.mods then
 	error("--mods <Path to DBM mod repo> is required")
 end
+if not args.dbm then
+	error("--dbm <Path to DBM main repo> is required")
+end
 if not args.tests then
 	args.tests = ""
 end
@@ -20,7 +23,7 @@ local version = require "fakes.version"
 
 version:LoadPreset(args.flavor)
 
-dbm:LoadCore("../DeadlyBossMods")
+dbm:LoadCore(args.dbm)
 
 local coreMods = {
 	["DBM-Core"] = true, ["DBM-GUI"] = true, ["DBM-StatusBarTimers"] = true, ["DBM-Test"] = true,

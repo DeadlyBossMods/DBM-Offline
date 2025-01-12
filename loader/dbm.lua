@@ -38,10 +38,10 @@ function dbmLoader:LoadCore(basePath)
 		error("DBM is already loaded")
 	end
 	loader:LoadAddOn(basePath .. "/DBM-StatusBarTimers/DBM-StatusBarTimers_" .. version.config.tocSuffix .. ".toc")
-	loader:LoadAddOn("../DeadlyBossMods/DBM-Core/DBM-Core_" .. version.config.tocSuffix .. ".toc", excludedFiles)
+	loader:LoadAddOn(basePath .. "/DBM-Core/DBM-Core_" .. version.config.tocSuffix .. ".toc", excludedFiles)
 	DBM:ADDON_LOADED("DBM-Core")
 	DBM.VoiceVersions["VEM"] = 10000 -- Usually loaded from toc metadata which isn't implemented (and we don't actually have VEM)
-	loader:LoadAddOn("../DeadlyBossMods/DBM-Test/DBM-Test_" .. version.config.tocSuffix .. ".toc")
+	loader:LoadAddOn(basePath .. "/DBM-Test/DBM-Test_" .. version.config.tocSuffix .. ".toc")
 	setupHooks()
 end
 
