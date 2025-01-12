@@ -10,7 +10,7 @@ local frameMt = {
 
 function CreateFrame(frameType, name, parent, template)
 	if type(name) == "string" then
-		name = name:gsub("^$parent", parent and tostring(parent:GetName()) or "UnknownParent")
+		name = name:gsub("^$parent", parent and parent.GetName and tostring(parent:GetName()) or "UnknownParent")
 	end
 	local obj = setmetatable({
 		type = frameType,
@@ -53,7 +53,7 @@ function frame:IsShown()
 end
 
 function frame:IsVisible()
-	return self:IsShown() and (not self.parent or self.parent:IsVisible())
+	return self:IsShown() and (not self.parent or not self.parent.IsVisible or self.parent:IsVisible())
 end
 
 function frame:GetName()
