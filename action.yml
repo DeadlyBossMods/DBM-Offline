@@ -15,11 +15,15 @@ inputs:
     default: DeadlyBossMods/DeadlyBossMods
   dbm-main-ref:
     default: ""
+  dbm-main-base-ref:
+    default: ""
   dbm-mod-repo:
     required: true
   dbm-mod-ref:
+    default: ""
     required: true
   dbm-mod-base-ref:
+    default: ""
     required: true
   upload-repo:
     required: true
@@ -52,6 +56,12 @@ runs:
         repository: ${{ inputs.dbm-main-repo }}
         ref: ${{ inputs.dbm-main-ref }}
         path: ./dbm-offline-diff/DeadlyBossMods
+    - name: Checkout DBM main repo (base)
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.dbm-main-repo }}
+        ref: ${{ inputs.dbm-main-base-ref }}
+        path: ./dbm-offline-diff/DeadlyBossMods-base
     - name: Download DBM dependencies
       uses: BigWigsMods/packager@master
       with:
@@ -60,31 +70,32 @@ runs:
       shell: bash
       run: |
         cp -r ./dbm-offline-diff/DeadlyBossMods/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods/DBM-Core/
+        # FIXME: this is slightly incorrect and won't work if a dependency was removed
+        cp -r ./dbm-offline-diff/DeadlyBossMods/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/
     - name: Checkout DBM mod repo
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.dbm-mod-repo }}
         ref: ${{ inputs.dbm-mod-ref }}
         path: ./dbm-offline-diff/mod-repo
-    - name: Run tests
-      shell: bash
-      run: |
-        cd dbm-offline-diff/DBM-Offline
-        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --mods ../mod-repo
-        mkdir -p ../results
-        mv reports ../results/new
-        rm -rf ../mod-repo
     - name: Checkout DBM mod repo (base)
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.dbm-mod-repo }}
         ref: ${{ inputs.dbm-mod-base-ref }}
-        path: ./dbm-offline-diff/mod-repo
+        path: ./dbm-offline-diff/mod-repo-base
+    - name: Run tests
+      shell: bash
+      run: |
+        cd dbm-offline-diff/DBM-Offline
+        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --dbm ../DeadlyBossMods --mods ../mod-repo
+        mkdir -p ../results
+        mv reports ../results/new
     - name: Run tests (Base)
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
-        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --mods ../mod-repo
+        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --dbm ../DeadlyBossMods-base --mods ../mod-repo-base
         mkdir -p ../results
         mv reports ../results/base
     - name: Upload reports
@@ -99,17 +110,17 @@ runs:
         git init .
         git config --global user.email "ci@deadlybossmods.com"
         git config --global user.name "DBM CI"
-        git checkout -b diff-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        git checkout -b diff-dbm-${{ inputs.dbm-main-base-ref }}-${{ inputs.dbm-main-ref }}-mod-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
         mv ../results/base reports
         rm -f reports/.gitignore
         git add reports/*
-        git commit -am "Test results at https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-base-ref }}"
+        git commit -am "Test results at https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-base-ref }} with https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-base-ref }}"
         rm -rf reports/
         mv ../results/new reports
         rm -f reports/.gitignore
         git add reports/*
-        git commit --allow-empty -am "Test results at https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-ref }}"
-        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} diff-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        git commit --allow-empty -am "Test results at https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-ref }} with https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-ref }}"
+        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} diff-dbm-${{ inputs.dbm-main-base-ref }}-${{ inputs.dbm-main-ref }}-mod-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
         sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
         echo 'diff<<EOFDelim' >> $GITHUB_OUTPUT
         cat ../summary.txt >> $GITHUB_OUTPUT
