@@ -1,9 +1,15 @@
 local fake = {}
 
-local function new(parent)
-	local depth = parent and parent.__magicFakeDepth or 0
+local function new(parentOrType)
+	local depth = 0
+	local fakedType
+	if type(parentOrType) == "table" then
+		depth = parentOrType.__magicFakeDepth or 0
+	elseif type(parentOrType) == "string" then
+		fakedType = parentOrType
+	end
 	if depth > 1000 then error("recursive calls into magic fake") end
-	return setmetatable({__magicFakeDepth = depth + 1}, fake)
+	return setmetatable({__magicFakeDepth = depth + 1, __fakedType = fakedType}, fake)
 end
 
 local function ret(val)
