@@ -37,7 +37,21 @@ local function diffTest(before, after)
 			diff.description = "Test has new errors."
 		else
 			diff.state = "Info"
-			diff.description = "Test output changed."
+			local messages = {}
+			if before.errors ~= after.errors then
+				messages[#messages + 1] = "Test has different errors than before."
+				diff.state = "Error"
+			end
+			if before.report ~= after.report then
+				messages[#messages + 1] = "Test report changed."
+			end
+			if before.addMsg ~= after.addMsg then
+				messages[#messages + 1] = "DBM:AddMsg() output changed."
+			end
+			if before.debug ~= after.debug then
+				messages[#messages + 1] = "DBM:Debug() output changed."
+			end
+			diff.description = table.concat(messages, " ")
 		end
 	elseif not after then
 		diff.state = "Info"
