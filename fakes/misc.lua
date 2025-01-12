@@ -33,6 +33,11 @@ function GetNumTalentTabs()
 	return 1
 end
 
+-- FIXME: should be fixed on warcraft.wiki.gg where it is incorrectly tagged as returning non-nil
+function GetSpecialization()
+	return nil
+end
+
 -- TODO: DBM-Test should probably mock this?
 function IsInGroup()
 	return true

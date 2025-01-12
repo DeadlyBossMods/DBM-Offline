@@ -6,7 +6,7 @@ function downloader:Cache(url, path)
 	if f then
 		f:close()
 	else
-		os.execute("mkdir -p " .. path:gsub("/[^/]*$", ""))
+		os.execute("mkdir -p '" .. path:gsub("/[^/]*$", "") .. "'")
 		f, err = io.open(path, "wb")
 		if not f then error(err) end
 		local curl, curlErr = io.popen(("curl '%s'"):format(url), "r")
