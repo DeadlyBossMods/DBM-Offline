@@ -26,7 +26,24 @@ function GetSpellInfo(id)
 	end
 end
 
-function IsSpellKnown() return false end
-function IsPlayerSpell() return false end
+C_Spell = C_Spell or {}
 
--- TODO: support the C_Spell variant
+function C_Spell.GetSpellInfo(id)
+	local spell = spells[id]
+	if spell then
+		return {maxRange = 0, castTime = 0, name = spell, spellID = id, iconID = 0, minRange = 0, originalIconID = 0}
+	end
+end
+
+function C_Spell.GetSpellName(id)
+	local info = C_Spell.GetSpellInfo(id)
+	return info and info.name
+end
+
+function C_Spell.DoesSpellExist(id)
+	return not not spells[id]
+end
+
+function C_Spell.GetSpellTexture(id)
+	return 0, 0
+end
