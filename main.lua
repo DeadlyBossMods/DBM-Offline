@@ -7,16 +7,20 @@ local log = require "logging"
 local args = (require "cli.args"):Parse(...)
 
 if not args.flavor then
-	error("--flavor is required")
+	error("--flavor <SoD|Retail> is required")
 end
 if not args.mods then
-	error("--mods is required")
+	error("--mods <Path to DBM mod repo> is required")
 end
 if not args.tests then
 	args.tests = ""
 end
 
-dbm:LoadCore("../DeadlyBossMods", args.flavor)
+local version = require "fakes.version"
+
+version:LoadPreset(args.flavor)
+
+dbm:LoadCore("../DeadlyBossMods")
 
 local coreMods = {
 	["DBM-Core"] = true, ["DBM-GUI"] = true, ["DBM-StatusBarTimers"] = true, ["DBM-Test"] = true,
@@ -24,14 +28,14 @@ local coreMods = {
 
 for entry in lfs.dir(args.mods) do
 	if entry:match("^DBM%-") and lfs.attributes(args.mods .. "/" .. entry).mode == "directory" and not coreMods[entry] then
-		dbm:LoadMod(args.mods, entry, args.flavor)
+		dbm:LoadMod(args.mods, entry)
 	end
 end
 
 
 local function runTest(name)
 	local dirName = "reports/" .. name:gsub("/", "-") .. "/"
-	os.execute("mkdir -p " .. dirName)
+	os.execute("mkdir -p '" .. dirName .. "'")
 	log:SetLogFiles{
 		debug = dirName .. "DBM-Debug.txt",
 		out = dirName .. "DBM-AddMsg.txt",

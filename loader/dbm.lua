@@ -3,6 +3,7 @@ require "fakes"
 require "wow-ui-source"
 local loader = require "loader"
 local log = require "logging"
+local version = require "fakes.version"
 
 local dbmLoader = {}
 
@@ -31,25 +32,24 @@ local function setupHooks()
 	DBM.Debug = logDbmDebug
 end
 
-function dbmLoader:LoadCore(basePath, flavor)
+function dbmLoader:LoadCore(basePath)
 	log("Loading DBM Core")
 	if DBM then
 		error("DBM is already loaded")
 	end
-	flavor = flavor or "Vanilla"
-	loader:LoadAddOn(basePath .. "/DBM-StatusBarTimers/DBM-StatusBarTimers_" .. flavor .. ".toc")
-	loader:LoadAddOn("../DeadlyBossMods/DBM-Core/DBM-Core_" .. flavor .. ".toc", excludedFiles)
+	loader:LoadAddOn(basePath .. "/DBM-StatusBarTimers/DBM-StatusBarTimers_" .. version.config.tocSuffix .. ".toc")
+	loader:LoadAddOn("../DeadlyBossMods/DBM-Core/DBM-Core_" .. version.config.tocSuffix .. ".toc", excludedFiles)
 	DBM:ADDON_LOADED("DBM-Core")
 	DBM.VoiceVersions["VEM"] = 10000 -- Usually loaded from toc metadata which isn't implemented (and we don't actually have VEM)
-	loader:LoadAddOn("../DeadlyBossMods/DBM-Test/DBM-Test_" .. flavor .. ".toc")
+	loader:LoadAddOn("../DeadlyBossMods/DBM-Test/DBM-Test_" .. version.config.tocSuffix .. ".toc")
 	setupHooks()
 end
 
-function dbmLoader:LoadMod(basePath, mod, flavor)
+function dbmLoader:LoadMod(basePath, mod)
 	log("Loading " .. mod)
 	-- TODO: We should be using DBM:LoadMod here for DBM mods, but that requires implementing more parts of C_AddOns
 	DBM.Test:OnBeforeLoadAddOn()
-	loader:LoadAddOn(basePath .. "/" .. mod .. "/" .. mod .. "_" .. flavor .. ".toc")
+	loader:LoadAddOn(basePath .. "/" .. mod .. "/" .. mod .. "_" .. version.config.tocSuffix .. ".toc")
 	DBM.Test:OnAfterLoadAddOn()
 end
 

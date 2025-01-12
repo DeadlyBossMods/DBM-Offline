@@ -2,9 +2,9 @@
 require "fakes.generated"
 -- Hand-maintained fakes
 require "fakes.magicfake"
+require "fakes.version"
 require "fakes.misc"
 require "fakes.spells"
 require "fakes.time"
-require "fakes.version"
 require "fakes.frame"
 require "fakes.libstub"
