@@ -136,6 +136,7 @@ runs:
         rm -rf dbm-offline-diff/upload-results/.git
     - name: Post comment
       uses: actions/github-script@v5
+      if: ${{ github.event_name == 'pull_request' }}
       with:
         github-token: ${{ inputs.comment-token }}
         script: |
