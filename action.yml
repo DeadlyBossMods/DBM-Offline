@@ -41,7 +41,9 @@ inputs:
   upload-token:
     required: true
   comment-token:
-    required: true
+    required: false
+  diff-mode:
+    default: "true"
 
 runs:
   using: composite
@@ -68,6 +70,7 @@ runs:
         ref: ${{ inputs.dbm-main-ref }}
         path: ./dbm-offline-diff/DeadlyBossMods-new
     - name: Checkout DBM main repo (Base)
+      if: ${{ inputs.diff-mode == 'true' }}
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.dbm-main-repo }}
@@ -82,7 +85,7 @@ runs:
       run: |
         cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-new/DBM-Core/
         # FIXME: this is slightly incorrect and won't work if a dependency was removed
-        cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/
+        cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/ || true
     - name: Checkout DBM-Vanilla (New)
       uses: actions/checkout@v4
       if: ${{ inputs.test-dbm-vanilla-mods }}
@@ -92,7 +95,7 @@ runs:
         path: ./dbm-offline-diff/DBM-Vanilla-new
     - name: Checkout DBM-Vanilla (Base)
       uses: actions/checkout@v4
-      if: ${{ inputs.test-dbm-vanilla-mods }}
+      if: ${{ inputs.test-dbm-vanilla-mods && inputs.diff-mode == 'true' }}
       with:
         repository: ${{ inputs.dbm-mod-repo-vanilla }}
         ref: ${{ inputs.dbm-mod-base-ref-vanilla }}
@@ -106,7 +109,7 @@ runs:
         path: ./dbm-offline-diff/DBM-Dungeons-new
     - name: Checkout DBM-Dungeons (Base)
       uses: actions/checkout@v4
-      if: ${{ inputs.test-dbm-dungeon-mods }}
+      if: ${{ inputs.test-dbm-dungeon-mods && inputs.diff-mode == 'true' }}
       with:
         repository: ${{ inputs.dbm-mod-repo-dungeons }}
         ref: ${{ inputs.dbm-mod-base-ref-dungeons }}
@@ -129,6 +132,7 @@ runs:
         mkdir -p ../results
         mv reports ../results/new
     - name: Run tests (Base)
+      if: ${{ inputs.diff-mode == 'true' }}
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
@@ -145,8 +149,9 @@ runs:
         done
         mkdir -p ../results
         mv reports ../results/base
-    - name: Upload reports
+    - name: Upload diff
       id: upload
+      if: ${{ inputs.diff-mode == 'true' }}
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
@@ -182,6 +187,25 @@ runs:
         cat ../summary.txt >> $GITHUB_STEP_SUMMARY
       env:
         gh_token: ${{ inputs.upload-token }}
+    - name: Upload test results
+      if: ${{ inputs.diff-mode == 'false' }}
+      shell: bash
+      run: |
+        cd dbm-offline-diff/
+        git clone https://github.com/${{ inputs.upload-repo }} upload-results
+        cd upload-results
+        git checkout ${{ inputs.upload-repo-branch }}
+        git config --global user.email "ci@deadlybossmods.com"
+        git config --global user.name "DBM CI"
+        mv ../results/new/* .
+        git add *
+        git commit --allow-empty -a -m "Test results" \
+          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-new rev-parse HEAD)" \
+          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/$(git -C ../DBM-Vanilla-new rev-parse HEAD)" \
+          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/$(git -C ../DBM-Dungeons-new rev-parse HEAD)"
+        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} ${{ inputs.upload-repo-branch }}
+      env:
+        gh_token: ${{ inputs.upload-token }}
     - name: Cleanup
       shell: bash
       if: always()
@@ -190,7 +214,7 @@ runs:
         rm -rf dbm-offline-diff/upload-results/.git
     - name: Post comment
       uses: actions/github-script@v5
-      if: ${{ github.event_name == 'pull_request' }}
+      if: ${{ github.event_name == 'pull_request' && inputs.diff-mode == 'true' }}
       with:
         github-token: ${{ inputs.comment-token }}
         script: |
