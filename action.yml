@@ -5,8 +5,6 @@ branding:
   color: blue
 
 inputs:
-  game-flavor:
-    required: true
   dbm-offline-repo:
     default: DeadlyBossMods/DBM-Offline
   dbm-offline-ref:
@@ -17,15 +15,28 @@ inputs:
     default: ""
   dbm-main-base-ref:
     default: ""
-  dbm-mod-repo:
-    required: true
-  dbm-mod-ref:
+  dbm-mod-repo-vanilla:
+    default: "DeadlyBossMods/DBM-Vanilla"
+  dbm-mod-ref-vanilla:
     default: ""
-    required: true
-  dbm-mod-base-ref:
+  dbm-mod-base-ref-vanilla:
     default: ""
-    required: true
+  dbm-mod-repo-dungeons:
+    default: "DeadlyBossMods/DBM-Dungeons"
+  dbm-mod-ref-dungeons:
+    default: ""
+  dbm-mod-base-ref-dungeons:
+    default: ""
+  test-dbm-core-mods:
+    default: false
+  test-dbm-vanilla-mods:
+    default: false
+  test-dbm-dungeon-mods:
+    default: false
   upload-repo:
+    default: "DeadlyBossMods/DBM-Test-Results"
+    required: true
+  upload-repo-branch:
     required: true
   upload-token:
     required: true
@@ -50,13 +61,13 @@ runs:
         repository: ${{ inputs.dbm-offline-repo }}
         ref: ${{ inputs.dbm-offline-ref }}
         path: ./dbm-offline-diff/DBM-Offline
-    - name: Checkout DBM main repo
+    - name: Checkout DBM main repo (New)
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.dbm-main-repo }}
         ref: ${{ inputs.dbm-main-ref }}
-        path: ./dbm-offline-diff/DeadlyBossMods
-    - name: Checkout DBM main repo (base)
+        path: ./dbm-offline-diff/DeadlyBossMods-new
+    - name: Checkout DBM main repo (Base)
       uses: actions/checkout@v4
       with:
         repository: ${{ inputs.dbm-main-repo }}
@@ -65,37 +76,73 @@ runs:
     - name: Download DBM dependencies
       uses: BigWigsMods/packager@master
       with:
-        args: -z -d -c -t ./dbm-offline-diff/DeadlyBossMods
+        args: -z -d -c -t ./dbm-offline-diff/DeadlyBossMods-new
     - name: Install DBM dependencies
       shell: bash
       run: |
-        cp -r ./dbm-offline-diff/DeadlyBossMods/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods/DBM-Core/
+        cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-new/DBM-Core/
         # FIXME: this is slightly incorrect and won't work if a dependency was removed
-        cp -r ./dbm-offline-diff/DeadlyBossMods/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/
-    - name: Checkout DBM mod repo
+        cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/
+    - name: Checkout DBM-Vanilla (New)
       uses: actions/checkout@v4
+      if: ${{ inputs.test-dbm-vanilla-mods }}
       with:
-        repository: ${{ inputs.dbm-mod-repo }}
-        ref: ${{ inputs.dbm-mod-ref }}
-        path: ./dbm-offline-diff/mod-repo
-    - name: Checkout DBM mod repo (base)
+        repository: ${{ inputs.dbm-mod-repo-vanilla }}
+        ref: ${{ inputs.dbm-mod-ref-vanilla }}
+        path: ./dbm-offline-diff/DBM-Vanilla-new
+    - name: Checkout DBM-Vanilla (Base)
       uses: actions/checkout@v4
+      if: ${{ inputs.test-dbm-vanilla-mods }}
       with:
-        repository: ${{ inputs.dbm-mod-repo }}
-        ref: ${{ inputs.dbm-mod-base-ref }}
-        path: ./dbm-offline-diff/mod-repo-base
-    - name: Run tests
+        repository: ${{ inputs.dbm-mod-repo-vanilla }}
+        ref: ${{ inputs.dbm-mod-base-ref-vanilla }}
+        path: ./dbm-offline-diff/DBM-Vanilla-base
+    - name: Checkout DBM-Dungeons (New)
+      uses: actions/checkout@v4
+      if: ${{ inputs.test-dbm-dungeon-mods }}
+      with:
+        repository: ${{ inputs.dbm-mod-repo-dungeons }}
+        ref: ${{ inputs.dbm-mod-ref-dungeons }}
+        path: ./dbm-offline-diff/DBM-Dungeons-new
+    - name: Checkout DBM-Dungeons (Base)
+      uses: actions/checkout@v4
+      if: ${{ inputs.test-dbm-dungeon-mods }}
+      with:
+        repository: ${{ inputs.dbm-mod-repo-dungeons }}
+        ref: ${{ inputs.dbm-mod-base-ref-dungeons }}
+        path: ./dbm-offline-diff/DBM-Dungeons-base
+    - name: Run tests (New)
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
-        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --dbm ../DeadlyBossMods --mods ../mod-repo
+        for flavor in Retail SoD; do
+          if [[ ${{ inputs.test-dbm-core-mods }} == true ]]; then
+            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-new --mods ../DeadlyBossMods-new
+          fi
+          if [[ ${{ inputs.test-dbm-vanilla-mods }} == true ]]; then
+            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-new --mods ../DBM-Vanilla-new
+          fi
+          if [[ ${{ inputs.test-dbm-dungeon-mods }} == true ]]; then
+            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-new --mods ../DBM-Dungeons-new
+          fi
+        done
         mkdir -p ../results
         mv reports ../results/new
     - name: Run tests (Base)
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
-        lua5.1 main.lua --flavor ${{ inputs.game-flavor }} --dbm ../DeadlyBossMods-base --mods ../mod-repo-base
+        for flavor in Retail SoD; do
+          if [[ ${{ inputs.test-dbm-core-mods }} == true ]]; then
+            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-base --mods ../DeadlyBossMods-base
+          fi
+          if [[ ${{ inputs.test-dbm-vanilla-mods }} == true ]]; then
+            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-base --mods ../DBM-Vanilla-base
+          fi
+          if [[ ${{ inputs.test-dbm-dungeon-mods }} == true ]]; then
+            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-base --mods ../DBM-Dungeons-base
+          fi
+        done
         mkdir -p ../results
         mv reports ../results/base
     - name: Upload reports
@@ -110,17 +157,23 @@ runs:
         git init .
         git config --global user.email "ci@deadlybossmods.com"
         git config --global user.name "DBM CI"
-        git checkout -b diff-dbm-${{ inputs.dbm-main-base-ref }}-${{ inputs.dbm-main-ref }}-mod-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        git checkout -b ${{ inputs.upload-repo-branch }}
         mv ../results/base reports
         rm -f reports/.gitignore
         git add reports/*
-        git commit -am "Test results at https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-base-ref }} with https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-base-ref }}"
+        git commit --allow-empty -a -m "Base test results" \
+          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-base-ref }}" \
+          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/${{ inputs.dbm-mod-base-ref-vanilla }}" \
+          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/${{ inputs.dbm-mod-base-ref-dungeons }}"
         rm -rf reports/
         mv ../results/new reports
         rm -f reports/.gitignore
         git add reports/*
-        git commit --allow-empty -am "Test results at https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-ref }} with https://github.com/${{ inputs.dbm-mod-repo }}/commit/${{ inputs.dbm-mod-ref }}"
-        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} diff-dbm-${{ inputs.dbm-main-base-ref }}-${{ inputs.dbm-main-ref }}-mod-${{ inputs.dbm-mod-base-ref }}-${{ inputs.dbm-mod-ref }}
+        git commit --allow-empty -a -m "Test results" \
+          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-ref }}" \
+          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/${{ inputs.dbm-mod-ref-vanilla }}" \
+          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/${{ inputs.dbm-mod-ref-dungeons }}"
+        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} ${{ inputs.upload-repo-branch }}
         sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
         echo 'diff<<EOFDelim' >> $GITHUB_OUTPUT
         cat ../summary.txt >> $GITHUB_OUTPUT
