@@ -175,6 +175,7 @@ runs:
           -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/${{ inputs.dbm-mod-ref-dungeons }}"
         git push https://${gh_token}@github.com/${{ inputs.upload-repo }} ${{ inputs.upload-repo-branch }}
         sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
+        sed -i "s|{{fullResultsLink}}|https://github.com/${{ inputs.upload-repo }}/tree/$(git rev-parse HEAD^)/reports|" ../summary.txt
         echo 'diff<<EOFDelim' >> $GITHUB_OUTPUT
         cat ../summary.txt >> $GITHUB_OUTPUT
         echo EOFDelim >> $GITHUB_OUTPUT

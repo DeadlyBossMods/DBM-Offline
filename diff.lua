@@ -109,9 +109,9 @@ end)
 print(("Executed %d boss mod tests."):format(numTests))
 
 if #sortedDiffs == 0 then
-	print("No diffs found!")
+	print("No diffs found. [View full test results]({{fullResultsLink}}).")
 else
-	print("[View full diff of all tests]({{fullDiffLink}})")
+	print("[View full diff of all tests]({{fullDiffLink}}).")
 	print()
 	print("|Status|Test|Description|")
 	print("|:-----|:---|:----------|")
