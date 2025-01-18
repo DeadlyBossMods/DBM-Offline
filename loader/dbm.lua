@@ -49,7 +49,14 @@ function dbmLoader:LoadMod(basePath, mod)
 	log("Loading " .. mod)
 	-- TODO: We should be using DBM:LoadMod here for DBM mods, but that requires implementing more parts of C_AddOns
 	DBM.Test:OnBeforeLoadAddOn()
-	loader:LoadAddOn(basePath .. "/" .. mod .. "/" .. mod .. "_" .. version.config.tocSuffix .. ".toc")
+	-- FIXME: Loader itself should handle toc resolution
+	local ok, err = pcall(loader.LoadAddOn, loader, basePath .. "/" .. mod .. "/" .. mod .. "_" .. version.config.tocSuffix .. ".toc")
+	if not ok and err and err:match("No such file or directory") then
+		ok, err = pcall(loader.LoadAddOn, loader, basePath .. "/" .. mod .. "/" .. mod .. ".toc")
+		if not ok and err and err:match("No such file or directory") then
+			print("Couldn't load mod " .. mod .. ": No toc for current game flavor found.")
+		end
+	end
 	DBM.Test:OnAfterLoadAddOn()
 end
 

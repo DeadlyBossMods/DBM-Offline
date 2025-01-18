@@ -23,6 +23,25 @@ local version = require "fakes.version"
 
 version:LoadPreset(args.flavor)
 
+-- Check if we even have tests for the given flavor
+-- Doing this early makes it cheap to just run the test for every flavor on every mod
+local hasTestsForFlavor = false
+for entry in lfs.dir(args.mods) do
+	local dir = args.mods .. "/" .. entry
+	if entry:match("^DBM%-Test%-") and lfs.attributes(dir).mode == "directory" then
+		if lfs.attributes(dir .. "/" .. entry .. ".toc") then
+			error("All tests must only use tocs split by flavor to work with DBM-Offline. Found unsplit toc in " .. dir)
+		end
+		if lfs.attributes(dir .. "/" .. entry .. "_" .. version.config.tocSuffix .. ".toc") then
+			hasTestsForFlavor = true
+		end
+	end
+end
+if not hasTestsForFlavor then
+	print("Found no tests for selected game flavor")
+	os.exit(0)
+end
+
 dbm:LoadCore(args.dbm)
 
 local coreMods = {
