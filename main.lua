@@ -59,9 +59,9 @@ local function runTest(name)
 	local dirName = "reports/" .. name:gsub("/", "-") .. "/"
 	os.execute("mkdir -p '" .. dirName .. "'")
 	log:SetLogFiles{
-		debug = dirName .. "DBM-Debug.txt",
-		out = dirName .. "DBM-AddMsg.txt",
-		error = dirName .. "Errors.txt",
+		debug = dirName .. "4-DBM-Debug.txt",
+		out = dirName .. "3-DBM-AddMsg.txt",
+		error = dirName .. "1-Errors.txt",
 		-- TODO: do we want to catch print() somehow? probably not...
 	}
 	DBM.Test:RunTest(name)
@@ -72,7 +72,7 @@ local function runTest(name)
 	if DBM.Test:OnUpdate() then
 		error("test timed out")
 	end
-	local f, err = io.open(dirName .. "Report.txt", "w+")
+	local f, err = io.open(dirName .. "2-Test-Report.txt", "w+")
 	if not f then error(err) end
 	if DBM.Test.reporter:HasDiff() then
 		f:write("Test report differs from test report stored in the DBM test mod.\n\n")

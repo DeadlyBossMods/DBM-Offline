@@ -16,10 +16,10 @@ local function gatherFiles(dir)
 		local path = dir .. "/" .. entry
 		if not entry:match("^%.") and lfs.attributes(path).mode == "directory" then
 			tests[entry] = {
-				addMsg = readFile(path .. "/" .. "DBM-AddMsg.txt"),
-				debug = readFile(path .. "/" .. "DBM-Debug.txt"),
-				errors = readFile(path .. "/" .. "Errors.txt"),
-				report = readFile(path .. "/" .. "Report.txt"),
+				errors = readFile(path .. "/" .. "1-Errors.txt"),
+				report = readFile(path .. "/" .. "2-Test-Report.txt"),
+				addMsg = readFile(path .. "/" .. "3-DBM-AddMsg.txt"),
+				debug = readFile(path .. "/" .. "4-DBM-Debug.txt"),
 			}
 		end
 	end
