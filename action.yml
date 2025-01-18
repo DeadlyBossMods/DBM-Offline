@@ -167,17 +167,17 @@ runs:
         rm -f reports/.gitignore
         git add reports/*
         git commit --allow-empty -a -m "Base test results" \
-          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-base-ref }}" \
-          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/${{ inputs.dbm-mod-base-ref-vanilla }}" \
-          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/${{ inputs.dbm-mod-base-ref-dungeons }}"
+          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-base rev-parse HEAD)" \
+          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/$(git -C ../DBM-Vanilla-base rev-parse HEAD)" \
+          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/$(git -C ../DBM-Dungeons-base rev-parse HEAD)"
         rm -rf reports/
         mv ../results/new reports
         rm -f reports/.gitignore
         git add reports/*
         git commit --allow-empty -a -m "Test results" \
-          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/${{ inputs.dbm-main-ref }}" \
-          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/${{ inputs.dbm-mod-ref-vanilla }}" \
-          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/${{ inputs.dbm-mod-ref-dungeons }}"
+          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-new rev-parse HEAD)" \
+          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/$(git -C ../DBM-Vanilla-new rev-parse HEAD)" \
+          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/$(git -C ../DBM-Dungeons-new rev-parse HEAD)"
         git push https://${gh_token}@github.com/${{ inputs.upload-repo }} ${{ inputs.upload-repo-branch }}
         sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
         sed -i "s|{{fullResultsLink}}|https://github.com/${{ inputs.upload-repo }}/tree/$(git rev-parse HEAD^)/reports|" ../summary.txt
