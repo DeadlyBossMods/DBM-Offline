@@ -197,7 +197,10 @@ runs:
         git checkout ${{ inputs.upload-repo-branch }}
         git config --global user.email "ci@deadlybossmods.com"
         git config --global user.name "DBM CI"
-        mv ../results/new/* .
+        # FIXME: should be using an exclude filter instead of that
+        rm -rf Dragonflight-* SoD-* TWW-* Era-* Classic-* Cata-* TBC-*
+        rm -f ../results/new/.gitignore
+        cp -r ../results/new/* .
         git add *
         git commit --allow-empty -a -m "Test results" \
           -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-new rev-parse HEAD)" \
