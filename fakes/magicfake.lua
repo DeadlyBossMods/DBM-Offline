@@ -25,7 +25,6 @@ fake.__div = new
 fake.__unm = new
 fake.__mod = new
 fake.__pow = new
-fake.__concat = new
 fake.__eq = ret(false)
 fake.__lt = ret(false)
 fake.__le = ret(false)
@@ -33,5 +32,9 @@ fake.__len = ret(0)
 fake.__tostring = function(self)
 	return ("MagicFake(depth=%s)"):format(self.__magicFakeDepth)
 end
+fake.__concat = function(self, other)
+	return tostring(self) .. tostring(other)
+end
+
 
 return new()
