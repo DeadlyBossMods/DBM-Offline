@@ -40,6 +40,9 @@ inputs:
     required: true
   upload-token:
     required: true
+  upload-repo-commit-message:
+    required: true
+    default: "Test results"
   comment-token:
     required: false
   diff-mode:
@@ -202,7 +205,7 @@ runs:
         rm -f ../results/new/.gitignore
         cp -r ../results/new/* .
         git add *
-        git commit --allow-empty -a -m "Test results" \
+        git commit --allow-empty -a -m "${{inputs.upload-repo-commit-message}}" \
           -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-new rev-parse HEAD)" \
           -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/$(git -C ../DBM-Vanilla-new rev-parse HEAD)" \
           -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/$(git -C ../DBM-Dungeons-new rev-parse HEAD)"
