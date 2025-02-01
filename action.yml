@@ -88,7 +88,9 @@ runs:
       run: |
         cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-new/DBM-Core/
         # FIXME: this is slightly incorrect and won't work if a dependency was removed
-        cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/ || true
+        if [[ -e ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/ ]]; then
+          cp -r ./dbm-offline-diff/DeadlyBossMods-new/.release/DBM-Core/Libs ./dbm-offline-diff/DeadlyBossMods-base/DBM-Core/
+        fi
     - name: Checkout DBM-Vanilla (New)
       uses: actions/checkout@v4
       if: ${{ inputs.test-dbm-vanilla-mods }}
