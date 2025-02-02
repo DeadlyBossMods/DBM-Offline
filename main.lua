@@ -74,11 +74,6 @@ local function runTest(name)
 	end
 	local f, err = io.open(dirName .. "2-Test-Report.txt", "w+")
 	if not f then error(err) end
-	if DBM.Test.reporter:HasDiff() then
-		f:write("Test report differs from test report stored in the DBM test mod.\n\n")
-	else
-		f:write("Test report exactly matches test report stored in the DBM test mod.\n\n")
-	end
 	f:write(DBM.Test.reporter:Report())
 	f:close()
 end
