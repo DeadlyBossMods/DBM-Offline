@@ -91,12 +91,16 @@ function loader:LoadAddOn(tocPath, excludeList)
 	end
 	-- FIXME: this should come from the toc
 	addon = addon:gsub("_Vanilla$", ""):gsub("_Mainline$", ""):gsub("_Cata$", "")
-	local tocFile = toc:Parse(tocPath)
+	local ok, tocFile = pcall(toc.Parse, toc, tocPath)
+	if not ok and tocFile:match("No such file or directory") then
+		return false
+	end
 	for _, file in ipairs(tocFile.files) do
 		if not (excludeList and excludeList[file]) then
 			self:LoadFile(basePath, file, addon)
 		end
 	end
+	return true
 end
 
 return loader
