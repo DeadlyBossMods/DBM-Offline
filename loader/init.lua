@@ -7,9 +7,13 @@ local namespaces = {}
 local function runWowLua(file, addon)
 	--print(("Loading AddOn %s: Running %s"):format(addon, file))
 	local f, err = loadfile(file)
-	if not f then error(err) end
-	namespaces[addon] = namespaces[addon] or {}
-	f(addon, namespaces[addon])
+	if not f then
+		-- FIXME: should come from the log package
+		print(("::error file=%s::%s"):format(file, err))
+	else
+		namespaces[addon] = namespaces[addon] or {}
+		f(addon, namespaces[addon])
+	end
 end
 
 
