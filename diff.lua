@@ -20,6 +20,7 @@ local function gatherFiles(dir)
 				report = readFile(path .. "/" .. "2-Test-Report.txt"),
 				addMsg = readFile(path .. "/" .. "3-DBM-AddMsg.txt"),
 				debug = readFile(path .. "/" .. "4-DBM-Debug.txt"),
+				fileName = entry
 			}
 		end
 	end
@@ -65,8 +66,8 @@ local function diffTest(before, after)
 			diff.description = "New test."
 		end
 	end
-	local report = after and after.report or before.report
-	diff.name = report:match("\nTest: (.-)\r?\n")
+	local report = after and after.report or before.report or ""
+	diff.name = report:match("\nTest: (.-)\r?\n") or after.fileName:gsub("%-", "/")
 	return diff
 end
 
