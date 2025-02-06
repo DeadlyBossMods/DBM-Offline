@@ -82,8 +82,15 @@ function log:DbmAddMsg(str, ...)
 	return logToFile(addMsgLogFile, str, ...)
 end
 
-function log:DbmDebug(str, ...)
-	return logToFile(debugLogFile, str, ...)
+function log:DbmDebug(fmtStr, ...)
+	local msg = select(2, ...)
+	-- A bit hacky, but DBM test calls DBM:Disable() as part of test teardown, this in turn calls UnregisterShortTermEvents on each mod which spams the debug log
+	-- For now just filtering it here, but maybe we want to hook DBM:Disable() and stop test logging as soon as it is called
+	local timewarperActive = getMockTime()
+	if not timewarperActive and msg == "UnregisterShortTermEvents fired" then
+		return
+	end
+	return logToFile(debugLogFile, fmtStr, ...)
 end
 
 function log:DbmError(str, ...)
