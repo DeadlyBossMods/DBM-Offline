@@ -67,7 +67,7 @@ local function diffTest(before, after)
 		end
 	end
 	local report = after and after.report or before.report or ""
-	diff.name = report:match("\nTest: (.-)\r?\n") or after.fileName:gsub("%-", "/")
+	diff.name = report:match("\nTest: (.-)\r?\n") or after and after.fileName:gsub("%-", "/") or before and before.fileName:gsub("%-", "/") or "Unknown Test"
 	return diff
 end
 
