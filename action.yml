@@ -1,0 +1,90 @@
+name: Upload DBM test output
+description: Uploads a DBM test diff and posts a comment to a PR 
+branding:
+  icon: book
+  color: blue
+
+inputs:
+  upload-repo:
+    default: "DeadlyBossMods/DBM-Test-Results"
+    required: true
+  upload-token:
+    required: true
+  comment-token:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Download artifact
+      uses: actions/github-script@v7
+      with:
+        script: |
+          let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            run_id: context.payload.workflow_run.id,
+          });
+          let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
+            return artifact.name == "dbm-offline-diff"
+          })[0];
+          let download = await github.rest.actions.downloadArtifact({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            artifact_id: matchArtifact.id,
+            archive_format: 'zip',
+          });
+          const fs = require('fs');
+          fs.writeFileSync('${{github.workspace}}/dbm-offline-diff.zip', Buffer.from(download.data));
+    - name: Unpack artifact
+      shell: bash
+      run: unzip dbm-offline-diff.zip
+    - name: Upload diff
+      id: upload
+      shell: bash
+      run: |
+        mkdir upload-results
+        cd upload-results
+        git init .
+        git config --global user.email "ci@deadlybossmods.com"
+        git config --global user.name "DBM CI"
+        git checkout -b diff-$(cat ../sut-flavor.txt)-$(cat ../sut-head.txt)-$(cat ../sut-base.txt)
+        mv ../reports-base reports
+        rm -f reports/.gitignore
+        git add reports/*
+        git commit --allow-empty -a -m "Base test results" \
+          -m "Core: https://github.com/$(cat ../core-repo.txt)/commit/$(cat ../core-base.txt)" \
+          -m "Vanilla: https://github.com/$(cat ../vanilla-repo.txt)/commit/$(cat ../vanilla-base.txt)" \
+          -m "Dungeons: https://github.com/$(cat ../dungeons-repo.txt)/commit/$(cat ../dungeons-base.txt)"
+        rm -rf reports/
+        mv ../reports-new reports
+        rm -f reports/.gitignore
+        git add reports/*
+        git commit --allow-empty -a -m "Test results" \
+          -m "Core: https://github.com/$(cat ../core-repo.txt)/commit/$(cat ../core-new.txt)" \
+          -m "Vanilla: https://github.com/$(cat ../vanilla-repo.txt)/commit/$(cat ../vanilla-new.txt)" \
+          -m "Dungeons: https://github.com/$(cat ../dungeons-repo.txt)/commit/$(cat ../dungeons-new.txt)"
+        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} diff-$(cat ../sut-flavor.txt)-$(cat ../sut-head.txt)-$(cat ../sut-base.txt)
+        sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
+        sed -i "s|{{fullResultsLink}}|https://github.com/${{ inputs.upload-repo }}/tree/$(git rev-parse HEAD)/reports|" ../summary.txt
+        echo 'diff<<EOFDelim' >> $GITHUB_OUTPUT
+        cat ../summary.txt >> $GITHUB_OUTPUT
+        echo EOFDelim >> $GITHUB_OUTPUT
+      env:
+        gh_token: ${{ inputs.upload-token }}
+    - name: Post comment
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ inputs.comment-token }}
+        script: |
+          var fs = require('fs');
+          var prNum = Number(fs.readFileSync('./pr.txt'));
+          if (!prNum) {
+            return;
+          }
+          github.rest.issues.createComment({
+            issue_number: prNum,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `${{ steps.upload.outputs.diff }}`
+          })
