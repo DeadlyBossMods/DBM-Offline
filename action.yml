@@ -1,5 +1,5 @@
 name: Diff DBM test output
-description: Runs DBM tests on two commits and pushes the resulting output into a repository to get a diff
+description: Runs DBM tests on two commits and uploads the resulting data to a GitHub artifact or the DBM-Test-Results main repo
 branding:
   icon: book
   color: blue
@@ -27,6 +27,8 @@ inputs:
     default: ""
   dbm-mod-base-ref-dungeons:
     default: ""
+  repo-under-test:
+    default: ""
   test-dbm-core-mods:
     default: false
   test-dbm-vanilla-mods:
@@ -35,16 +37,14 @@ inputs:
     default: false
   upload-repo:
     default: "DeadlyBossMods/DBM-Test-Results"
-    required: true
+    required: false
   upload-repo-branch:
-    required: true
+    required: false
   upload-token:
-    required: true
+    required: false
   upload-repo-commit-message:
     required: true
     default: "Test results"
-  comment-token:
-    required: false
   diff-mode:
     default: "true"
 
@@ -93,28 +93,26 @@ runs:
         fi
     - name: Checkout DBM-Vanilla (New)
       uses: actions/checkout@v4
-      if: ${{ inputs.test-dbm-vanilla-mods }}
       with:
         repository: ${{ inputs.dbm-mod-repo-vanilla }}
         ref: ${{ inputs.dbm-mod-ref-vanilla }}
         path: ./dbm-offline-diff/DBM-Vanilla-new
     - name: Checkout DBM-Vanilla (Base)
       uses: actions/checkout@v4
-      if: ${{ inputs.test-dbm-vanilla-mods && inputs.diff-mode == 'true' }}
+      if: ${{ inputs.diff-mode == 'true' }}
       with:
         repository: ${{ inputs.dbm-mod-repo-vanilla }}
         ref: ${{ inputs.dbm-mod-base-ref-vanilla }}
         path: ./dbm-offline-diff/DBM-Vanilla-base
     - name: Checkout DBM-Dungeons (New)
       uses: actions/checkout@v4
-      if: ${{ inputs.test-dbm-dungeon-mods }}
       with:
         repository: ${{ inputs.dbm-mod-repo-dungeons }}
         ref: ${{ inputs.dbm-mod-ref-dungeons }}
         path: ./dbm-offline-diff/DBM-Dungeons-new
     - name: Checkout DBM-Dungeons (Base)
       uses: actions/checkout@v4
-      if: ${{ inputs.test-dbm-dungeon-mods && inputs.diff-mode == 'true' }}
+      if: ${{ inputs.diff-mode == 'true' }}
       with:
         repository: ${{ inputs.dbm-mod-repo-dungeons }}
         ref: ${{ inputs.dbm-mod-base-ref-dungeons }}
@@ -154,8 +152,7 @@ runs:
         done
         mkdir -p ../results
         mv reports ../results/base
-    - name: Upload diff
-      id: upload
+    - name: Create diff
       if: ${{ inputs.diff-mode == 'true' }}
       shell: bash
       run: |
@@ -164,34 +161,43 @@ runs:
         cd ..
         mkdir upload-results
         cd upload-results
-        git init .
-        git config --global user.email "ci@deadlybossmods.com"
-        git config --global user.name "DBM CI"
-        git checkout -b ${{ inputs.upload-repo-branch }}
-        mv ../results/base reports
-        rm -f reports/.gitignore
-        git add reports/*
-        git commit --allow-empty -a -m "Base test results" \
-          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-base rev-parse HEAD)" \
-          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/$(git -C ../DBM-Vanilla-base rev-parse HEAD)" \
-          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/$(git -C ../DBM-Dungeons-base rev-parse HEAD)"
-        rm -rf reports/
-        mv ../results/new reports
-        rm -f reports/.gitignore
-        git add reports/*
-        git commit --allow-empty -a -m "Test results" \
-          -m "Core: https://github.com/${{ inputs.dbm-main-repo }}/commit/$(git -C ../DeadlyBossMods-new rev-parse HEAD)" \
-          -m "Vanilla: https://github.com/${{ inputs.dbm-mod-repo-vanilla }}/commit/$(git -C ../DBM-Vanilla-new rev-parse HEAD)" \
-          -m "Dungeons: https://github.com/${{ inputs.dbm-mod-repo-dungeons }}/commit/$(git -C ../DBM-Dungeons-new rev-parse HEAD)"
-        git push https://${gh_token}@github.com/${{ inputs.upload-repo }} ${{ inputs.upload-repo-branch }}
-        sed -i "s|{{fullDiffLink}}|https://github.com/${{ inputs.upload-repo }}/commit/$(git rev-parse HEAD)|" ../summary.txt
-        sed -i "s|{{fullResultsLink}}|https://github.com/${{ inputs.upload-repo }}/tree/$(git rev-parse HEAD^)/reports|" ../summary.txt
-        echo 'diff<<EOFDelim' >> $GITHUB_OUTPUT
-        cat ../summary.txt >> $GITHUB_OUTPUT
-        echo EOFDelim >> $GITHUB_OUTPUT
-        cat ../summary.txt >> $GITHUB_STEP_SUMMARY
-      env:
-        gh_token: ${{ inputs.upload-token }}
+        # TODO: this is a bit ugly
+        echo ${{ github.event.number }} > pr.txt
+        echo ${{ inputs.repo-under-test }} >> sut-flavor.txt
+        echo ${{ inputs.dbm-main-repo }} >> core-repo.txt
+        echo ${{ inputs.dbm-mod-repo-vanilla }} >> vanilla-repo.txt
+        echo ${{ inputs.dbm-mod-repo-dungeons }} >> dungeons-repo.txt
+        echo $(git -C ../DeadlyBossMods-base rev-parse HEAD) >> core-base.txt
+        echo $(git -C ../DBM-Vanilla-base rev-parse HEAD) >> vanilla-base.txt
+        echo $(git -C ../DBM-Dungeons-base rev-parse HEAD)>> dungeons-base.txt
+        echo $(git -C ../DeadlyBossMods-new rev-parse HEAD) >> core-new.txt
+        echo $(git -C ../DBM-Vanilla-new rev-parse HEAD) >> vanilla-new.txt
+        echo $(git -C ../DBM-Dungeons-new rev-parse HEAD) >> dungeons-new.txt
+        if [[ ${{ inputs.repo-under-test }} == core ]]; then
+          cp core-base.txt sut-base.txt
+          cp core-new.txt sut-head.txt
+        fi
+        if [[ ${{ inputs.repo-under-test }} == vanilla ]]; then
+          cp vanilla-base.txt sut-base.txt
+          cp vanilla-new.txt sut-head.txt
+        fi
+        if [[ ${{ inputs.repo-under-test }} == dungeons ]]; then
+          cp dungeons-base.txt sut-base.txt
+          cp dungeons-new.txt sut-head.txt
+        fi
+        cp ../summary.txt summary.txt
+        mv ../results/base reports-base
+        rm -f reports-base/.gitignore
+        mv ../results/new reports-new
+        rm -f reports-new/.gitignore
+        cat summary.txt >> $GITHUB_STEP_SUMMARY
+    - name: Upload diff
+      if: ${{ inputs.diff-mode == 'true' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: dbm-offline-diff
+        path: dbm-offline-diff/upload-results
+        retention-days: 1
     - name: Upload test results
       if: ${{ inputs.diff-mode == 'false' }}
       shell: bash
@@ -220,15 +226,4 @@ runs:
       run: |
         # just making sure the auth token is definitely gone
         rm -rf dbm-offline-diff/upload-results/.git
-    - name: Post comment
-      uses: actions/github-script@v5
-      if: ${{ github.event_name == 'pull_request' && inputs.diff-mode == 'true' }}
-      with:
-        github-token: ${{ inputs.comment-token }}
-        script: |
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: `${{ steps.upload.outputs.diff }}`
-          })
+
