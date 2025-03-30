@@ -121,17 +121,25 @@ runs:
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
+        mkdir -p ../testing
+        # Directory shows up in errors and we want identical errors to look identical across old and new, moving around the code is the easiest way to achieve this
+        mv ../DeadlyBossMods-new ../testing/DeadlyBossMods
         for flavor in Retail SoD; do
           if [[ ${{ inputs.test-dbm-core-mods }} == true ]]; then
-            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-new --mods ../DeadlyBossMods-new
+            lua5.1 main.lua --flavor $flavor --dbm ../testing/DeadlyBossMods --mods ../testing/DeadlyBossMods
           fi
           if [[ ${{ inputs.test-dbm-vanilla-mods }} == true ]]; then
-            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-new --mods ../DBM-Vanilla-new
+            mv ../DBM-Vanilla-new ../testing/DBM-Vanilla
+            lua5.1 main.lua --flavor $flavor --dbm ../testing/DeadlyBossMods --mods ../testing/DBM-Vanilla
+            mv ../testing/DBM-Vanilla ../DBM-Vanilla-new
           fi
           if [[ ${{ inputs.test-dbm-dungeon-mods }} == true ]]; then
-            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-new --mods ../DBM-Dungeons-new
+            mv ../DBM-Dungeons-new ../testing/DBM-Dungeons
+            lua5.1 main.lua --flavor $flavor --dbm ../testing/DeadlyBossMods --mods ../testing/DBM-Dungeons
+            mv ../testing/DBM-Dungeons ../DBM-Dungeons-new
           fi
         done
+        mv ../testing/DeadlyBossMods ../DeadlyBossMods-new
         mkdir -p ../results
         mv reports ../results/new
     - name: Run tests (Base)
@@ -139,17 +147,23 @@ runs:
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
+        mv ../DeadlyBossMods-base ../testing/DeadlyBossMods
         for flavor in Retail SoD; do
           if [[ ${{ inputs.test-dbm-core-mods }} == true ]]; then
-            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-base --mods ../DeadlyBossMods-base
+            lua5.1 main.lua --flavor $flavor --dbm ../testing/DeadlyBossMods --mods ../testing/DeadlyBossMods
           fi
           if [[ ${{ inputs.test-dbm-vanilla-mods }} == true ]]; then
-            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-base --mods ../DBM-Vanilla-base
+            mv ../DBM-Vanilla-base ../testing/DBM-Vanilla
+            lua5.1 main.lua --flavor $flavor --dbm ../testing/DeadlyBossMods --mods ../testing/DBM-Vanilla
+            mv ../testing/DBM-Vanilla ../DBM-Vanilla-base
           fi
           if [[ ${{ inputs.test-dbm-dungeon-mods }} == true ]]; then
-            lua5.1 main.lua --flavor $flavor --dbm ../DeadlyBossMods-base --mods ../DBM-Dungeons-base
+            mv ../DBM-Dungeons-base ../testing/DBM-Dungeons
+            lua5.1 main.lua --flavor $flavor --dbm ../testing/DeadlyBossMods --mods ../testing/DBM-Dungeons
+            mv ../testing/DBM-Dungeons ../DBM-Dungeons-base
           fi
         done
+        mv ../testing/DeadlyBossMods ../DeadlyBossMods-base
         mkdir -p ../results
         mv reports ../results/base
     - name: Create diff
