@@ -28,7 +28,7 @@ local function gatherFiles(dir)
 end
 
 local function diffTest(before, after)
-	local diff = {}
+	local diff = {before = before, after = after}
 	if before and after then
 		if before.addMsg == after.addMsg and before.debug == after.debug and before.errors == after.errors and before.report == after.report then
 			diff.state = "Unchanged"
@@ -125,4 +125,12 @@ local stateToEmoji = {
 
 for k, v in ipairs(sortedDiffs) do
 	print(("|%s|%s|%s|"):format(stateToEmoji[v.state] or v.state, v.name, v.description))
+end
+
+for k, v in ipairs(sortedDiffs) do
+	if v.state == "Error" then
+		io.stderr:write(("::error title=%s has errors::%s"):format(v.name, (v.after.errors ~= "" and v.after.errors or v.before.errors):gsub("\n", "\\n")))
+		io.stderr:write("\n")
+		io.stderr:flush()
+	end
 end

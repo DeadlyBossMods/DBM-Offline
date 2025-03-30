@@ -157,7 +157,7 @@ runs:
       shell: bash
       run: |
         cd dbm-offline-diff/DBM-Offline
-        lua5.1 diff.lua ../results/base ../results/new > ../summary.txt
+        lua5.1 diff.lua ../results/base ../results/new > ../summary.txt 2> ../diff-errors
         cd ..
         mkdir upload-results
         cd upload-results
@@ -220,10 +220,11 @@ runs:
         git push https://${gh_token}@github.com/${{ inputs.upload-repo }} ${{ inputs.upload-repo-branch }}
       env:
         gh_token: ${{ inputs.upload-token }}
-    - name: Cleanup
+    - name: Report diff errors
       shell: bash
-      if: always()
+      if: ${{ inputs.diff-mode == 'true' }}
       run: |
-        # just making sure the auth token is definitely gone
-        rm -rf dbm-offline-diff/upload-results/.git
-
+        if [[ -s dbm-offline-diff/diff-errors ]] ; then
+          cat dbm-offline-diff/diff-errors
+          exit 1
+        fi
