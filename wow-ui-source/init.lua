@@ -39,16 +39,19 @@ local function fixEnums()
 	end
 end
 
-downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master", "Annotations/Data/Enum.lua")
+local kethoTag = "0.19.1"
+local wowUiTag = "11.1.5"
+
+downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Core/Data/Enum.lua")
 require "env.enums"
 fixEnums()
-downloadAndRunFile("Gethe/wow-ui-source/live/Interface/AddOns", "Blizzard_SharedXMLBase/Mixin.lua")
-downloadAndRunFile("Gethe/wow-ui-source/live/Interface/AddOns", "Blizzard_SharedXMLBase/TableUtil.lua")
-downloadAndRunFile("Gethe/wow-ui-source/live/Interface/AddOns", "Blizzard_SharedXMLBase/MathUtil.lua")
-downloadAndRunFile("Gethe/wow-ui-source/live/Interface/AddOns", "Blizzard_FrameXMLBase/Constants.lua", magicFakeEnvironment)
+downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/Mixin.lua")
+downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/TableUtil.lua")
+downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/MathUtil.lua")
+downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_FrameXMLBase/Constants.lua", magicFakeEnvironment)
 
 
-downloadAndRunFile("Gethe/wow-ui-source/live/Interface/AddOns", "Blizzard_SharedXML/Color.lua")
-downloadAndRunFile("Gethe/wow-ui-source/live/Interface/AddOns", "Blizzard_SharedXML/ColorUtil.lua")
-downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master", "Annotations/Interface/Blizzard_SharedXML/ColorUtil.lua")
-downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master", "Annotations/Type/GlobalColors.lua")
+downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/Color.lua")
+downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXML/ColorUtil.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Interface/Blizzard_SharedXML/ColorUtil.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Core/Type/GlobalColors.lua")
