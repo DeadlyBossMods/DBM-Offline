@@ -64,6 +64,7 @@ local function runTest(name)
 		error = dirName .. "1-Errors.txt",
 		-- TODO: do we want to catch print() somehow? probably not...
 	}
+	DBM.Test.environment = "DBM-Offline"
 	DBM.Test:RunTest(name)
 	for i = 1, 1000 do
 		Tick()
