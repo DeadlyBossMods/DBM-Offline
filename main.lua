@@ -81,9 +81,6 @@ end
 
 for _, v in ipairs(DBM.Test.Registry.sortedTests) do
 	if v:match("^" .. args.tests) then
-		if DBM.Test._loadTestAsyncInternal then
-			DBM.Test._loadTestAsyncInternal(DBM.Test.Registry.tests[v]) -- not async when run from main thread
-		end
 		log("Running test: %s", v)
 		local ok, err = pcall(runTest, v)
 		if not ok then
