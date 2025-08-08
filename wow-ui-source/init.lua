@@ -41,8 +41,7 @@ end
 
 local kethoTag = "0.20.8"
 local wowUiTag = "11.2.0"
-
-downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Core/Data/Enum.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master/Annotations/Core/Data/Enum.lua")
 require "env.enums"
 fixEnums()
 downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/Mixin.lua")
@@ -53,5 +52,5 @@ downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/A
 
 downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/Color.lua")
 downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXML/ColorUtil.lua")
-downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Interface/Blizzard_SharedXML/ColorUtil.lua")
-downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Core/Type/GlobalColors.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master/Annotations/Interface/Blizzard_SharedXML/ColorUtil.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master/Annotations/Core/Type/GlobalColors.lua")
