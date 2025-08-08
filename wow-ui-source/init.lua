@@ -4,7 +4,7 @@ local magicFake = require "fakes.magicfake"
 local downloader = require "downloader"
 
 local function downloadAndRunFile(base, file, env)
-	local url = "https://raw.githubusercontent.com/" .. base .. "/" .. file
+	local url = "https://github.com/" .. base .. "/" .. file--https://raw.githubusercontent.com/
 	local path = "wow-ui-source/" .. file
 	downloader:Cache(url, path)
 	local f, err = loadfile(path)
