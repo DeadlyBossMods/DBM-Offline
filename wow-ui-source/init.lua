@@ -39,8 +39,8 @@ local function fixEnums()
 	end
 end
 
-local kethoTag = "0.19.1"
-local wowUiTag = "11.1.5"
+local kethoTag = "0.20.8"
+local wowUiTag = "11.2.0"
 
 downloadAndRunFile("Ketho/vscode-wow-api/refs/tags/" .. kethoTag, "Annotations/Core/Data/Enum.lua")
 require "env.enums"
