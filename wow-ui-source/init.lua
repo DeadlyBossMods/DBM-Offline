@@ -41,7 +41,7 @@ end
 
 local kethoTag = "0.20.8"
 local wowUiTag = "11.2.0"
-downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master/Annotations/Core/Data/Enum.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master", "Annotations/Core/Data/Enum.lua")
 require "env.enums"
 fixEnums()
 downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/Mixin.lua")
