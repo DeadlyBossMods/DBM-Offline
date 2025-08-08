@@ -52,5 +52,5 @@ downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/A
 
 downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXMLBase/Color.lua")
 downloadAndRunFile("Gethe/wow-ui-source/refs/tags/" .. wowUiTag .. "/Interface/AddOns", "Blizzard_SharedXML/ColorUtil.lua")
-downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master/Annotations/Interface/Blizzard_SharedXML/ColorUtil.lua")
-downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master/Annotations/Core/Type/GlobalColors.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master", "Annotations/Interface/Blizzard_SharedXML/ColorUtil.lua")
+downloadAndRunFile("Ketho/vscode-wow-api/refs/heads/master", "Annotations/Core/Type/GlobalColors.lua")
