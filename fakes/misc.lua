@@ -43,6 +43,8 @@ function IsInGroup()
 	return true
 end
 
+function PanelTemplates_SetNumTabs(frame, numTabs) end
+
 -- Random globals
 SlashCmdList = {}
 
