@@ -48,6 +48,7 @@ function PanelTemplates_SetTab(frame, id) end
 
 -- Random globals
 SlashCmdList = {}
+UISpecialFrames = {}
 
 -- FIXME: auto-generate global strings
 SCENARIO_STAGE = "SCENARIO_STAGE(%s)"
