@@ -112,6 +112,19 @@ runs:
         repository: ${{ inputs.dbm-mod-repo-vanilla }}
         ref: ${{ inputs.dbm-mod-base-ref-vanilla }}
         path: ./dbm-offline-diff/DBM-Vanilla-base
+    - name: Checkout DBM-MoP (New)
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.dbm-mod-repo-mop }}
+        ref: ${{ inputs.dbm-mod-ref-mop }}
+        path: ./dbm-offline-diff/DBM-MoP-new
+    - name: Checkout DBM-MoP (Base)
+      uses: actions/checkout@v4
+      if: ${{ inputs.diff-mode == 'true' }}
+      with:
+        repository: ${{ inputs.dbm-mod-repo-mop }}
+        ref: ${{ inputs.dbm-mod-base-ref-mop }}
+        path: ./dbm-offline-diff/DBM-MoP-base
     - name: Checkout DBM-Dungeons (New)
       uses: actions/checkout@v4
       with:
