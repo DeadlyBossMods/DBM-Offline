@@ -6,6 +6,7 @@ WOW_PROJECT_CLASSIC = 2
 WOW_PROJECT_BURNING_CRUSADE_CLASSIC = 5
 WOW_PROJECT_WRATH_CLASSIC = 11
 WOW_PROJECT_CATACLYSM_CLASSIC = 14
+WOW_PROJECT_MISTS_CLASSIC = 19
 
 local presets = {}
 
@@ -15,11 +16,23 @@ presets.SoD = {
 	projectId = WOW_PROJECT_CLASSIC,
 	tocSuffix = "Vanilla",
 	wagoId = "wow_classic_era_ptr",
-	buildInfo = {"1.15.5", "58555", "Jan  9 2025", 11505, "", "Release ", 11505},
+	buildInfo = {"1.15.5", "58555", "Jan 9 2025", 11505, "", "Release ", 11505},
 	testBuild = false,
 	os = "mac", ---@type "mac"|"windows"|"linux"
 	hardcore = false,
 	season = 2
+}
+
+presets.Classic = {
+	locale = "enUS",
+	projectId = WOW_PROJECT_MISTS_CLASSIC,
+	tocSuffix = "Mists",
+	wagoId = "wow_classic",
+	buildInfo = {"5.5.2", "64271", "Nov 7 2025", 50502, "", ""},
+	testBuild = false,
+	os = "mac", ---@type "mac"|"windows"|"linux"
+	hardcore = false,
+	season = false
 }
 
 presets.Retail = {
